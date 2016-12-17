@@ -1,5 +1,5 @@
 aws s3 sync  \
-  /Users/robcmills/src/dragons-and-krakens/  \
+  /Users/robcmills/src/vigtavl/  \
   s3://vigtavl.net  \
   --exclude '*.DS_Store' \
   --exclude '*.log' \
@@ -12,4 +12,4 @@ aws s3 sync  \
   --exclude '.git/*' \
   --exclude 'dockerfile' \
   --exclude 'stack/*' # \
-#  --dryrun
+ # --dryrun
