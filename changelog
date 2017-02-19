@@ -1,0 +1,27 @@
+v1.0 changes
+- Remove bonus for seizing last building
+- Rename Emperor to Conqueror
+- Add competitive/casual rule variations
+- Rename caravels to ships
+- Rename cavalry to knights
+- Remove Retaliation
+- Add Currency section
+- Change coin allowances
+- Add gems
+- Remove diminishing damage for ranged attacks
+- Remove per round player attack restrictions
+
+Todo:
+- Update Longship example diagrams that embark 3 units
+- Update Flanking example with damage system
+- Update Attacking Longship example with damage system
+
+v1.1 changes
+- Ranged attack updates
+  + Ranged attacks are no longer blocked by walls or opponent units
+  + Ranged attacks at range do not capture
+  + Only Galleon and Artillery can destroy walls
+
+Todo:
+- Update Ranged Attack diagrams
+- Add 1,2,3 range numbers to Ranged Attack diagrams (to clarify that adjacent hexes are range 1)

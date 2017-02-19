@@ -142,7 +142,9 @@
 
 				<li><b>Prevailing Winds:</b> Determine the direction of prevailing by flipping the Prevailing Winds Token. Place it in the center of the map.</li>
 
-				<li><b>Turn Order:</b> Randomly determine which player will go first. Turn order is the opposite direction of Prevailing Winds for the remainder of the game.</li>
+				<li><b>Turn Order:</b>
+				Turn order is the same direction as Prevailing Winds for the remainder of the game.<br>
+				Randomly determine which player will go first.<br>
 
 				<li>You are now ready to begin the game.</li>
 			</ol>
@@ -256,8 +258,8 @@
 			<ul>
 				<li><b>Ship:</b> A small, maneuverable sailing ship with lateen sails, capable of basic attacking and defending and the most movement range of all naval units. 6 movement, value of 1</li>
 				<li><b>Galleon:</b> Large warship with powerful cannons, but slower and less sea-worthy. build limit 1, 4 movement, 3 attack range* (diminishing damage), value of 3</li>
-				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 5 movement, +2 transport, -attack, -defend, build limit 3, value of 2<br>
-					Longships can transport up to 2 land units of any type.<br>
+				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 5 movement, +3 transport, -attack, -defend, build limit 3, value of 2<br>
+					Longships can transport up to 3 land units of any type.<br>
 					Longships can not attack or defend other ships or coastal buildings.<br>
 					Archers on a longship can attack coastal hexes or enemy ships.<br>
 					Archers on a longship can defend it from attacking ships.<br>
@@ -360,11 +362,13 @@
 					<li><b>Ranged:</b><br>
 					Archers, Artillery and Galleons are capable of ranged attacks.<br>
 					Ranged attacks can only extend in straight lines perpendicular to the center of each hex edge.<br>
+					Ranged attacks can only extend a distance equal to the Unit's value.<br>
 					<div class="diagram">
 						<img src='img/diagram-ranged-attack-straight.png' />
 					</div>
-					Ranged attacks are blocked by mountains and walls.<br>
-					Ranged attacks can not target a hex if a closer hex in the same line of sight is occupied by opponent units.<br>
+					Ranged attacks are blocked by mountains but not walls or opponent Units.<br>
+					Ranged attacks that defeat opponent Units at range do not capture.
+					The defeated Unit is simply removed from the board.<br>
 					<div class="diagram">
 						<img src='img/diagram-ranged-attack-block.png' />
 					</div>
@@ -409,9 +413,9 @@
 		</h3>
 		<div class="attack-results section">
 			<p>
-				<b>Land Victory:</b> If the attacker wins a land battle, the defeated unit is captured. Place the captured piece by the victor's nearest building. This Unit is now considered a prisoner.<br>
+				<b>Land Victory:</b> If the attacker wins a land battle, the defeated unit is captured (unless Ranged Attack at range greater than 1). Place the captured piece by the victor's nearest Building. That Unit is now considered a prisoner.<br>
 				<b>Sea Victory:</b> If the attacker wins at sea, the victor sinks the loser's ship. Remove it from the board and place it in an area near him designated as his ship graveyard.<br>
-				<b>Sinking a Longship loaded with Units:</b> If a Longship loaded with Units is defeated in Naval battle, the victor captures all units aboard and sinks the Longship. However, if Archers or Soldiers with Artillery are aboard, they must be defeated (and captured) prior to sinking the Longship.<br>
+				<b>Sinking a Longship loaded with Units:</b> If a Longship loaded with Units is defeated in Naval battle, the victor captures all units aboard and sinks the Longship. However, if Archers or Units with Artillery are aboard, they must be defeated prior to sinking the Longship.<br>
 				Example:<br>
 				<div class="diagram">
 					<p><b>1.</b> Black must first attack the Archer defending the Longship. Black captures white Archer:</p>
