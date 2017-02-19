@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.0</title>
+		<title>⚔ VigTavl 1.1</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -78,7 +78,7 @@
 	<body>
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
-			<h1>VigTavl ⚔ v1.0</h1>
+			<h1>VigTavl ⚔ v1.1</h1>
 			<p>A turn-based strategy game of medieval combat.</p>
 		</div>
 
@@ -175,8 +175,13 @@
 		<div class="round section">
 			<p>
 				A round is defined as one revolution of player turns around the table.<br>
-				After the Build Phase, a game lasts 3 rounds of Battle.
-				At the beginning of each Round every player receives 3 silver, 2 gold, and 1 gem.<br>
+				After the Build Phase, a game lasts 3 rounds of Battle.<br>
+				At the beginning of each Round every player receives:
+				<ul>
+					<li>3 silver</li>
+					<li>2 gold</li>
+					<li>1 gem</li>
+				</ul>
 			</p>
 		</div>
 
@@ -189,6 +194,7 @@
 					<ul>
   					<li><a href="#recruiting-units">Recruit</a> a new unit (pay gold)</li>
   					<li><a href="#activating-units">Activate</a> a unit (pay silver)</li>
+  					<li><a href="#discharge-recruit">Discharge and Recruit</a> (only once per turn)</li>
   				</ul>
   			</li>
   			<li>Repeat until player has no more gold or silver or voluntarily ends his turn.</li>
