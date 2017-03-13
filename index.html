@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.2</title>
+		<title>⚔ VigTavl 1.3</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -90,7 +90,7 @@
 	<body>
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
-			<h1>VigTavl ⚔ v1.2</h1>
+			<h1>VigTavl ⚔ v1.3</h1>
 			<p>A turn-based strategy game of medieval combat.</p>
 		</div>
 
@@ -124,18 +124,21 @@
 			<ol>
 				<li><b>Tier 1 - Competitive:</b><br>
 				Starting Units: 1 Ship (placed at equidistant border hexes)<br>
-				Starting Gold: 6<br>
+				Starting Gold: 12<br>
 				Rounds: 6<br>
+				Players build their own sections of the board.<br>
 				</li>
-				<li><b>Tier 2:</b><br>
+				<li><b>Tier 2: Casual</b><br>
 				Starting Units (place 1 at a time in order): 1 Castle, 1 Town, 1 Village, 1 Knight, 1 Archer, 1 Soldier, 1 Galleon, 1 Longship, 1 Ship<br>
-				Starting Gold: 2<br>
+				Starting Gold: 9<br>
 				Rounds: 4<br>
+				Predetermined board.<br>
 				</li>
-				<li><b>Tier 3 - Casual:</b><br>
-				Starting Units (place 2 at a time in any order): 1 Castle, 2 Towns, 3 Villages, 1 Knight, 2 Archers, 3 Soldiers, 1 Galleon, 2 Longships, 3 Ships<br>
-				Starting Gold: 0<br>
+				<li><b>Tier 3 - Beginner:</b><br>
+				Starting Units (place 1 at a time in order): 1 Castle, 2 Towns, 3 Villages, 1 Knight, 2 Archers, 3 Soldiers, 1 Galleon, 2 Longships, 3 Ships<br>
+				Starting Gold: 6<br>
 				Rounds: 3<br>
+				Predetermined board.<br>
 				</li>
 			</ol>
 		</div>
@@ -158,7 +161,7 @@
 		<div class="winds section">
 			<p>The sea beyond the border of the map is the deep, open ocean, where strong, prevailing winds greatly enhance a sailor's ability to travel long distances.<br>
 			When ships move out into the deep sea, they may take advantage of the prevailing winds to travel from one edge of the map to the next adjacent edge in addition to each ship's normal movement range. Though they must travel in the same direction as the prevailing winds, which are either clockwise or counter-clockwise around the map.<br>
-			Player's ships may enter the prevailing winds from any border sea hex, and exit into any border sea hex on the next edge of the map.</p>
+			Player's ships may enter the prevailing winds from any border sea hex, and exit into the same border sea hex on the next adjacent edge of the map in the direction of prevailing winds.</p>
 			<!-- TODO: diagram-prevailing-winds -->
 			<p>
 			Ships may not end their movement in the deep ocean. Ships must use 1 movement to enter prevailing winds and 1 movement to exit. If a ship does not have 2 spare movements it may not use prevailing winds.</p>
@@ -170,42 +173,21 @@
 		</h3>
 		<div class="setup section">
 			<ol>
-				<li><b>Build the Board:</b><br>
-					Construct the border with sea hexes first. Then divide the hexagon into a number of sections equal to the number of players.<br>
-					2 players - 4 hex edges<br>
-					3 players - 5 hex edges<br>
-					4 players - 6 hex edges<br>
-					6 players - 7 hex edges<br>
-					Each player receives the following hexes according to total number of players:<br>
-					2 players - 1 sea, 1 mountain, 4 land<br>
-					3 players - 2 sea, 2 mountain, 4 land<br>
-					6 players - 3 sea, 3 mountain, 4 land<br>
-					Each player then places his hexes in his section of the map in any arrangement.<br>
-					<div class="diagram">
-						<p>6 players</p>
-						<img src='img/diagram-setup-6-players.png' />
-					</div>
-					<div class="diagram">
-						<p>3 players</p>
-						<img src='img/diagram-setup-3-players.png' />
-					</div>
-					<div class="diagram">
-						<p>2 players</p>
-						<img src='img/diagram-setup-2-players.png' />
-					</div>
-				</li>
-
-				<li><b>Prevailing Winds:</b> Determine the direction of prevailing by flipping the Prevailing Winds Token. Place it beside the map.</li>
+				<li><b>Prevailing Winds:</b> Determine the direction of prevailing by flipping the Prevailing Winds Token. Place it in view of all players.</li>
 
 				<li><b>Turn Order:</b>
-				Turn order is the same direction as Prevailing Winds for the remainder of the game.<br>
 				Randomly determine which player will go first.</li>
+				Turn order is the opposite direction as Prevailing Winds for the remainder of the game.<br>
 
 				<li><b>Round Die:</b>
 				Place a white die beside the player who will go first. Turn it so the number of rounds is facing up. At the end of each round, rotate the die to show the number of rounds remaining.</li>
 
 				<li><b>Time Die:</b>
 				Place a black die beside the player who will go first. Turn it so the number 6 is facing up. When the player Activates Units or Builds, rotate the die to show the number of time remaining for his turn. At the end of the turn, pass the Time Die to the next player and reset to 6.</li>
+
+				<li><b>Build the Board:</b><br>
+				todo
+				</li>
 
 				<li><b>Tier and Placement:</b>
 				Decide which Tier you will be playing and conduct placement of Starting Units if applicable.</li>
@@ -221,7 +203,7 @@
 			<ol>
 				<li>In order, players may do the following:
 					<ol>
-  					<li><a href="#actions">Actions</a> (time cost)</li>
+  					<li><a href="#activate">Activate</a> (time cost)</li>
   					<li><a href="#tax">Tax</a> (receive gold)</li>
   					<li><a href="#build">Build</a> (gold and time cost)</li>
   				</ol>
@@ -229,18 +211,17 @@
   		</ol>
 		</div>
 
-		<h3 id="actions" class="section-header" onclick="toggle('actions');">
-			<span class="toggler">+</span> Actions
+		<h3 id="activate" class="section-header" onclick="toggle('activate');">
+			<span class="toggler">+</span> Activate
 		</h3>
-		<div class="actions section">
+		<div class="activate section">
 			<p>
 				Combat Units are Activated by expending 1 time.<br>
-				An Activated unit can execute <b>3 Primary Actions</b>.<br>
+				An Activated unit can execute <b> up to 3</b> <a href="primary-actions">Primary Actions</a>.<br>
 				Once the player has resolved a unit's actions, lay the piece on its side to denote that it has completed its actions.<br>
 				Each Unit can only be activated once per turn. At the end of the turn, reset all activated units to their upright position.<br>
 				Each action must be unique. For example, a Unit may not attack three times in a row.<br>
-				Activation and subsequent actions can occur at any point in a player's turn, but once a unit is activated the player must execute all its actions immediately or execute some and forfeit the others, before Activating any additional Units.<br>
-				Players may not Activate more than one unit simultaneously.
+				Players may not Activate more than one unit simultaneously.<br>
 			</p>
 		</div>
 
@@ -401,6 +382,7 @@
 				To seize a Building, a player removes it from the board and replaces it with an equivalent Building of their own color. He may then move the seizing unit onto the hex.<br>
 				<b>Rescue:</b> If a player seizes a Building with prisoners, all prisoners belonging to him are freed and can now be Activated. Any prisoners belonging to other players become the prisoners of the Building's new owner.<br>
 				<b>Seizing Walls:</b> Any walls on hexes that are seized by an opponent also change ownership only if there are no adjacent hexes occupied by the original owner of the wall. This is not an all or none condition. It is possible that some walls could be converted and others not.<br>
+				Ships may seize coastal buildings.<br>
 			</p>
 		</div>
 
