@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.3</title>
+		<title>⚔ VigTavl 1.4</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -90,7 +90,7 @@
 	<body>
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
-			<h1>VigTavl ⚔ v1.3</h1>
+			<h1>VigTavl ⚔ v1.4</h1>
 			<p>A turn-based strategy game of medieval combat.</p>
 		</div>
 
@@ -104,11 +104,11 @@
 			<p><b>Anytime - Multiple possible</b></p>
 			<ol>
 				<li><b>Battle:</b> For each Combat Unit that you defeat in battle collect a number of victory tokens equal to its value.</li>
-				<li><b>Seize:</b> For each Building that you sieze from another player collect a number of victory tokens equal to its value.</li>
+				<li><b>Seize/Destroy:</b> For each Building that you sieze or destroy from another player collect a number of victory tokens equal to its value.</li>
 				<li><b>Rescue:</b> For each of your own prisoners that you free collect a number of victory tokens equal to their value.</li>
 			</ol>
 
-			<p><b>Once at the end (if a tie exists both players receive tokens)</b></p>
+			<p><b>Once at the end</b></p>
 				<ol>
 					<li><b>General:</b> 3 tokens for the player with the most value of prisoners.</li>
 					<li><b>Admiral:</b> 3 tokens for the player with the most value of sunken ships.</li>
@@ -155,29 +155,13 @@
 			</ul>
 		</div>
 
-		<h3 id="winds" class="section-header" onclick="toggle('winds');">
-			<span class="toggler">+</span> Winds
-		</h3>
-		<div class="winds section">
-			<p>The sea beyond the border of the map is the deep, open ocean, where strong, prevailing winds greatly enhance a sailor's ability to travel long distances.<br>
-			When ships move out into the deep sea, they may take advantage of the prevailing winds to travel from one edge of the map to the next adjacent edge in addition to each ship's normal movement range. Though they must travel in the same direction as the prevailing winds, which are either clockwise or counter-clockwise around the map.<br>
-			Player's ships may enter the prevailing winds from any border sea hex, and exit into the same border sea hex on the next adjacent edge of the map in the direction of prevailing winds.</p>
-			<!-- TODO: diagram-prevailing-winds -->
-			<p>
-			Ships may not end their movement in the deep ocean. Ships must use 1 movement to enter prevailing winds and 1 movement to exit. If a ship does not have 2 spare movements it may not use prevailing winds.</p>
-			<!-- TODO: diagram-prevailing-winds-enter-exit -->
-		</div>
-
 		<h3 id="setup" class="section-header" onclick="toggle('setup');">
 			<span class="toggler">+</span> Setup
 		</h3>
 		<div class="setup section">
 			<ol>
-				<li><b>Prevailing Winds:</b> Determine the direction of prevailing by flipping the Prevailing Winds Token. Place it in view of all players.</li>
-
 				<li><b>Turn Order:</b>
-				Randomly determine which player will go first.</li>
-				Turn order is the opposite direction as Prevailing Winds for the remainder of the game.<br>
+				Players use starting Gold to bid for turn order once before the game begins.<br>
 
 				<li><b>Round Die:</b>
 				Place a white die beside the player who will go first. Turn it so the number of rounds is facing up. At the end of each round, rotate the die to show the number of rounds remaining.</li>
@@ -204,7 +188,7 @@
 				<li>In order, players may do the following:
 					<ol>
   					<li><a href="#activate">Activate</a> (time cost)</li>
-  					<li><a href="#tax">Tax</a> (receive gold)</li>
+  					<li><a href="#tax">Tax</a> (collect gold)</li>
   					<li><a href="#build">Build</a> (gold and time cost)</li>
   				</ol>
   			</li>
@@ -237,14 +221,18 @@
 		</h3>
 		<div class="build section">
 			<p>
-				Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following:<br>
+				Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following rules:<br>
 				Buildings are placed on or adjacent to any of the player's Land or Sea Units, or existing Buildings.<br>
-				Land units are placed on or adjacent to any of the player's buildings.<br>
+				Buildings follow an upgrade path. Towns are built by Upgrading an existing Village, and Castles must be Upgraded from a Town.<br>
+				Newly built Villages can not be upgraded until the player's next turn.<br>
+				Buildings can only be upgraded once per turn.<br>
+				Land units are placed on or adjacent to their corresponding buildings.<br>
+				Soldiers can only be built by Villages.<br>
+				Archers can only be built by Towns.<br>
+				Knights can only be built by Castles.<br>
 				Ships are placed on any sea hex adjacent to any of a player's coastal buildings (in order to build ships, players must have at least one village, town or castle on the coast)<br>
+				Ships do not follow the same corresponding rule as land units. Any type of ship may be built by any type of coastal Building.<br>
 				When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.
-				Players must have at least 1 Village in order to build Soldiers and Ships.<br>
-				Players must have at least 1 Town in order to build Archers and Longships.<br>
-				Players must have at least 1 Castle in order to build Knights and Galleons.<br>
 			</p>
 		</div>
 
@@ -254,8 +242,8 @@
 		<div class="sea-units section">
 			<ul>
 				<li><b>Ship:</b> A small, maneuverable sailing ship with lateen sails, capable of basic attacking and defending and the most movement range of all naval units. 3 movement, value of 1</li>
-				<li><b>Galleon:</b> Large warship with powerful cannons, but slower and less sea-worthy. build limit 1, 1 movement, 3 attack range, value of 3</li>
-				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 2 movement, +2 transport, -attack, -defend, value of 2<br>
+				<li><b>Galleon:</b> Large warship with powerful cannons, capable of sinking ships and destroying Buildings. But slower and less sea-worthy. 2 movement, 3 attack range, value of 3</li>
+				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 4 movement, +2 transport, -attack, -defend, value of 2<br>
 					Longships can transport up to 2 land units of any type.<br>
 					Longships can not attack or defend other ships or coastal buildings.<br>
 					Archers on a longship can attack coastal hexes or enemy ships.<br>
@@ -275,9 +263,9 @@
 		</h3>
 		<div class="land-units section">
 			<ul>
-				<li><b>Soldiers:</b> 3 movement, value of 1</li>
-				<li><b>Archer:</b> 2 movement, 2 attack range, value of 2</li>
-				<li><b>Knights:</b> 1 movement, value of 3</li>
+				<li><b>Soldiers:</b> 2 movement, value of 1</li>
+				<li><b>Archer:</b> 1 movement, 2 attack range, value of 2</li>
+				<li><b>Knights:</b> 3 movement, value of 3</li>
 			</ul>
 		</div>
 
@@ -332,9 +320,10 @@
 					<li><b>Ranged:</b><br>
 					Archers and Galleons are capable of ranged attacks.<br>
 					Ranged attacks can only extend in straight lines perpendicular to the center of each hex edge.<br>
-					Ranged attacks can only extend a distance equal to the Unit's value.<br>
+					Ranged attacks can only extend a distance equal to the Unit's attack range value.<br>
 					Ranged attacks are blocked by mountains but not walls or opponent Units.<br>
 					Ranged attacks that defeat opponent Units at range do not capture. The defeated Unit is simply removed from the board.<br>
+					A Galleon attacking an undefended opponent Building at range greater than 1, can destroy it. A destroyed Building is simply removed from the board.<br>
 					</li>
 				</ul>
 			</p>
@@ -408,6 +397,7 @@
       Activated Units occupying a hex adjacent to an opponent Wall may expend a primary Attack Action to inflict damage on the Wall.<br>
       If 3 or more damage is inflicted on an opponent wall, it is destroyed and removed from the board.<br>
       Ships may inflict damage to coastal walls.<br>
+      Ranged attacks may inflict damage to walls.<br>
 		</div>
 
 		<h3 id="stats" class="section-header" onclick="toggle('stats');">
@@ -426,21 +416,21 @@
 				<div class="stats-row">
 					<div class="stats-column">Soldier</div> <!-- Unit -->
 					<div class="stats-column">1</div> <!-- Value -->
-					<div class="stats-column">3</div> <!-- Movement Range -->
+					<div class="stats-column">2</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Archer</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
-					<div class="stats-column">2</div> <!-- Movement Range -->
+					<div class="stats-column">1</div> <!-- Movement Range -->
 					<div class="stats-column">2</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Knight</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
-					<div class="stats-column">1</div> <!-- Movement Range -->
+					<div class="stats-column">3</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
@@ -463,14 +453,14 @@
 				<div class="stats-row">
 					<div class="stats-column">Longship</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
-					<div class="stats-column">2</div> <!-- Movement Range -->
+					<div class="stats-column">4</div> <!-- Movement Range -->
 					<div class="stats-column">NA</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Galleon</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
-					<div class="stats-column">1</div> <!-- Movement Range -->
+					<div class="stats-column">2</div> <!-- Movement Range -->
 					<div class="stats-column">3</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
@@ -485,7 +475,7 @@
 
 				<div class="stats-row">
 					<div class="stats-column">Wall</div> <!-- Unit -->
-					<div class="stats-column">1*</div> <!-- Value -->
+					<div class="stats-column">1-3</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
@@ -495,21 +485,21 @@
 					<div class="stats-column">1</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column">3</div> <!-- Limit -->
+					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Town</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column">2</div> <!-- Limit -->
+					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Castle</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column">1</div> <!-- Limit -->
+					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 
 			</div>
