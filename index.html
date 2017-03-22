@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.4</title>
+		<title>⚔ VigTavl 1.5</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -90,7 +90,7 @@
 	<body>
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
-			<h1>VigTavl ⚔ v1.4</h1>
+			<h1>VigTavl ⚔ v1.5</h1>
 			<p>A turn-based strategy game of medieval combat.</p>
 		</div>
 
@@ -114,33 +114,6 @@
 					<li><b>Admiral:</b> 3 tokens for the player with the most value of sunken ships.</li>
 					<li><b>Colonist:</b> 3 tokens for the player with the most value of buildings.</li>
 				</ol>
-		</div>
-
-		<h3 id="tiers" class="section-header" onclick="toggle('tiers');">
-			<span class="toggler">+</span> Tiers
-		</h3>
-		<div class="tiers section">
-			<p>There are 3 Tiers of play that range from competitive to casual.</p>
-			<ol>
-				<li><b>Tier 1 - Competitive:</b><br>
-				Starting Units: 1 Ship (placed at equidistant border hexes)<br>
-				Starting Gold: 12<br>
-				Rounds: 6<br>
-				Players build their own sections of the board.<br>
-				</li>
-				<li><b>Tier 2: Casual</b><br>
-				Starting Units (place 1 at a time in order): 1 Castle, 1 Town, 1 Village, 1 Knight, 1 Archer, 1 Soldier, 1 Galleon, 1 Longship, 1 Ship<br>
-				Starting Gold: 9<br>
-				Rounds: 4<br>
-				Predetermined board.<br>
-				</li>
-				<li><b>Tier 3 - Beginner:</b><br>
-				Starting Units (place 1 at a time in order): 1 Castle, 2 Towns, 3 Villages, 1 Knight, 2 Archers, 3 Soldiers, 1 Galleon, 2 Longships, 3 Ships<br>
-				Starting Gold: 6<br>
-				Rounds: 3<br>
-				Predetermined board.<br>
-				</li>
-			</ol>
 		</div>
 
 		<h3 id="hexes" class="section-header" onclick="toggle('hexes');">
@@ -173,9 +146,6 @@
 				todo
 				</li>
 
-				<li><b>Tier and Placement:</b>
-				Decide which Tier you will be playing and conduct placement of Starting Units if applicable.</li>
-
 				<li>You are now ready to begin the game.</li>
 			</ol>
 		</div>
@@ -185,13 +155,13 @@
 		</h3>
 		<div class="turn section">
 			<ol>
-				<li>In order, players may do the following:
-					<ol>
+				<li>On their turn, players may do the following in any order:
+					<ul>
   					<li><a href="#activate">Activate</a> (time cost)</li>
-  					<li><a href="#tax">Tax</a> (collect gold)</li>
   					<li><a href="#build">Build</a> (gold and time cost)</li>
-  				</ol>
+  				</ul>
   			</li>
+  			<p>At the end of the turn, players may <a href="#tax">Tax</a> (collect gold)</p>
   		</ol>
 		</div>
 
@@ -209,13 +179,6 @@
 			</p>
 		</div>
 
-		<h3 id="tax" class="section-header" onclick="toggle('tax');">
-			<span class="toggler">+</span> Tax
-		</h3>
-		<div class="tax section">
-			<p>Player simply collect Gold coins for the value of each Building they own.</p>
-		</div>
-
 		<h3 id="build" class="section-header" onclick="toggle('build');">
 			<span class="toggler">+</span> Build
 		</h3>
@@ -231,9 +194,18 @@
 				Archers can only be built by Towns.<br>
 				Knights can only be built by Castles.<br>
 				Ships are placed on any sea hex adjacent to any of a player's coastal buildings (in order to build ships, players must have at least one village, town or castle on the coast)<br>
-				Ships do not follow the same corresponding rule as land units. Any type of ship may be built by any type of coastal Building.<br>
+				Ships can only be built by Coastal Villages.<br>
+				Longships can only be built by Towns.<br>
+				Galleons can only be built by Castles.<br>
 				When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.
 			</p>
+		</div>
+
+		<h3 id="tax" class="section-header" onclick="toggle('tax');">
+			<span class="toggler">+</span> Tax
+		</h3>
+		<div class="tax section">
+			<p>Player simply collect Gold coins for the value of each Building they own.</p>
 		</div>
 
 		<h3 id="sea-units" class="section-header" onclick="toggle('sea-units');">
@@ -241,9 +213,9 @@
 		</h3>
 		<div class="sea-units section">
 			<ul>
-				<li><b>Ship:</b> A small, maneuverable sailing ship with lateen sails, capable of basic attacking and defending and the most movement range of all naval units. 3 movement, value of 1</li>
-				<li><b>Galleon:</b> Large warship with powerful cannons, capable of sinking ships and destroying Buildings. But slower and less sea-worthy. 2 movement, 3 attack range, value of 3</li>
-				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 4 movement, +2 transport, -attack, -defend, value of 2<br>
+				<li><b>Ship:</b> A small, maneuverable sailing ship with lateen sails, capable of basic attacking and defending and the most movement range of all naval units. 2 movement, value of 1</li>
+				<li><b>Galleon:</b> Large warship with powerful cannons, capable of sinking ships and destroying Buildings. But slower and less sea-worthy. 1 movement, 3 attack range, value of 3</li>
+				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 3 movement, +2 transport, -attack, -defend, value of 2<br>
 					Longships can transport up to 2 land units of any type.<br>
 					Longships can not attack or defend other ships or coastal buildings.<br>
 					Archers on a longship can attack coastal hexes or enemy ships.<br>
@@ -309,7 +281,7 @@
 		<div class="attack section">
 			<p>
 				Attacking Units inflict an amount of damage equal to their value.<br>
-				If the amount of damage inflicted is equal to or greater than the value of the opponent Unit, then that Unit is defeated.<br>
+				If the amount of damage inflicted is greater than the value of the opponent Unit, then that Unit is defeated.<br>
 				If more than one opponent Unit is present on an attacked hex, damage must be inflicted on the opponent Units with least value first.<br>
 				If the amount of damage inflicted is greater than the value of the opponent Unit that is attacked, any excess can be inflicted on other opponent Units on the same hex.<br>
 				There are 2 types of attack:<br>
@@ -321,7 +293,7 @@
 					Archers and Galleons are capable of ranged attacks.<br>
 					Ranged attacks can only extend in straight lines perpendicular to the center of each hex edge.<br>
 					Ranged attacks can only extend a distance equal to the Unit's attack range value.<br>
-					Ranged attacks are blocked by mountains but not walls or opponent Units.<br>
+					Ranged attacks are blocked by mountains and walls but not opponent Units.<br>
 					Ranged attacks that defeat opponent Units at range do not capture. The defeated Unit is simply removed from the board.<br>
 					A Galleon attacking an undefended opponent Building at range greater than 1, can destroy it. A destroyed Building is simply removed from the board.<br>
 					</li>
@@ -357,11 +329,11 @@
 		</div>
 
 		<h3 id="seizing" class="section-header" onclick="toggle('seizing');">
-			<span class="toggler">+</span> Seizing
+			<span class="toggler">+</span> Seize or Destroy
 		</h3>
 		<div class="seizing section">
 			<p>
-				Players may expend an activated Unit Primary Action to seize opponent Buildings.<br>
+				Players may expend an activated Unit Primary Action to seize or destroy opponent Buildings.<br>
 				<b>Conditions:</b> The following must be true in order to seize:<br>
 				<ul>
 					<li>The seizing Unit is located on or adjacent to the hex with the Building to be seized</li>
@@ -369,6 +341,7 @@
 				</ul>
 				If the Building is defended, the attacking player must first defeat all defenders.<br>
 				To seize a Building, a player removes it from the board and replaces it with an equivalent Building of their own color. He may then move the seizing unit onto the hex.<br>
+				To destroy a Building, remove it from the board.<br>
 				<b>Rescue:</b> If a player seizes a Building with prisoners, all prisoners belonging to him are freed and can now be Activated. Any prisoners belonging to other players become the prisoners of the Building's new owner.<br>
 				<b>Seizing Walls:</b> Any walls on hexes that are seized by an opponent also change ownership only if there are no adjacent hexes occupied by the original owner of the wall. This is not an all or none condition. It is possible that some walls could be converted and others not.<br>
 				Ships may seize coastal buildings.<br>
@@ -446,21 +419,21 @@
 				<div class="stats-row">
 					<div class="stats-column">Ship</div> <!-- Unit -->
 					<div class="stats-column">1</div> <!-- Value -->
-					<div class="stats-column">3</div> <!-- Movement Range -->
+					<div class="stats-column">2</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Longship</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
-					<div class="stats-column">4</div> <!-- Movement Range -->
+					<div class="stats-column">3</div> <!-- Movement Range -->
 					<div class="stats-column">NA</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Galleon</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
-					<div class="stats-column">2</div> <!-- Movement Range -->
+					<div class="stats-column">1</div> <!-- Movement Range -->
 					<div class="stats-column">3</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
