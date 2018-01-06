@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.6</title>
+		<title>⚔ VigTavl 1.2</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -11,7 +11,7 @@
 	<style>
 		html, body {
 			background-color: #e1c5a2;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
 		body {
 			margin: 0 auto;
@@ -91,13 +91,13 @@
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
 			<h1>
-				VigTavl ⚔ v1.6
+				VigTavl ⚔ v1.2
 				<select name="version">
-					<option value="1.2">1.2</option>
+					<option value="1.2" selected>1.2</option>
 					<option value="1.3">1.3</option>
 					<option value="1.4">1.4</option>
 					<option value="1.5">1.5</option>
-					<option value="1.6" selected>1.6</option>
+					<option value="1.6">1.6</option>
 				</select>
 			</h1>
 			<p>A turn-based strategy game of medieval combat.</p>
@@ -113,16 +113,40 @@
 			<p><b>Anytime - Multiple possible</b></p>
 			<ol>
 				<li><b>Battle:</b> For each Combat Unit that you defeat in battle collect a number of victory tokens equal to its value.</li>
-				<li><b>Seize/Destroy:</b> For each Building that you sieze or destroy from another player collect a number of victory tokens equal to its value.</li>
+				<li><b>Seize:</b> For each Building that you sieze from another player collect a number of victory tokens equal to its value.</li>
 				<li><b>Rescue:</b> For each of your own prisoners that you free collect a number of victory tokens equal to their value.</li>
 			</ol>
 
-			<p><b>Once at the end</b></p>
+			<p><b>Once at the end (if a tie exists both players receive tokens)</b></p>
 				<ol>
 					<li><b>General:</b> 3 tokens for the player with the most value of prisoners.</li>
 					<li><b>Admiral:</b> 3 tokens for the player with the most value of sunken ships.</li>
 					<li><b>Colonist:</b> 3 tokens for the player with the most value of buildings.</li>
 				</ol>
+		</div>
+
+		<h3 id="tiers" class="section-header" onclick="toggle('tiers');">
+			<span class="toggler">+</span> Tiers
+		</h3>
+		<div class="tiers section">
+			<p>There are 3 Tiers of play that range from competitive to casual.</p>
+			<ol>
+				<li><b>Tier 1 - Competitive:</b><br>
+				Starting Units: 1 Ship (placed at equidistant border hexes)<br>
+				Starting Gold: 6<br>
+				Rounds: 6<br>
+				</li>
+				<li><b>Tier 2:</b><br>
+				Starting Units (place 1 at a time in order): 1 Castle, 1 Town, 1 Village, 1 Knight, 1 Archer, 1 Soldier, 1 Galleon, 1 Longship, 1 Ship<br>
+				Starting Gold: 2<br>
+				Rounds: 4<br>
+				</li>
+				<li><b>Tier 3 - Casual:</b><br>
+				Starting Units (place 2 at a time in any order): 1 Castle, 2 Towns, 3 Villages, 1 Knight, 2 Archers, 3 Soldiers, 1 Galleon, 2 Longships, 3 Ships<br>
+				Starting Gold: 0<br>
+				Rounds: 3<br>
+				</li>
+			</ol>
 		</div>
 
 		<h3 id="hexes" class="section-header" onclick="toggle('hexes');">
@@ -135,9 +159,19 @@
 				<li>Sea</li>
 				<li>Mountains (Can not be occupied or built on)</li>
 			</ul>
-			<div class="diagram">
-				<img src='img/hex-types.png' />
-			</div>
+		</div>
+
+		<h3 id="winds" class="section-header" onclick="toggle('winds');">
+			<span class="toggler">+</span> Winds
+		</h3>
+		<div class="winds section">
+			<p>The sea beyond the border of the map is the deep, open ocean, where strong, prevailing winds greatly enhance a sailor's ability to travel long distances.<br>
+			When ships move out into the deep sea, they may take advantage of the prevailing winds to travel from one edge of the map to the next adjacent edge in addition to each ship's normal movement range. Though they must travel in the same direction as the prevailing winds, which are either clockwise or counter-clockwise around the map.<br>
+			Player's ships may enter the prevailing winds from any border sea hex, and exit into any border sea hex on the next edge of the map.</p>
+			<!-- TODO: diagram-prevailing-winds -->
+			<p>
+			Ships may not end their movement in the deep ocean. Ships must use 1 movement to enter prevailing winds and 1 movement to exit. If a ship does not have 2 spare movements it may not use prevailing winds.</p>
+			<!-- TODO: diagram-prevailing-winds-enter-exit -->
 		</div>
 
 		<h3 id="setup" class="section-header" onclick="toggle('setup');">
@@ -145,23 +179,45 @@
 		</h3>
 		<div class="setup section">
 			<ol>
-				<li><b>Starting Gold:</b> Each player receives 6 starting Gold.</li>
+				<li><b>Build the Board:</b><br>
+					Construct the border with sea hexes first. Then divide the hexagon into a number of sections equal to the number of players.<br>
+					2 players - 4 hex edges<br>
+					3 players - 5 hex edges<br>
+					4 players - 6 hex edges<br>
+					6 players - 7 hex edges<br>
+					Each player receives the following hexes according to total number of players:<br>
+					2 players - 1 sea, 1 mountain, 4 land<br>
+					3 players - 2 sea, 2 mountain, 4 land<br>
+					6 players - 3 sea, 3 mountain, 4 land<br>
+					Each player then places his hexes in his section of the map in any arrangement.<br>
+					<div class="diagram">
+						<p>6 players</p>
+						<img src='img/diagram-setup-6-players.png' />
+					</div>
+					<div class="diagram">
+						<p>3 players</p>
+						<img src='img/diagram-setup-3-players.png' />
+					</div>
+					<div class="diagram">
+						<p>2 players</p>
+						<img src='img/diagram-setup-2-players.png' />
+					</div>
+				</li>
 
-				<li><b>Starting Units:</b> Each player receives 1 ship.</li>
+				<li><b>Prevailing Winds:</b> Determine the direction of prevailing by flipping the Prevailing Winds Token. Place it beside the map.</li>
 
 				<li><b>Turn Order:</b>
-				Randomly determine who will go first and proceed clockwise.<br>
-				After the first round, turn order is determined at the beginning of each round by each player's score.<br>
-				Player's scores are defined as the sum of the values of all their Buildings and Units. Do not count Gold, Victory Tokens, Prisoners, or sunken Ships.<br>
-				The player with the lowest score goes first, highest last.<br>
-				</li>
+				Turn order is the same direction as Prevailing Winds for the remainder of the game.<br>
+				Randomly determine which player will go first.</li>
 
 				<li><b>Round Die:</b>
-				Place a white die beside the player who will go first. Turn it so the 6 is facing up. At the end of each round, rotate the die to show the number of rounds remaining and place in front of the player who goes first.</li>
+				Place a white die beside the player who will go first. Turn it so the number of rounds is facing up. At the end of each round, rotate the die to show the number of rounds remaining.</li>
 
-				<li><b>Build the Board:</b><br>
-				todo
-				</li>
+				<li><b>Time Die:</b>
+				Place a black die beside the player who will go first. Turn it so the number 6 is facing up. When the player Activates Units or Builds, rotate the die to show the number of time remaining for his turn. At the end of the turn, pass the Time Die to the next player and reset to 6.</li>
+
+				<li><b>Tier and Placement:</b>
+				Decide which Tier you will be playing and conduct placement of Starting Units if applicable.</li>
 
 				<li>You are now ready to begin the game.</li>
 			</ol>
@@ -172,58 +228,28 @@
 		</h3>
 		<div class="turn section">
 			<ol>
-				<li>On their turn, players may do the following in order:
+				<li>In order, players may do the following:
 					<ol>
-						<li><a href="#battle">Battle</a></li>
-						<li><a href="#build">Build</a></li>
-						<li><a href="#tax">Tax</a></li>
-					</ol>
-				</li>
-			</ol>
+  					<li><a href="#actions">Actions</a> (time cost)</li>
+  					<li><a href="#tax">Tax</a> (receive gold)</li>
+  					<li><a href="#build">Build</a> (gold and time cost)</li>
+  				</ol>
+  			</li>
+  		</ol>
 		</div>
 
-		<h3 id="battle" class="section-header" onclick="toggle('battle');">
-			<span class="toggler">+</span> Battle
+		<h3 id="actions" class="section-header" onclick="toggle('actions');">
+			<span class="toggler">+</span> Actions
 		</h3>
-		<div class="battle section">
+		<div class="actions section">
 			<p>
-				A player turn begins with the Battle Phase.<br>
-				During the Battle Phase, each combat Unit can execute <b> up to 3</b> <a href="primary-actions">Primary Actions</a>.<br>
-				Once the player has resolved a Unit's actions, lay the piece on its side to denote that it has completed its actions for the remainder of the turn.<br>
-				Each Unit can only execute Actions once per turn.<br>
-				Players may not execute Actions with more than one unit simultaneously.<br>
-				At the end of the turn, reset all Units to their upright position.<br>
-				Each Action must be unique. For example, a Unit may not attack three times in a row.<br>
-				<b>Retreat:</b> One exception to the rule that each Action must be unique is Retreat. If a Unit's first Action is Movement, it's second Action is Attack or Seize/Destroy, then that Unit may execute another Movement for it's third Action.<br>
-			</p>
-		</div>
-
-		<h3 id="build" class="section-header" onclick="toggle('build');">
-			<span class="toggler">+</span> Build
-		</h3>
-		<div class="build section">
-			<p>Players can build three types of Buildings:</p>
-			<ol>
-				<li>Village (value of 1)</li>
-				<li>Town (value of 2)</li>
-				<li>Castle (value of 3)</li>
-			</ol>
-			<p>
-				Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following rules:<br>
-				Buildings must be placed on or adjacent to any of the player's Land or Sea Units.<br>
-				Buildings follow an upgrade path: Villages may be built on empty hexes, Towns are built by upgrading an existing Village, and Castles must be Upgraded from a Town.<br>
-				New Buildings can not be upgraded until the player's next turn.<br>
-				Buildings can only be upgraded once per turn.<br>
-				New Land units are placed on the same hex as their corresponding Buildings.<br>
-				Soldiers can only be built in Villages.<br>
-				Archers can only be built in Towns.<br>
-				Knights can only be built in Castles.<br>
-				Ships are placed on any sea hex adjacent to their corresponding coastal Building.<br>
-				Ships can only be built by Villages.<br>
-				Longships can only be built by Towns.<br>
-				Galleons can only be built by Castles.<br>
-				When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.<br>
-				When building, players must spend the Gold that is located closest first.<br>
+				Combat Units are Activated by expending 1 time.<br>
+				An Activated unit can execute <b>3 Primary Actions</b>.<br>
+				Once the player has resolved a unit's actions, lay the piece on its side to denote that it has completed its actions.<br>
+				Each Unit can only be activated once per turn. At the end of the turn, reset all activated units to their upright position.<br>
+				Each action must be unique. For example, a Unit may not attack three times in a row.<br>
+				Activation and subsequent actions can occur at any point in a player's turn, but once a unit is activated the player must execute all its actions immediately or execute some and forfeit the others, before Activating any additional Units.<br>
+				Players may not Activate more than one unit simultaneously.
 			</p>
 		</div>
 
@@ -231,13 +257,22 @@
 			<span class="toggler">+</span> Tax
 		</h3>
 		<div class="tax section">
+			<p>Player simply collect Gold coins for the value of each Building they own.</p>
+		</div>
+
+		<h3 id="build" class="section-header" onclick="toggle('build');">
+			<span class="toggler">+</span> Build
+		</h3>
+		<div class="build section">
 			<p>
-			At the end of a player's turn, each of his Buildings produces an amount of Gold equal to the Building's value.<br>
-			Players place Gold coins for each Building on the corresponding hexes.<br>
-			Gold remains on the hexes until it is spent, stolen, or destroyed.<br>
-			Players can steal an opponent's Gold when Seizing a hex with Gold on it or defeating Units that are transporting Gold.<br>
-			Gold can be relocated by Units using the same mechanics as the Longship transports Units.<br>
-			Units moving Gold can only transport up to 3 Gold per movement.<br>
+				Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following:<br>
+				Buildings are placed on or adjacent to any of the player's Land or Sea Units, or existing Buildings.<br>
+				Land units are placed on or adjacent to any of the player's buildings.<br>
+				Ships are placed on any sea hex adjacent to any of a player's coastal buildings (in order to build ships, players must have at least one village, town or castle on the coast)<br>
+				When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.
+				Players must have at least 1 Village in order to build Soldiers and Ships.<br>
+				Players must have at least 1 Town in order to build Archers and Longships.<br>
+				Players must have at least 1 Castle in order to build Knights and Galleons.<br>
 			</p>
 		</div>
 
@@ -246,9 +281,9 @@
 		</h3>
 		<div class="sea-units section">
 			<ul>
-				<li><b>Ship:</b> A small, maneuverable sailing ship with a lateen sail. 2 movement range, value of 1</li>
-				<li><b>Galleon:</b> Large warship with powerful cannons. 1 movement range, 3 attack range, value of 3</li>
-				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 3 movement range, +2 transport, -attack, -defend, value of 2<br>
+				<li><b>Ship:</b> A small, maneuverable sailing ship with lateen sails, capable of basic attacking and defending and the most movement range of all naval units. 3 movement, value of 1</li>
+				<li><b>Galleon:</b> Large warship with powerful cannons, but slower and less sea-worthy. build limit 1, 1 movement, 3 attack range, value of 3</li>
+				<li><b>Longship:</b> A large, oar-powered ship primarily for transporting troops. 2 movement, +2 transport, -attack, -defend, value of 2<br>
 					Longships can transport up to 2 land units of any type.<br>
 					Longships can not attack or defend other ships or coastal buildings.<br>
 					Archers on a longship can attack coastal hexes or enemy ships.<br>
@@ -268,9 +303,9 @@
 		</h3>
 		<div class="land-units section">
 			<ul>
-				<li><b>Soldiers:</b> 2 movement, value of 1</li>
-				<li><b>Archer:</b> 1 movement, 2 attack range, value of 2</li>
-				<li><b>Knights:</b> 3 movement, value of 3</li>
+				<li><b>Soldiers:</b> 3 movement, value of 1</li>
+				<li><b>Archer:</b> 2 movement, 2 attack range, value of 2</li>
+				<li><b>Knights:</b> 1 movement, value of 3</li>
 			</ul>
 		</div>
 
@@ -281,7 +316,7 @@
 			<ul>
 				<li><a href="#move">Move</a></li>
 				<li><a href="#attack">Attack</a></li>
-				<li><a href="#seize">Seize/Destory</a></li>
+				<li><a href="#seize">Seize</a></li>
 			</ul>
 		</div>
 
@@ -302,8 +337,9 @@
 		</h3>
 		<div class="occupancy section">
 			<p>
-			Each hex on the map may only be occupied by 3 or less Units.<br>
-			Buildings, Prisoners, Gold, and Victory Tokens do not count toward occupancy.<br>
+			Each hex on the map may only be occupied by 3 or less units.<br>
+			Buildings do not count toward occupancy.<br>
+			Prisoners do not count toward occupancy.<br>
 			</p>
 		</div>
 
@@ -313,7 +349,7 @@
 		<div class="attack section">
 			<p>
 				Attacking Units inflict an amount of damage equal to their value.<br>
-				If the amount of damage inflicted is greater than the value of the opponent Unit, then that Unit is defeated.<br>
+				If the amount of damage inflicted is equal to or greater than the value of the opponent Unit, then that Unit is defeated.<br>
 				If more than one opponent Unit is present on an attacked hex, damage must be inflicted on the opponent Units with least value first.<br>
 				If the amount of damage inflicted is greater than the value of the opponent Unit that is attacked, any excess can be inflicted on other opponent Units on the same hex.<br>
 				There are 2 types of attack:<br>
@@ -324,9 +360,9 @@
 					<li><b>Ranged:</b><br>
 					Archers and Galleons are capable of ranged attacks.<br>
 					Ranged attacks can only extend in straight lines perpendicular to the center of each hex edge.<br>
-					Ranged attacks can only extend a distance equal to the Unit's attack range value.<br>
-					Ranged attacks are blocked by mountains and walls but not opponent Units.<br>
-					Ranged attacks that defeat opponent Units or Buildings at range more than adjacent do not capture. The defeated Unit or Building is destroyed and simply removed from the board.<br>
+					Ranged attacks can only extend a distance equal to the Unit's value.<br>
+					Ranged attacks are blocked by mountains but not walls or opponent Units.<br>
+					Ranged attacks that defeat opponent Units at range do not capture. The defeated Unit is simply removed from the board.<br>
 					</li>
 				</ul>
 			</p>
@@ -353,19 +389,18 @@
 		<div class="attack-results section">
 			<p>
 				<b>Land Victory:</b> If the attacker wins a land battle, the defeated unit is captured (unless Ranged Attack at range greater than 1). Place the captured piece by the victor's nearest Building. That Unit is now considered a prisoner.<br>
-				If defeated Units were carrying Gold or Victory Tokens, they are transferred to the victor's adjacent Units. If they were defeated at range, the Gold and Victory Tokens remain on the hex, and can be picked up by the first player who moves Units onto that hex.<br>
-				<b>Sea Victory:</b> If the attacker wins a battle at sea, the victor sinks the loser's ships. Remove them from the board and place them in an area near him designated as his ship graveyard.<br>
-				If the defeated Ships were carrying Gold or Victory Tokens, they are transferred to the victor's adjacent Units. If they were defeated at range, the Gold and Victory Tokens remain on the hex, and can be picked up by the first player who moves Units onto that hex.<br>
+				<b>Sea Victory:</b> If the attacker wins at sea, the victor sinks the loser's ship. Remove it from the board and place it in an area near him designated as his ship graveyard.<br>
 				<b>Sinking a Longship loaded with Units:</b> If a Longship loaded with Units is defeated in Naval battle, the victor captures all units aboard and sinks the Longship. However, if Archers are aboard, they must be defeated prior to sinking the Longship.<br>
+				<b>Occupation:</b> The attacker may optionally move his victorious Unit onto the hex that was attacked if no opponent Units remain.<br>
 			</p>
 		</div>
 
 		<h3 id="seizing" class="section-header" onclick="toggle('seizing');">
-			<span class="toggler">+</span> Seize or Destroy
+			<span class="toggler">+</span> Seizing
 		</h3>
 		<div class="seizing section">
 			<p>
-				Players may expend an activated Unit Primary Action to seize or destroy opponent Buildings.<br>
+				Players may expend an activated Unit Primary Action to seize opponent Buildings.<br>
 				<b>Conditions:</b> The following must be true in order to seize:<br>
 				<ul>
 					<li>The seizing Unit is located on or adjacent to the hex with the Building to be seized</li>
@@ -373,11 +408,8 @@
 				</ul>
 				If the Building is defended, the attacking player must first defeat all defenders.<br>
 				To seize a Building, a player removes it from the board and replaces it with an equivalent Building of their own color. He may then move the seizing unit onto the hex.<br>
-				To destroy a Building, remove it from the board along with any Prisoners, Gold and Victory Tokens that were on the same hex.<br>
 				<b>Rescue:</b> If a player seizes a Building with prisoners, all prisoners belonging to him are freed and can now be Activated. Any prisoners belonging to other players become the prisoners of the Building's new owner.<br>
-				Players receive Victory Tokens equal to the value of all prisoners on the hex.<br>
-				<b>Seizing Walls:</b> Any walls on hexes that are seized by an opponent also change ownership only if there are none of the original owner's Units on the other side of the wall. This is not an all or none condition. It is possible that some walls could be converted and others not.<br>
-				Ships may seize coastal buildings.<br>
+				<b>Seizing Walls:</b> Any walls on hexes that are seized by an opponent also change ownership only if there are no adjacent hexes occupied by the original owner of the wall. This is not an all or none condition. It is possible that some walls could be converted and others not.<br>
 			</p>
 		</div>
 
@@ -386,7 +418,7 @@
 		</h3>
 		<div class="defending section">
 			<p>
-				Defending is a passive action. Units do not have to be Activated nor does it have to be that player's turn to defend.<br>
+				Defending is a passive action. Unit do not have to be Activated nor does it have to be that player's turn to defend.<br>
 				Units may defend a Building if they are located on the same hex.<br>
 				Units may defend a Building if they are located on a hex adjacent to both the attacker and the unit they are defending.<br>
 				Units may defend other Units only if they are of higher value.<br>
@@ -397,13 +429,12 @@
 			<span class="toggler">+</span> Walls
 		</h3>
 		<div class="walls section">
-			Walls block melee and ranged attacks and protect Units behind them.<br>
 			Builing a wall costs 1 Gold.<br>
-			Destroying a wall requires 3 damage.<br>
-			Units may not move or attack through opponent walls, however a player's own units may move freely or attack through his own walls.<br>
-			<b>Breaching:</b><br>
-			Ships may inflict damage to coastal walls.<br>
-			Ranged attacks may inflict damage to walls.<br>
+      Units may not move or attack through opponent walls, however a player's own units may move freely or attack through his own walls.<br>
+      <b>Breaching:</b><br>
+      Activated Units occupying a hex adjacent to an opponent Wall may expend a primary Attack Action to inflict damage on the Wall.<br>
+      If 3 or more damage is inflicted on an opponent wall, it is destroyed and removed from the board.<br>
+      Ships may inflict damage to coastal walls.<br>
 		</div>
 
 		<h3 id="stats" class="section-header" onclick="toggle('stats');">
@@ -422,21 +453,21 @@
 				<div class="stats-row">
 					<div class="stats-column">Soldier</div> <!-- Unit -->
 					<div class="stats-column">1</div> <!-- Value -->
-					<div class="stats-column">2</div> <!-- Movement Range -->
+					<div class="stats-column">3</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Archer</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
-					<div class="stats-column">1</div> <!-- Movement Range -->
+					<div class="stats-column">2</div> <!-- Movement Range -->
 					<div class="stats-column">2</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Knight</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
-					<div class="stats-column">3</div> <!-- Movement Range -->
+					<div class="stats-column">1</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
@@ -452,14 +483,14 @@
 				<div class="stats-row">
 					<div class="stats-column">Ship</div> <!-- Unit -->
 					<div class="stats-column">1</div> <!-- Value -->
-					<div class="stats-column">2</div> <!-- Movement Range -->
+					<div class="stats-column">3</div> <!-- Movement Range -->
 					<div class="stats-column">1</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Longship</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
-					<div class="stats-column">3</div> <!-- Movement Range -->
+					<div class="stats-column">2</div> <!-- Movement Range -->
 					<div class="stats-column">NA</div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
 				</div>
@@ -481,7 +512,7 @@
 
 				<div class="stats-row">
 					<div class="stats-column">Wall</div> <!-- Unit -->
-					<div class="stats-column">1-3</div> <!-- Value -->
+					<div class="stats-column">1*</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
 					<div class="stats-column"></div> <!-- Limit -->
@@ -491,21 +522,21 @@
 					<div class="stats-column">1</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column"></div> <!-- Limit -->
+					<div class="stats-column">3</div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Town</div> <!-- Unit -->
 					<div class="stats-column">2</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column"></div> <!-- Limit -->
+					<div class="stats-column">2</div> <!-- Limit -->
 				</div>
 				<div class="stats-row">
 					<div class="stats-column">Castle</div> <!-- Unit -->
 					<div class="stats-column">3</div> <!-- Value -->
 					<div class="stats-column"></div> <!-- Movement Range -->
 					<div class="stats-column"></div> <!-- Attack  Range -->
-					<div class="stats-column"></div> <!-- Limit -->
+					<div class="stats-column">1</div> <!-- Limit -->
 				</div>
 
 			</div>
@@ -526,7 +557,7 @@
 			</ol>
 		</div>
 
-		<div class="footer">by <a href="http://robcmills.net" target="_blank">robcmills</a></div>
+		<div class="footer">by robcmills</div>
 
 	</body>
 	<script>
@@ -543,7 +574,7 @@
 		}
 
 		function capitalize(string) {
-			return string.charAt(0).toUpperCase() + string.slice(1)
+	    return string.charAt(0).toUpperCase() + string.slice(1)
 		}
 
 		var contents = document.querySelector('#contents')
