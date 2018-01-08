@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>⚔ VigTavl 1.6</title>
+		<title>⚔ VigTavl 2.0</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
 		<meta name="description" description="A game of medieval combat">
@@ -91,18 +91,18 @@
 		<div class="vigtavl">
 			<img src="img/vigtavl-logo.png" />
 			<h1>
-				VigTavl ⚔ v1.6
+				VigTavl ⚔ v2.0
 				<select name="version">
 					<option value="1.0">1.0</option>
 					<option value="1.2">1.2</option>
 					<option value="1.3">1.3</option>
 					<option value="1.4">1.4</option>
 					<option value="1.5">1.5</option>
-					<option value="1.6" selected>1.6</option>
-					<option value="2.0">2.0</option>
+					<option value="1.6">1.6</option>
+					<option value="2.0" selected>2.0</option>
 				</select>
 			</h1>
-			<p>A turn-based strategy game of medieval combat.</p>
+			<p>A game of medieval combat.</p>
 		</div>
 
 		<img src='img/close-up.jpg' />
@@ -142,91 +142,136 @@
 			</div>
 		</div>
 
+		<h3 id="merchant" class="section-header" onclick="toggle('merchant');">
+			<span class="toggler">+</span> The Merchant
+		</h3>
+		<div class="merchant section">
+			<ul>
+				<li>Resolves any initial placement disputes during game setup.</li>
+				<li>Provides players with extra <a href="#location-cards">Location Cards</a> when necessary.</li>
+				<li>Handles all monetary transactions.</li>
+				<li>Sells new Units to players performing Build Actions</li>
+				<li>Sells Action Cards to players performing Buy Actions</li>
+			</ul>
+		</div>
+
 		<h3 id="setup" class="section-header" onclick="toggle('setup');">
 			<span class="toggler">+</span> Setup
 		</h3>
 		<div class="setup section">
 			<ol>
-				<li><b>Starting Gold:</b> Each player receives 6 starting Gold.</li>
+				<li><b>Merchant:</b> The player who is most familiar with the rules of this game is the Merchant. Decide who will be the Merchant first.</li>
 
-				<li><b>Starting Units:</b> Each player receives 1 ship.</li>
+				<li><b>Build the Board:</b> todo</li>
 
-				<li><b>Turn Order:</b>
-				Randomly determine who will go first and proceed clockwise.<br>
-				After the first round, turn order is determined at the beginning of each round by each player's score.<br>
-				Player's scores are defined as the sum of the values of all their Buildings and Units. Do not count Gold, Victory Tokens, Prisoners, or sunken Ships.<br>
-				The player with the lowest score goes first, highest last.<br>
-				</li>
+				<li><b>Round Die:</b> Place a white die beside the board. Turn it so the 6 is facing up. At the end of each round, rotate the die to show the number of rounds remaining. At the end of the 6th round the game is over.</li>
 
-				<li><b>Round Die:</b>
-				Place a white die beside the player who will go first. Turn it so the 6 is facing up. At the end of each round, rotate the die to show the number of rounds remaining and place in front of the player who goes first.</li>
+				<li><b>Starting Units:</b> Each player receives 1 Ship, 1 Soldier, and 1 Village.</li>
 
-				<li><b>Build the Board:</b><br>
-				todo
+				<li><b>Starting Gold:</b> Each player receives 6 starting Gold from the Merchant.</li>
+
+				<li><b>Placement:</b> Once all players have received their Starting Gold, the Placement Phase begins. All players simultaneously choose a coastal hex and place their starting Village there. Then they place their starting Soldier on the same hex or any adjacent land hex. Then they place their starting Ship on any adjacent sea hex.<br>
+				Any disputes are settled by the Merchant. If any player takes too long or refuses to place, the Merchant may choose a starting hex on their behalf.
 				</li>
 
 				<li>You are now ready to begin the game.</li>
 			</ol>
 		</div>
 
-		<h3 id="turn" class="section-header" onclick="toggle('turn');">
-			<span class="toggler">+</span> Turn Summary
+		<h3 id="round" class="section-header" onclick="toggle('round');">
+			<span class="toggler">+</span> Round Summary
 		</h3>
-		<div class="turn section">
+		<div class="round section">
+			<p>A Round consists of the following phases in order:</p>
 			<ol>
-				<li>On their turn, players may do the following in order:
-					<ol>
-						<li><a href="#battle">Battle</a></li>
-						<li><a href="#build">Build</a></li>
-						<li><a href="#tax">Tax</a></li>
-					</ol>
-				</li>
+				<li><a href="#planning">Planning</a></li>
+				<li><a href="#action-resolution">Action Resolution</a></li>
+				<li><a href="#taxation">Taxation</a></li>
 			</ol>
 		</div>
 
-		<h3 id="battle" class="section-header" onclick="toggle('battle');">
-			<span class="toggler">+</span> Battle
+		<h3 id="planning" class="section-header" onclick="toggle('planning');">
+			<span class="toggler">+</span> Planning Phase
 		</h3>
-		<div class="battle section">
-			<p>
-				A player turn begins with the Battle Phase.<br>
-				During the Battle Phase, each combat Unit can execute <b> up to 3</b> <a href="primary-actions">Primary Actions</a>.<br>
-				Once the player has resolved a Unit's actions, lay the piece on its side to denote that it has completed its actions for the remainder of the turn.<br>
-				Each Unit can only execute Actions once per turn.<br>
-				Players may not execute Actions with more than one unit simultaneously.<br>
-				At the end of the turn, reset all Units to their upright position.<br>
-				Each Action must be unique. For example, a Unit may not attack three times in a row.<br>
-				<b>Retreat:</b> One exception to the rule that each Action must be unique is Retreat. If a Unit's first Action is Movement, it's second Action is Attack or Seize/Destroy, then that Unit may execute another Movement for it's third Action.<br>
+		<div class="planning section">
+			<ul>
+				<li>All players simultaneously choose the 3 actions they will take and place their <a href="#action-cards">Action Cards</a> face down in front of them.</li>
 			</p>
 		</div>
 
+		<h3 id="action-resolution" class="section-header" onclick="toggle('action-resolution');">
+			<span class="toggler">+</span> Action Resolution Phase
+		</h3>
+		<div class="action-resolution section">
+			<ul>
+				<li>All players simultaneously reveal their chosen <a href="#action-cards">Action Cards</a>.</li>
+				<li>All players simultaneously resolve actions.</li>
+			</p>
+		</div>
+
+		<h3 id="action-cards" class="section-header" onclick="toggle('action-cards');">
+			<span class="toggler">+</span> Action Cards
+		</h3>
+		<div class="action-cards section">
+			<p>Every Action requires an Actor, which is the sea or land unit that will perform the Action. For each Action performed, the player must identify the Actor by also providing an <a href="#actor-cards">Actor Card</a> of the unit type, and if necessary (more than one unit of that type is on the board) <a href="location-cards">Location Cards</a>.</p>
+			<p>Some Actions require a Target, which is the Unit or Location to which the Action applies. Players identify Targets in the same manner as Actors.</p>
+			<p>The following types of actions are available at the start of the game:</p>
+			<ul>
+				<li><a href="#build"><b>Build</b></a></li>
+				<li><a href="#buy"><b>Buy</b></a></li>
+				<li><a href="#move"><b>Move/Attack</b></a></li>
+				<li><a href="#ranged-attack"><b>Ranged Attack</b></a></li>
+			</p>
+		</div>
+
+		<h3 id="actor-cards" class="section-header" onclick="toggle('actor-cards');">
+			<span class="toggler">+</span> Actor Cards
+		</h3>
+		<div class="actor-cards section">
+			<p>Actor Cards are for identifying which Land or Sea Units are to perform Actions. Players should have an Actor Card of the corresponding type for each Unit in their standing Armies and Navies.</p>
+			<p>todo: img of Actor Cards</p>
+		</div>
+
+		<h3 id="location-cards" class="section-header" onclick="toggle('location-cards');">
+			<span class="toggler">+</span> Location Cards
+		</h3>
+		<div class="location-cards section">
+			<p>Location Cards are for identifying hexes on the board. Each player should have one complete set of Letters and Numbers. Sometimes in rare cases, players will need more than one of the same Letter or Number, in which case that player may pass the needed Location Card to the Merchant, who will provide additional matching Location Cards.</p>
+			<p>todo: img of Location Cards</p>
+		</div>
+
 		<h3 id="build" class="section-header" onclick="toggle('build');">
-			<span class="toggler">+</span> Build
+			<span class="toggler">+</span> Build Action
 		</h3>
 		<div class="build section">
-			<p>Players can build three types of Buildings:</p>
+			<p>As an action players can build/upgrade Buildings or place new combat Units:</p>
 			<ol>
 				<li>Village (value of 1)</li>
 				<li>Town (value of 2)</li>
 				<li>Castle (value of 3)</li>
 			</ol>
-			<p>
-				Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following rules:<br>
-				Buildings must be placed on or adjacent to any of the player's Land or Sea Units.<br>
-				Buildings follow an upgrade path: Villages may be built on empty hexes, Towns are built by upgrading an existing Village, and Castles must be Upgraded from a Town.<br>
-				New Buildings can not be upgraded until the player's next turn.<br>
-				Buildings can only be upgraded once per turn.<br>
-				New Land units are placed on the same hex as their corresponding Buildings.<br>
-				Soldiers can only be built in Villages.<br>
-				Archers can only be built in Towns.<br>
-				Knights can only be built in Castles.<br>
-				Ships are placed on any sea hex adjacent to their corresponding coastal Building.<br>
-				Ships can only be built by Villages.<br>
-				Longships can only be built by Towns.<br>
-				Galleons can only be built by Castles.<br>
-				When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.<br>
-				When building, players must spend the Gold that is located closest first.<br>
-			</p>
+			<p>Buildings and new combat Units are built simply by paying their value in Gold and then placing according to the following rules:</p>
+			<ul>
+				<li>Buildings must be placed on or adjacent to any of the player's Land or Sea Units.</li>
+				<li>Buildings follow an upgrade path: Villages may be built on empty hexes, Towns are built by upgrading an existing Village, and Castles must be Upgraded from a Town.</li>
+				<li>New Buildings can not be upgraded until the next Round.</li>
+				<li>Buildings can only be upgraded once per turn.</li>
+				<li>New Land units are placed on the same hex as their corresponding Buildings.</li>
+				<li>Soldiers can only be built in Villages.</li>
+				<li>Archers can only be built in Towns.</li>
+				<li>Knights can only be built in Castles.</li>
+				<li>Ships are placed on any sea hex adjacent to any of the player's coastal Buildings.</li>
+				<li>Longships can only be built if the player has built a Town.</li>
+				<li>Galleons can only be built if the player has built a Castle.</li>
+				<li>When placing new units players must respect <a href="#occupancy">maximum occupancy rule</a>.</li>
+			</ul>
+		</div>
+
+		<h3 id="buy" class="section-header" onclick="toggle('buy');">
+			<span class="toggler">+</span> Buy Action
+		</h3>
+		<div class="buy section">
+			<p>As an Action, players may Buy a new Action Card of their choice from the Merchant.</p>
 		</div>
 
 		<h3 id="tax" class="section-header" onclick="toggle('tax');">
@@ -295,7 +340,7 @@
 				Units may move in any direction or combination of directions, up to a number of hexes equal to their movement range.<br>
 				Units may move <em>through</em> hexes occupied by their own units or hexes at max occupancy, but must respect <a href="#occupancy">maximum occupancy</a> rule and only <em>end</em> movement in an eligible hex.<br>
 				Units may move through hexes that have an opponent building if unoccupied by opponent units.<br>
-				Units may not move into a hex occupied by another player.<br>
+				Units may not move into or through a hex occupied by another player.<br>
 			</p>
 		</div>
 
