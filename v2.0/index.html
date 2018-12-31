@@ -4,7 +4,7 @@
 		<title>⚔ VigTavl 2.0</title>
 		<meta charset="utf-8">
 		<meta name="author" description="robcmills">
-		<meta name="description" description="A game of medieval combat">
+		<meta name="description" description="A turn-based strategy game of medieval combat">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</head>
@@ -103,7 +103,7 @@
 
 			<div class="vigtavl">
 				<h1>
-					VigTavl ⚔ v2.0
+					VigTavl ⚔ v2.0 (beta)
 					<select name="version">
 						<option value="1.0">1.0</option>
 						<option value="1.2">1.2</option>
@@ -125,7 +125,7 @@
 				<p><b>Anytime - Multiple possible</b></p>
 				<ol>
 					<li><b>Battle:</b> For each Combat Unit that you defeat in battle collect a number of victory tokens equal to its value.</li>
-					<li><b>Seize/Destroy:</b> For each Building that you sieze or destroy from another player collect a number of victory tokens equal to its value.</li>
+					<li><b>Seize/Destroy:</b> For each Building that you sieze from another player collect a number of victory tokens equal to its value.</li>
 					<li><b>Rescue:</b> For each of your own prisoners that you free collect a number of victory tokens equal to their value.</li>
 				</ol>
 
@@ -191,64 +191,29 @@
 			<div class="round section">
 				<p>A Round consists of the following phases in order:</p>
 				<ol>
-					<li><a href="#actions">Actions</a></li>
-					<li><a href="#taxation">Taxation</a></li>
+					<li><a href="#movement">Movement</a></li>
+					<li><a href="#battle">Battle</a></li>
 					<li><a href="#building">Building</a></li>
+					<li><a href="#taxation">Taxation</a></li>
 				</ol>
 			</div>
 
-			<h3 id="actions" class="section-header" onclick="toggle('actions');">
-				<span class="toggler">+</span> Actions Phase
+			<h3 id="movement" class="section-header" onclick="toggle('movement');">
+				<span class="toggler">+</span> Movement Phase
 			</h3>
-			<div class="actions section">
-				<p>The Actions Phase consists of two parts:</p>
-				<ol>
-					<li>Planning</li>
-					<li>Resolution</li>
-				</ol>
-				<p><b>Planning:</b> All players simultaneously choose 3 actions and place the necessary cards to specify those actions face-down in front of them.</p>
-				<p><b>Resolution:</b> After all players have chosen their actions, all players simultaneously reveal their chosen actions and resolve them.</p>
+			<div class="movement section">
+				<p>In turn order each player may move one unit or pass and move no units.</p>
+				<p>Continue moving for 3 rounds (until each player has had the opportunity to move 3 times).</p>
+				<p>A player who has passed on a previous round (during the same phase) may move units on a subsequent round, but a pass counts toward their total of 3 movements.</p>
 			</div>
 
-			<h3 id="action-resolution" class="section-header" onclick="toggle('action-resolution');">
-				<span class="toggler">+</span> Action Resolution Phase
+			<h3 id="battle" class="section-header" onclick="toggle('battle');">
+				<span class="toggler">+</span> Battle Phase
 			</h3>
-			<div class="action-resolution section">
-				<ul>
-					<li>All players simultaneously reveal their chosen <a href="#action-cards">Action Cards</a>.</li>
-					<li>All players simultaneously resolve actions.</li>
-				</p>
-			</div>
-
-			<h3 id="action-cards" class="section-header" onclick="toggle('action-cards');">
-				<span class="toggler">+</span> Action Cards
-			</h3>
-			<div class="action-cards section">
-				<p>Every Action requires an Actor, which is the sea or land unit that will perform the Action. For each Action performed, the player must identify the Actor by also providing an <a href="#actor-cards">Actor Card</a> of the unit type, and if necessary (more than one unit of that type is on the board) <a href="location-cards">Location Cards</a>.</p>
-				<p>Some Actions require a Target, which is the Unit or Location to which the Action applies. Players identify Targets in the same manner as Actors.</p>
-				<p>The following types of actions are available at the start of the game:</p>
-				<ul>
-					<li><a href="#build"><b>Build</b></a></li>
-					<li><a href="#buy"><b>Buy</b></a></li>
-					<li><a href="#move"><b>Move/Attack</b></a></li>
-					<li><a href="#ranged-attack"><b>Ranged Attack</b></a></li>
-				</p>
-			</div>
-
-			<h3 id="actor-cards" class="section-header" onclick="toggle('actor-cards');">
-				<span class="toggler">+</span> Actor Cards
-			</h3>
-			<div class="actor-cards section">
-				<p>Actor Cards are for identifying which Land or Sea Units are to perform Actions. Players should have an Actor Card of the corresponding type for each Unit in their standing Armies and Navies.</p>
-				<p>todo: img of Actor Cards</p>
-			</div>
-
-			<h3 id="location-cards" class="section-header" onclick="toggle('location-cards');">
-				<span class="toggler">+</span> Location Cards
-			</h3>
-			<div class="location-cards section">
-				<p>Location Cards are for identifying hexes on the board. Each player should have one complete set of Letters and Numbers. Sometimes in rare cases, players will need more than one of the same Letter or Number, in which case that player may pass the needed Location Card to the Merchant, who will provide additional matching Location Cards.</p>
-				<p>todo: img of Location Cards</p>
+			<div class="battle section">
+				<p>Players resolve battles on any hex that contains combat units belonging to more than one player.</p>
+				<p>Each player rolls a number of dice equal to the total value of their units on the hex. The player that rolls the highest die wins the battle (including when there are more than two players involved).</p>
+				<p>Ties are re-rolled.</p>
 			</div>
 
 			<h3 id="build" class="section-header" onclick="toggle('build');">
