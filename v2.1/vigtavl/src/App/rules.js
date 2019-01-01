@@ -3,10 +3,10 @@ export default [{
 	text: 'Get Victory Points:',
 	bullets: [
 		'Defeat/Capture Units',
-		'Seize Buildings',
+		'Build/Seize',
 		'Free Prisoners',
 	],
-},{
+}, {
 	title: 'Hex Types',
 	bullets: [{
 		title: 'Land',
@@ -61,7 +61,7 @@ export default [{
 		}, {
 			title: 'Build',
 			bullets: [
-				'Players may build new Villages on any land hex they occupy or empty adjacent hex to their existing buildings',
+				'Players may build new structures on any land hex they occupy or empty adjacent hex to their existing buildings',
 				'Existing buildings can be upgraded',
 				'To build or upgrade simply pay value of building in gold',
 			],
@@ -69,30 +69,34 @@ export default [{
 	}, {
 		title: 'Movement Phase',
 		bullets: [
-			'In turn order, each player may move one unit or pass ',
+			'In turn order, each player may move one unit or pass',
 			'Continue until each player has had 3 opportunities to move',
 			'If all players pass then phase ends',
-			'(see also “Movement Restrictions”)',
+			'See also “Max movements per phase” for each unit type',
 		],
 	}, {
 		title: 'Battle Phase',
 		bullets: [{
 			title: 'Ranged Attacks',
 			bullets: [
-				'Archers that have opponent units within range may roll 2 attack dice. If either die is a 1 that is a hit and an opponent unit suffers 2 points of damage per hit. If both die are hits then opponent unit suffers 4 points of damage.',
-				'If opponent unit has 2 or less health points then taking 2 damage will kill the unit and it is removed from the board. Attacker receives victory points for the value of the killed unit. If opponent unit has 3 or more health points then that unit can survive a single arrow hit and recover.',
-				'If more than one opponent unit are present on a hex within range, the attacker need only specify the hex to be attacked. Any hits may be allocated to any opponent unit as decided by the attacker, however each hit may only be applied to one unit (for example a single arrow can not kill 2 soldiers).',
-				'Ranged Attacks are limited to 2 per player per round.',
+				'In turn order, each player may conduct one ranged attack',
+				'Continue until each player has had 3 opportunities to attack',
+				'To conduct a ranged attack, choose one of your Archers that has opponent units within range, then choose a target unit to aim at. Roll 1 D6.',
+				'Archers range extends in straight lines outward from the hex up to 3 hexes away. However when targeting hexes farther away, accuracy diminishes, resulting in a smaller chance of hitting the target.',
+				'If target is on an adjacent hex (range of 1) then a roll result of 3, 2, or 1 results in a successful hit and kills the target unit (50% chance)',
+				'If target is on a hex at range of 2 then a roll result of 2 or 1 results in a successful hit and kills the target unit (33% chance)',
+				'If target is on a hex at range of 3 then a roll result of 1 results in a successful hit and kills the target unit (17% chance)',
+				'Archers may not range attack units on the same hex. If opponent units are on the same hex as an archer then that would be a melee battle to be resolved as explained in the next section.',
 			],
 		}, {
 			title: 'Battles',
 			bullets: [
-				'Any hex occupied by more than one player becomes a battle.',
-				'Each player involved rolls a number of dice equal to the total sum value of their units that are involved. Involved units are the units located on the battle hex. The single highest die rolled is the only die compared. The higher die wins the battle. Ties are re-rolled.',
+				'Any hex occupied by more than one player becomes a melee battle.',
+				'Each player involved rolls a number of dice equal to the sum of their units "Melee Attack" values that are involved. Involved units are the units located on the battle hex. The single highest die rolled is the only die compared. The highest die wins the battle. Ties are re-rolled.',
 				'If more than 2 players are involved in a battle, and a 2-way tie is rolled between other players, then the other player either wins the battle if his die is higher than the tie, or is defeated if his die is lower, and becomes prisoner of the winner of the tied re-roll.',
 				'Units that lose the battle are captured. Captured units are moved to the closest building that belongs to the winner of the battle, where they become prisoners (denoted by laying the units on their side).',
 				'If multiple buildings are equidistant then the capturer may choose.',
-				'See “Prisoner Limits” for capacity of building types.',
+				'Max Prisoner occupancy for each unit type is the same as their max occupancy per hex. See Units section for values.',
 			],
 		}, {
 			title: 'Seizing',
@@ -108,46 +112,59 @@ export default [{
 	bullets: [{
 		title: 'Soldier',
 		bullets: [
-			'Health Points: 1',
+			'Cost/Victory points when captured/freed: 1',
 			'Melee Attack: 1',
-			'Ranged Attack: None',
 			'Movement: Any direction',
 			'Movement Range: 1 Hex',
-			'Movements per phase: 3',
+			'Max Movements per phase: 3',
 			'Maximum Occupancy per Hex: 3',
-			'Battalion: Up to 3 Soldiers located on the same hex may be moved together as a single unit',
 			'Can only be recruited in a Village',
+			'Battalion: Up to 3 Soldiers located on the same hex may be moved together as a single unit',
 		],
 	}, {
 		title: 'Archer',
 		bullets: [
-			'Health Points: 2',
-			'Melee Attack: None',
-			'Ranged Attack: 2',
-			'Movement: Any direction including diagonal',
+			'Cost/Victory points when captured/freed: 2',
+			'Melee Attack: 1',
+			'Movement: Diagonally',
 			'Movement Range: 1 Hex',
-			'Movements per phase: 2',
+			'Max Movements per phase: 2',
 			'Maximum Occupancy per Hex: 2',
 			'Can only be recruited in a Town',
+			'Capable of ranged attacks',
 		],
 	}, {
 		title: 'Knight',
 		bullets: [
-			'Health Points: 3',
+			'Cost/Victory points when captured/freed: 3',
 			'Melee Attack: 3',
-			'Ranged Attack: None',
 			'Movement: Any direction, straight line only',
-			'Movement Range: 3 Hex',
-			'Movements per phase: 1',
-			'Maximum Occupancy per Hexsu: 1',
+			'Movement Range: 3 Hexes',
+			'Max Movements per phase: 1',
+			'Maximum Occupancy per Hex: 1',
 			'Can only be recruited in a Castle',
+		],
+	}],
+}, {
+	title: 'Buildings',
+	bullets: [{
+		title: 'Village',
+		bullets: [
+			'Cost/Victory points: 1',
+			'Produces: Soldiers',
+		],
+	}, {
+		title: 'Town',
+		bullets: [
+			'Cost/Victory points: 2',
+			'Produces: Archers',
+		],
+	}, {
+		title: 'Castle',
+		bullets: [
+			'Cost/Victory points: 3',
+			'Produces: Knights',
 		],
 	}],
 }];
 
-/*
-
-
-Upgrade existing buildings
-
-*/
