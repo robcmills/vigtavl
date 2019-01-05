@@ -1,3 +1,7 @@
+import React from 'react'
+
+import SingleHex from './SingleHex';
+
 export default [{
 	title: 'Objective',
 	text: 'Get Victory Points:',
@@ -11,24 +15,28 @@ export default [{
 	bullets: [{
 		title: 'Land',
 		bullets: [
+		  <SingleHex />,
 			'Default hex type',
 			'Eligible sites for building',
 		],
 	}, {
 		title: 'Sea (resource)',
 		bullets: [
+		  <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
 			'Provide access to fishing and trade',
 			'Produce 1 Gold per occupied adjacent hex per Income Phase',
 		],
 	}, {
 		title: 'Forrest (resource)',
 		bullets: [
+		  <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
 			'Provide access to hunting and lumber',
 			'Produce 2 Gold if occupied per Income Phase',
 		],
 	}, {
 		title: 'Mountain (resource)',
 		bullets: [
+		  <SingleHex hexProps={{ fill: 'Sienna' }} />,
 			'Provide access to mining valuable minerals and ore',
 			'Produce 3 Gold if occupied per Income Phase',
 		],

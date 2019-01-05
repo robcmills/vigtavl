@@ -42,7 +42,7 @@ class Rule extends Component {
   	}
   	const { bullets } = this.props;
   	const items = bullets.map((bullet, index) => {
-  		const child = typeof bullet === 'string'
+  		const child = typeof bullet === 'string' || React.isValidElement(bullet)
   			? bullet
   			: <Rule {...bullet} />;
   		return <li key={index}>{child}</li>;
