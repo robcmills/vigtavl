@@ -9,7 +9,7 @@ const defaultStyle = {
 const DefaultSvg = ({ children }) => (
 	<Svg
 	  style={defaultStyle}
-	  viewBox="-1.1,-1.1,2.2,2.2"
+	  viewBox="0,0,2.2,2.2"
 	>
 	  {children}
 	</Svg>

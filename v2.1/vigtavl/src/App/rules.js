@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Board from './Board';
 import SingleHex from './SingleHex';
 
 export default [{
@@ -11,35 +12,46 @@ export default [{
 		'Free Prisoners',
 	],
 }, {
-	title: 'Hex Types',
+	title: 'Setup',
 	bullets: [{
-		title: 'Land',
+		title: 'Build the board',
+		text: 'The size and configuration of the game board is entirely customizable and will significantly effect gameplay. Experimentation is encouraged, however here are a few guidelines:',
 		bullets: [
-		  <SingleHex />,
-			'Default hex type',
-			'Eligible sites for building',
+			'For a 2 player game, a hexagon shaped board with a side dimension of 4 hexes. Randomly place 3 sea hexes, 2 forest hexes and 1 mountain hex.',
+			'Example:',
+			<Board />,
 		],
 	}, {
-		title: 'Sea (resource)',
-		bullets: [
-		  <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
-			'Provide access to fishing and trade',
-			'Produce 1 Gold per occupied adjacent hex per Income Phase',
-		],
-	}, {
-		title: 'Forrest (resource)',
-		bullets: [
-		  <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
-			'Provide access to hunting and lumber',
-			'Produce 2 Gold if occupied per Income Phase',
-		],
-	}, {
-		title: 'Mountain (resource)',
-		bullets: [
-		  <SingleHex hexProps={{ fill: 'Sienna' }} />,
-			'Provide access to mining valuable minerals and ore',
-			'Produce 3 Gold if occupied per Income Phase',
-		],
+		title: 'Hex Types',
+		bullets: [{
+			title: 'Land',
+			bullets: [
+			  <SingleHex />,
+				'Default hex type',
+				'Eligible sites for building',
+			],
+		}, {
+			title: 'Sea (resource)',
+			bullets: [
+			  <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
+				'Provide access to fishing and trade',
+				'Produce 1 Gold per occupied adjacent hex per Income Phase',
+			],
+		}, {
+			title: 'Forrest (resource)',
+			bullets: [
+			  <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
+				'Provide access to hunting and lumber',
+				'Produce 2 Gold if occupied per Income Phase',
+			],
+		}, {
+			title: 'Mountain (resource)',
+			bullets: [
+			  <SingleHex hexProps={{ fill: 'Sienna' }} />,
+				'Provide access to mining valuable minerals and ore',
+				'Produce 3 Gold if occupied per Income Phase',
+			],
+		}],
 	}],
 }, {
 	title: 'Placement Phase',
