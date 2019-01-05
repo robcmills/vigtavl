@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Rule extends Component {
 	state = {
-		isExpanded: false,
+		isExpanded: true,
 	}
 
   render() {
@@ -19,7 +19,7 @@ class Rule extends Component {
   renderTitle = () => {
   	const { title } = this.props;
   	return (
-  		<h3 onClick={this.handleClickTitle}>
+  		<h3 className="title" onClick={this.handleClickTitle}>
   		  {this.state.isExpanded ? '-' : '+'}&nbsp;
   			{title}
   		</h3>
