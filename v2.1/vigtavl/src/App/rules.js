@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Board from './Board';
+import DefaultBoard from './Board/default';
 import SingleHex from './SingleHex';
 
 export default [{
@@ -19,7 +19,7 @@ export default [{
 		bullets: [
 			'For a 2 player game, a hexagon shaped board with a side dimension of 4 hexes. Randomly place 3 sea hexes, 2 forest hexes and 1 mountain hex.',
 			'Example:',
-			<Board />,
+			<DefaultBoard />,
 		],
 	}, {
 		title: 'Hex Types',
