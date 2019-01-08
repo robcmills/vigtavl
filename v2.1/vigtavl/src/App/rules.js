@@ -5,21 +5,29 @@ import SingleHex from './SingleHex';
 
 export default [{
 	title: 'Objective',
-	text: 'Get Victory Points:',
+	text: 'The player with the most victory points at the end of the game is the winner. Victory points are obtained in the following ways:',
 	bullets: [
-		'Defeat/Capture Units',
-		'Build/Seize',
-		'Free Prisoners',
+		'Kill/capture opponent units',
+		'Seize opponent buildings',
+		'Free your imprisoned units',
 	],
 }, {
 	title: 'Setup',
 	bullets: [{
-		title: 'Build the board',
-		text: 'The size and configuration of the game board is entirely customizable and will significantly effect gameplay. Experimentation is encouraged, however here are a few guidelines:',
+		title: 'Step 1: Choose variant',
+		text: 'There are two variants to the rules of the game:',
+		bullets: [
+		  'Casual: Dice are used to determine the outcome of battles and ranged attacks. Much is left to chance, but is still exciting and well balanced.',
+		  'Competitive: Battles and ranged attacks are determined using a point system. This turns the game into one of perfect information and deep strategy.',
+		],
+	}, {
+		title: 'Step 2: Build the board',
+		text: 'The size and configuration of the game board is entirely customizable and will significantly affect gameplay. Experimentation is encouraged, however here are a few guidelines:',
 		bullets: [
 			'For a 2 player game, a hexagon shaped board with a side dimension of 4 hexes. Randomly place 3 sea hexes, 2 forest hexes and 1 mountain hex.',
 			'Example:',
 			<DefaultBoard />,
+			'For a 3 or 4 player game, a hexagon shaped board with a side dimension of 5 hexes. Randomly place 4 sea hexes, 3 forest hexes and 2 mountain hexes.',
 		],
 	}, {
 		title: 'Hex Types',
@@ -34,34 +42,52 @@ export default [{
 			title: 'Sea (resource)',
 			bullets: [
 			  <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
-				'Provide access to fishing and trade',
-				'Produce 1 Gold per occupied adjacent hex per Income Phase',
+				'Provides access to fishing and trade',
+				'Produces 1 Gold per occupied or built adjacent hex per Income Phase',
 			],
 		}, {
 			title: 'Forrest (resource)',
 			bullets: [
 			  <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
-				'Provide access to hunting and lumber',
-				'Produce 2 Gold if occupied per Income Phase',
+				'Provides access to hunting and lumber',
+				'Produces Gold if occupied per Income Phase',
 			],
 		}, {
 			title: 'Mountain (resource)',
 			bullets: [
 			  <SingleHex hexProps={{ fill: 'Sienna' }} />,
-				'Provide access to mining valuable minerals and ore',
-				'Produce 3 Gold if occupied per Income Phase',
+				'Provides access to mining valuable minerals and ore',
+				'Produces 3 Gold if occupied per Income Phase',
 			],
 		}],
+	}, {
+		title: 'Step 3: Placement',
+		text: 'In turn order each player chooses an empty land hex and places the following:',
+		bullets: [
+			'3 Villages & 3 Soldiers',
+			'2 Towns & 2 Archers',
+			'1 Castle & 1 Knight',
+			'(units and buildings are placed together on the same chosen hex)',
+			{
+				title: 'Example (click to expand)',
+				initialIsExpanded: false,
+				bullets: [
+				  'Player 1 places first Village & Soldier',
+				  'Player 2 places first Village & Soldier',
+				  'Player 1 places second Village & Soldier',
+				  'Player 2 places second Village & Soldier',
+				  'Player 1 places third Village & Soldier',
+				  'Player 2 places third Village & Soldier',
+				  'Player 1 places first Town & Archer',
+				  'Player 2 places first Town & Archer',
+				  'Player 1 places second Town & Archer',
+				  'Player 2 places second Town & Archer',
+				  'Player 1 places Castle & Knight',
+				  'Player 2 places Castle & Knight',
+				]
+			},
+		],
 	}],
-}, {
-	title: 'Placement Phase',
-	text: 'In turn order each player chooses an eligible hex and places the following:' +
-		'\n(eligible hexes are empty land hexes only)',
-	bullets: [
-		'1 Castle & 1 Knight',
-		'2 Towns & 2 Archers',
-		'3 Villages & 3 Soldiers',
-	],
 }, {
 	title: 'Round',
 	bullets: [{
@@ -177,13 +203,13 @@ export default [{
 		title: 'Town',
 		bullets: [
 			'Cost/Victory points: 2',
-			'Produces: Archers',
+			'Produces: Archers or Soldiers',
 		],
 	}, {
 		title: 'Castle',
 		bullets: [
 			'Cost/Victory points: 3',
-			'Produces: Knights',
+			'Produces: Knights, Archers or Soldiers',
 		],
 	}],
 }];

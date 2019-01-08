@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
 class Rule extends Component {
-	state = {
-		isExpanded: true,
-	}
+  constructor(props) {
+    super(props);
+    const { initialIsExpanded } = this.props;
+    this.state = {
+      isExpanded: initialIsExpanded === undefined ? true : initialIsExpanded,
+    }
+  }
 
   render() {
   	const { bullets, text, title } = this.props;
