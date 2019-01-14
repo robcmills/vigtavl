@@ -11,6 +11,8 @@ class App extends Component {
         <div>
           <h1>VigTavl ⚔ v2.1</h1>
           <p>A turn-based strategy game of medieval combat.</p>
+          <p>Author: Robert C. Mills</p>
+          <p>2 to 4 players | 11+ | 45 - 60 minutes</p>
         </div>
         {this.renderRules()}
       </div>

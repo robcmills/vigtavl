@@ -1,11 +1,35 @@
 import React from 'react'
 
 import DefaultBoard from './Board/default';
+import FourPlayerBoard from './Board/four-player';
 import SingleHex from './SingleHex';
 
 export default [{
-	title: 'Objective',
-	text: 'The player with the most victory points at the end of the game is the winner. Victory points are obtained in the following ways:',
+	title: 'Introduction',
+	text: 'Players take control of an army to battle against their opponents while maneuvering to control limited resources that can be used to grow their armies.',
+}, {
+	title: 'Game Components',
+	bullets: [
+	  '48 wooden land hexes',
+	  '6 wooden sea hexes',
+	  '5 wooden forest hexes',
+	  '4 wooden mountain hexes',
+	  '9 wooden village pieces of each color',
+	  '6 wooden town pieces of each color',
+	  '3 wooden castle pieces of each color',
+	  '9 wooden soldier pieces of each color',
+	  '6 wooden archer pieces of each color',
+	  '3 wooden knight pieces of each color',
+	  '4 player boards',
+	  '12 small 1-gold tokens',
+	  '12 medium 2-gold tokens',
+	  '12 large 3-gold tokens',
+	  '6 black dice',
+	  '6 white dice',
+	],
+}, {
+	title: 'Object of the Game',
+	text: 'Be the player with the most victory points at the end of the game. Obtain victory points in the following ways:',
 	bullets: [
 		'Kill/capture opponent units',
 		'Seize opponent buildings',
@@ -14,20 +38,14 @@ export default [{
 }, {
 	title: 'Setup',
 	bullets: [{
-		title: 'Step 1: Choose variant',
-		text: 'There are two variants to the rules of the game:',
-		bullets: [
-		  'Casual: Dice are used to determine the outcome of battles and ranged attacks. Much is left to chance, but is still exciting and well balanced.',
-		  'Competitive: Battles and ranged attacks are determined using a point system. This turns the game into one of perfect information and deep strategy.',
-		],
-	}, {
-		title: 'Step 2: Build the board',
-		text: 'The size and configuration of the game board is entirely customizable and will significantly affect gameplay. Experimentation is encouraged, however here are a few guidelines:',
+		title: 'Step 1: Build the board',
 		bullets: [
 			'For a 2 player game, a hexagon shaped board with a side dimension of 4 hexes. Randomly place 3 sea hexes, 2 forest hexes and 1 mountain hex.',
 			'Example:',
 			<DefaultBoard />,
 			'For a 3 or 4 player game, a hexagon shaped board with a side dimension of 5 hexes. Randomly place 4 sea hexes, 3 forest hexes and 2 mountain hexes.',
+			'Example:',
+			<FourPlayerBoard />,
 		],
 	}, {
 		title: 'Hex Types',
@@ -61,8 +79,8 @@ export default [{
 			],
 		}],
 	}, {
-		title: 'Step 3: Placement',
-		text: 'In turn order each player chooses an empty land hex and places the following:',
+		title: 'Step 2: Placement',
+		text: 'In turn order each player chooses an empty land hex and places one building and one unit together per turn in the following order:',
 		bullets: [
 			'3 Villages & 3 Soldiers',
 			'2 Towns & 2 Archers',
@@ -89,20 +107,31 @@ export default [{
 		],
 	}],
 }, {
-	title: 'Round',
-	bullets: [{
+	title: 'Rounds',
+	text: 'The game is played in a series of rounds. The number of rounds played depends on the number of players.',
+	bullets: [
+	  '2 players: 6 rounds',
+	  '3 players: 5 rounds',
+	  '4 players: 4 rounds',
+	  'Each round consists of 4 phases:',
+	{
 		title: 'Income Phase',
-		text: 'Collect gold for occupied resource hexes',
+		text: 'All players simultaneously collect gold for occupied resource hexes.',
+		bullets: [
+		  'For each building or occupied hex adjacent to 1 or more sea hexes collect 1 gold',
+		  'For each occupied forest hex collect 2 gold',
+		  'For each occupied mountain hex collect 3 gold',
+		]
 	}, {
 		title: 'Build Phase',
 		text: 'In turn order, each player may recruit or build or pass one at a time until all players have had 3 opportunities',
 		bullets: [{
 			title: 'Recruit',
 			bullets: [
-			  'Add a new combat unit to the board by paying the value and placing according to type:',
-			  'Soldiers can only be recruited in Villages',
-			  'Archers can only be recruited in Towns',
-			  'Knights can only be recruited in Castles',
+			  'Add a new combat unit to the board by paying the value in gold and placing according to type:',
+			  'Soldiers can only be recruited in Villages (max of 3 per phase)',
+			  'Archers can only be recruited in Towns (max of 2 per phase)',
+			  'Knights can only be recruited in Castles (max of 1 per phase)',
 			],
 		}, {
 			title: 'Build',
@@ -110,23 +139,29 @@ export default [{
 				'Players may build new structures on any land hex they occupy or empty adjacent hex to their existing buildings',
 				'Existing buildings can be upgraded',
 				'To build or upgrade simply pay value of building in gold',
+				'Villages cost 1 gold (max of 3 per phase)',
+				'Towns cost 2 gold (max of 2 per phase)',
+				'Castles cost 3 gold (max of 1 per phase)',
 			],
 		}],
 	}, {
 		title: 'Movement Phase',
 		bullets: [
 			'In turn order, each player may move one unit or pass',
-			'Continue until each player has had 3 opportunities to move',
-			'If all players pass then phase ends',
-			'See also “Max movements per phase” for each unit type',
+			'Continue until each player has had 3 opportunities',
+			'Soliers may be moved a max of 3 times per phase',
+			'Archers may be moved a max of 2 times per phase',
+			'Knights may be moved a max of 1 time per phase',
+			'Note that multiple soliers on the same hex can be moved together as a battalion',
 		],
 	}, {
 		title: 'Battle Phase',
+		text: 'The battle phase is conducted in three stages:',
 		bullets: [{
 			title: 'Ranged Attacks',
 			bullets: [
 				'In turn order, each player may conduct one ranged attack',
-				'Continue until each player has had 3 opportunities to attack',
+				'Continue until each player has had 2 opportunities to attack',
 				'To conduct a ranged attack, choose one of your Archers that has opponent units within range, then choose a target unit to aim at. Roll 1 D6.',
 				'Archers range extends in straight lines outward from the hex up to 3 hexes away. However when targeting hexes farther away, accuracy diminishes, resulting in a smaller chance of hitting the target.',
 				'If target is on an adjacent hex (range of 1) then a roll result of 3, 2, or 1 results in a successful hit and kills the target unit (50% chance)',
@@ -162,7 +197,7 @@ export default [{
 			'Melee Attack: 1',
 			'Movement: Any direction',
 			'Movement Range: 1 Hex',
-			'Max Movements per phase: 3',
+			'Max Recruits/Movements per phase: 3',
 			'Maximum Occupancy per Hex: 3',
 			'Can only be recruited in a Village',
 			'Battalion: Up to 3 Soldiers located on the same hex may be moved together as a single unit',
