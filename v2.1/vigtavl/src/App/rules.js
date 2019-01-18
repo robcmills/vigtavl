@@ -87,8 +87,7 @@ export default [{
 			'1 Castle & 1 Knight',
 			'(units and buildings are placed together on the same chosen hex)',
 			{
-				title: 'Example (click to expand)',
-				initialIsExpanded: false,
+				title: 'Example',
 				bullets: [
 				  'Player 1 places first Village & Soldier',
 				  'Player 2 places first Village & Soldier',
@@ -149,8 +148,8 @@ export default [{
 		bullets: [
 			'In turn order, each player may move one unit or pass',
 			'Continue until each player has had 3 opportunities',
-			'Soliers may be moved a max of 3 times per phase',
-			'Archers may be moved a max of 2 times per phase',
+			'Soliers may be moved a max of 3 times per phase (can be same unit/battalion)',
+			'Archers may be moved a max of 2 times per phase (can be same archer)',
 			'Knights may be moved a max of 1 time per phase',
 			'Note that multiple soliers on the same hex can be moved together as a battalion',
 		],
@@ -167,6 +166,8 @@ export default [{
 				'If target is on an adjacent hex (range of 1) then a roll result of 3, 2, or 1 results in a successful hit and kills the target unit (50% chance)',
 				'If target is on a hex at range of 2 then a roll result of 2 or 1 results in a successful hit and kills the target unit (33% chance)',
 				'If target is on a hex at range of 3 then a roll result of 1 results in a successful hit and kills the target unit (17% chance)',
+				'A successful hit results in 2 hit points of damage to the target unit. This is enough to kill another archer or solier, but not enough to kill a knight with a single hit because knights have 3 health points. In order to kill a knight with ranged attacks, players must successfully score two hits in the same phase on the same target knight. Hits do not carry over to subsequent rounds.',
+				'Killed units are removed from the board and the attacker collects a number of victory points equal to the value of the killed unit',
 				'Archers may not range attack units on the same hex. If opponent units are on the same hex as an archer then that would be a melee battle to be resolved as explained in the next section.',
 			],
 		}, {
