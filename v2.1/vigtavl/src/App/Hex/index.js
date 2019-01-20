@@ -2,17 +2,22 @@ import React from 'react'
 
 import { COS_60, SIN_60 } from '../constants'
 
-const Hex = ({ fill, onClick, radius, stroke, strokeWidth, style, x, y }) => {
-  const adjacent = radius * COS_60
-  const opposite = radius * SIN_60
-  const points = [
-    [0, radius],
-    [opposite, adjacent],
-    [opposite, -adjacent],
-    [0, -radius],
-    [-opposite, -adjacent],
-    [-opposite, adjacent],
-  ].map(point => `${x + point[0]},${y + point[1]}`).join(' ')
+const RADIUS = 1
+const ADJACENT = RADIUS * COS_60
+const OPPOSITE = RADIUS * SIN_60
+const VERTICES = [
+  [0, RADIUS],
+  [OPPOSITE, ADJACENT],
+  [OPPOSITE, -ADJACENT],
+  [0, -RADIUS],
+  [-OPPOSITE, -ADJACENT],
+  [-OPPOSITE, ADJACENT],
+]
+
+const Hex = ({ fill, onClick, stroke, strokeWidth, style, x, y }) => {
+  const points = VERTICES
+    .map(point => `${x + point[0]},${y + point[1]}`)
+    .join(' ')
   return (
     <polygon
       fill={fill}

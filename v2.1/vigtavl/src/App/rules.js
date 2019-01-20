@@ -1,8 +1,9 @@
 import React from 'react'
 
-import DefaultBoard from './Board/default';
-import FourPlayerBoard from './Board/four-player';
-import SingleHex from './SingleHex';
+import DefaultBoard from './Board/default'
+import FourPlayerBoard from './Board/four-player'
+import SingleHex from './SingleHex'
+import Soldier from './Soldier'
 
 export default [{
 	title: 'Introduction',
@@ -194,6 +195,7 @@ export default [{
 	bullets: [{
 		title: 'Soldier',
 		bullets: [
+		  <Soldier />,
 			'Cost/Victory points when captured/freed: 1',
 			'Melee Attack: 1',
 			'Movement: Any direction',
