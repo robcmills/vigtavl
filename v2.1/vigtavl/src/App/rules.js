@@ -5,6 +5,7 @@ import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
 import Soldier from './Soldier'
 import Archer from './Archer'
+import Knight from './Knight'
 
 export default [{
 	title: 'Introduction',
@@ -222,6 +223,7 @@ export default [{
 	}, {
 		title: 'Knight',
 		bullets: [
+		  <Knight />,
 			'Cost/Victory points when captured/freed: 3',
 			'Melee Attack: 3',
 			'Movement: Any direction, straight line only',
