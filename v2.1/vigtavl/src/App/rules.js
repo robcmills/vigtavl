@@ -1,6 +1,7 @@
 import React from 'react'
 
 import DefaultBoard from './Board/default'
+import PlacementBoard from './Board/placement'
 import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
 import Soldier from './Soldier'
@@ -109,6 +110,7 @@ export default [{
           'Player 2 places Castle & Knight',
         ]
       },
+      <PlacementBoard />,
     ],
   }],
 }, {

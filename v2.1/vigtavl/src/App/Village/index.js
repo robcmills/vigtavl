@@ -11,6 +11,8 @@ const Village = ({ fill, onClick, stroke, strokeWidth, style, x, y }) => {
       stroke={stroke}
       strokeWidth={strokeWidth}
       style={style}
+      x={x}
+      y={y}
     />
   )
 }

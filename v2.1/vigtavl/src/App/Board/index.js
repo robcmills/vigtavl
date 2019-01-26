@@ -2,6 +2,9 @@ import React from 'react'
 
 import { typeToFillMap, COS_60, SIN_60 } from '../constants'
 import Svg from '../Svg'
+import Castle from '../Castle'
+import Town from '../Town'
+import Village from '../Village'
 import DefaultHex from '../Hex/default'
 
 const HEX_RADIUS = 1 // vertical
@@ -30,6 +33,30 @@ const Board = ({ hexes, size, style }) => {
         const rank = hex.rank - 1
         const x = HORZ_RADIUS + file * HORZ_RADIUS * 2 - (rank * HORZ_RADIUS)
         const y = -(HEX_RADIUS + rank * (HEX_RADIUS + OPP))
+        if (hex.type === 'castle') {
+          return (
+            <React.Fragment>
+              <DefaultHex fill={hex.color} x={x} y={y} />
+              <Castle key={index} x={x} y={y} />
+            </React.Fragment>
+          )
+        }
+        if (hex.type === 'town') {
+          return (
+            <React.Fragment>
+              <DefaultHex fill={hex.color} x={x} y={y} />
+              <Town key={index} x={x} y={y} />
+            </React.Fragment>
+          )
+        }
+        if (hex.type === 'village') {
+          return (
+            <React.Fragment>
+              <DefaultHex fill={hex.color} x={x} y={y} />
+              <Village key={index} x={x} y={y} />
+            </React.Fragment>
+          )
+        }
         return (
           <DefaultHex
             fill={typeToFillMap[hex.type]}

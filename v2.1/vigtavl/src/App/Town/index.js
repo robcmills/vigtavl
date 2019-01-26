@@ -7,10 +7,12 @@ const Town = ({ fill, onClick, stroke, strokeWidth, style, x, y }) => {
     <DefaultTriangle
       fill="wheat"
       onClick={onClick}
-      radius={0.7}
+      radius={0.6}
       stroke={stroke}
       strokeWidth={strokeWidth}
       style={style}
+      x={x}
+      y={y}
     />
   )
 }
