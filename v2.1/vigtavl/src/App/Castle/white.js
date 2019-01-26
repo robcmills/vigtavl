@@ -1,13 +1,12 @@
 import React from 'react'
 
-import Square from '.';
+import Castle from '.';
 
 const defaultStyle = {}
 
-const DefaultSquare = ({ fill, radius, stroke, strokeWidth, style, x, y }) => (
-	<Square
+const WhiteCastle = ({ fill, radius, stroke, strokeWidth, style, x, y }) => (
+	<Castle
 		fill={fill || 'white'}
-		radius={radius || 0.75}
 	  stroke={stroke || "black"}
 	  strokeWidth={strokeWidth || 0.1}
 	  style={style || defaultStyle}
@@ -16,4 +15,4 @@ const DefaultSquare = ({ fill, radius, stroke, strokeWidth, style, x, y }) => (
 	/>
 );
 
-export default DefaultSquare;
+export default WhiteCastle;
