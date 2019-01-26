@@ -1,13 +1,12 @@
 import React from 'react'
 
-import Hex from '.';
+import Town from '.';
 
 const defaultStyle = {}
 
-const DefaultTriangle = ({ fill, radius, stroke, strokeWidth, style, x, y }) => (
-	<Hex
+const WhiteTown = ({ fill, radius, stroke, strokeWidth, style, x, y }) => (
+	<Town
 		fill={fill || 'white'}
-		radius={radius || 1}
 	  stroke={stroke || "black"}
 	  strokeWidth={strokeWidth || 0.1}
 	  style={style || defaultStyle}
@@ -16,4 +15,4 @@ const DefaultTriangle = ({ fill, radius, stroke, strokeWidth, style, x, y }) => 
 	/>
 );
 
-export default DefaultTriangle;
+export default WhiteTown;

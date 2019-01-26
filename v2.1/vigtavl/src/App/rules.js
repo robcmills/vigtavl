@@ -7,6 +7,7 @@ import Soldier from './Soldier'
 import Archer from './Archer'
 import Knight from './Knight'
 import SingleWhiteVillage from './Village/single'
+import SingleWhiteTown from './Town/single'
 
 export default [{
   title: 'Introduction',
@@ -246,6 +247,7 @@ export default [{
   }, {
     title: 'Town',
     bullets: [
+      <SingleWhiteTown />,
       'Cost/Victory points: 2',
       'Produces: Archers or Soldiers',
     ],
