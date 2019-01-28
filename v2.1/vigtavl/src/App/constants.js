@@ -5,6 +5,11 @@ export const typeToFillMap = {
 	mountain: 'Sienna',
 }
 
+export const colorToFillAndStrokeMap = {
+	black: { fill: 'black', stroke: 'white' },
+	white: { fill: 'white', stroke: 'black' },
+}
+
 export const toRad = deg => deg * (Math.PI / 180)
 export const COS_30 = Math.cos(toRad(30))
 export const COS_60 = Math.cos(toRad(60))

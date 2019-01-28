@@ -4,7 +4,7 @@ import DefaultBoard from './Board/default'
 import PlacementBoard from './Board/placement'
 import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
-import Soldier from './Soldier'
+import SingleSoldier from './Soldier/single'
 import Archer from './Archer'
 import Knight from './Knight'
 import SingleWhiteVillage from './Village/single'
@@ -202,7 +202,7 @@ export default [{
   bullets: [{
     title: 'Soldier',
     bullets: [
-      <Soldier />,
+      <SingleSoldier />,
       'Cost/Victory points when captured/freed: 1',
       'Melee Attack: 1',
       'Movement: Any direction',

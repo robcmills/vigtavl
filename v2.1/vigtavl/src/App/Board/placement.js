@@ -2,11 +2,14 @@ import React from 'react'
 
 import Board from '.'
 
+const blackSoldier = { type: 'soldier', color: 'black' }
+const whiteSoldier = { type: 'soldier', color: 'white' }
+
 const hexes = [
 	{ file: 'a', rank: 1, type: 'sea' },
 	{ file: 'a', rank: 2 },
-	{ file: 'a', rank: 3, type: 'village', color: 'black' },
-	{ file: 'a', rank: 4, type: 'village', color: 'white' },
+	{ file: 'a', rank: 3, type: 'village', color: 'black', units: [blackSoldier] },
+	{ file: 'a', rank: 4, type: 'village', color: 'white', units: [whiteSoldier] },
 	{ file: 'b', rank: 1 },
 	{ file: 'b', rank: 2, type: 'castle', color: 'white' },
 	{ file: 'b', rank: 3 },
@@ -46,7 +49,7 @@ const PlacementBoard = () => (
 	<Board
 		hexes={hexes}
 		size={4}
-		style={{ height: '10rem' }}
+		style={{ height: '15rem' }}
 	/>
 );
 
