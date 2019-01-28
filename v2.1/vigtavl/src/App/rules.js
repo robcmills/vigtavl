@@ -6,7 +6,7 @@ import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
 import SingleSoldier from './Soldier/single'
 import Archer from './Archer'
-import Knight from './Knight'
+import SingleKnight from './Knight/single'
 import SingleWhiteVillage from './Village/single'
 import SingleWhiteTown from './Town/single'
 import SingleWhiteCastle from './Castle/single'
@@ -228,7 +228,7 @@ export default [{
   }, {
     title: 'Knight',
     bullets: [
-      <Knight />,
+      <SingleKnight />,
       'Cost/Victory points when captured/freed: 3',
       'Melee Attack: 3',
       'Movement: Any direction, straight line only',

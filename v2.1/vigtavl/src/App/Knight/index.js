@@ -1,12 +1,12 @@
 import React from 'react'
 
-import DefaultSquare from '../Square/default';
-import DefaultSvg from '../Svg/default';
+import DefaultSquare from '../Square/default'
 
-const Knight = ({ hexProps }) => (
-	<DefaultSvg>
-	  <DefaultSquare {...hexProps} />
-	 </DefaultSvg>
-);
+import { colorToFillAndStrokeMap } from '../constants'
 
-export default Knight;
+const Knight = ({ color, x, y }) => {
+	const fillAndStroke = colorToFillAndStrokeMap[color]
+	return <DefaultSquare {...fillAndStroke} radius={0.45} x={x} y={y} />
+}
+
+export default Knight

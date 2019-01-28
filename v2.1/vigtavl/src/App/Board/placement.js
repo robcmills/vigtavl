@@ -4,6 +4,8 @@ import Board from '.'
 
 const blackSoldier = { type: 'soldier', color: 'black' }
 const whiteSoldier = { type: 'soldier', color: 'white' }
+const blackKnight = { type: 'knight', color: 'black' }
+const whiteKnight = { type: 'knight', color: 'white' }
 
 const hexes = [
 	{ file: 'a', rank: 1, type: 'sea' },
@@ -11,7 +13,7 @@ const hexes = [
 	{ file: 'a', rank: 3, type: 'village', color: 'black', units: [blackSoldier] },
 	{ file: 'a', rank: 4, type: 'village', color: 'white', units: [whiteSoldier] },
 	{ file: 'b', rank: 1 },
-	{ file: 'b', rank: 2, type: 'castle', color: 'white' },
+	{ file: 'b', rank: 2, type: 'castle', color: 'white', units: [whiteKnight] },
 	{ file: 'b', rank: 3 },
 	{ file: 'b', rank: 4, type: 'forest' },
 	{ file: 'b', rank: 5 },
@@ -26,7 +28,7 @@ const hexes = [
 	{ file: 'd', rank: 3, type: 'village', color: 'white' },
 	{ file: 'd', rank: 4, type: 'mountain' },
 	{ file: 'd', rank: 5, type: 'town', color: 'black' },
-	{ file: 'd', rank: 6, type: 'castle', color: 'black' },
+	{ file: 'd', rank: 6, type: 'castle', color: 'black', units: [blackKnight] },
 	{ file: 'd', rank: 7 },
 	{ file: 'e', rank: 2, type: 'town', color: 'white' },
 	{ file: 'e', rank: 3 },
