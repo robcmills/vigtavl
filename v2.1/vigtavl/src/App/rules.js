@@ -5,7 +5,7 @@ import PlacementBoard from './Board/placement'
 import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
 import SingleSoldier from './Soldier/single'
-import Archer from './Archer'
+import SingleArcher from './Archer/single'
 import SingleKnight from './Knight/single'
 import SingleWhiteVillage from './Village/single'
 import SingleWhiteTown from './Town/single'
@@ -215,7 +215,7 @@ export default [{
   }, {
     title: 'Archer',
     bullets: [
-      <Archer />,
+      <SingleArcher />,
       'Cost/Victory points when captured/freed: 2',
       'Melee Attack: 1',
       'Movement: Diagonally',
