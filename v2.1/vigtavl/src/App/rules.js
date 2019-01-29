@@ -15,6 +15,14 @@ export default [{
   title: 'Introduction',
   text: 'Players take control of an army to battle against their opponents while maneuvering to control limited resources that can be used to grow their armies.',
 }, {
+  title: 'Object of the Game',
+  text: 'Be the player with the most victory points at the end of the game. Obtain victory points in the following ways:',
+  bullets: [
+    'Kill/capture opponent units',
+    'Seize opponent buildings',
+    'Free your imprisoned units',
+  ],
+}, {
   title: 'Game Components',
   bullets: [
     '48 wooden land hexes',
@@ -35,13 +43,101 @@ export default [{
     '6 white dice',
   ],
 }, {
-  title: 'Object of the Game',
-  text: 'Be the player with the most victory points at the end of the game. Obtain victory points in the following ways:',
-  bullets: [
-    'Kill/capture opponent units',
-    'Seize opponent buildings',
-    'Free your imprisoned units',
-  ],
+  title: 'Units',
+  bullets: [{
+    title: 'Soldier',
+    bullets: [
+      <SingleSoldier />,
+      'Cost/Victory points when captured/freed: 1',
+      'Melee Attack: 1',
+      'Movement: Any direction',
+      'Movement Range: 1 Hex',
+      'Max Recruits/Movements per phase: 3',
+      'Maximum Occupancy per Hex: 3',
+      'Can only be recruited in a Village',
+      'Battalion: Up to 3 Soldiers located on the same hex may be moved together as a single unit',
+    ],
+  }, {
+    title: 'Archer',
+    bullets: [
+      <SingleArcher />,
+      'Cost/Victory points when captured/freed: 2',
+      'Melee Attack: 1',
+      'Movement: Diagonally',
+      'Movement Range: 1 Hex',
+      'Max Movements per phase: 2',
+      'Maximum Occupancy per Hex: 2',
+      'Can only be recruited in a Town',
+      'Capable of ranged attacks',
+    ],
+  }, {
+    title: 'Knight',
+    bullets: [
+      <SingleKnight />,
+      'Cost/Victory points when captured/freed: 3',
+      'Melee Attack: 3',
+      'Movement: Any direction, straight line only',
+      'Movement Range: 3 Hexes',
+      'Max Movements per phase: 1',
+      'Maximum Occupancy per Hex: 1',
+      'Can only be recruited in a Castle',
+    ],
+  }],
+}, {
+  title: 'Buildings',
+  bullets: [{
+    title: 'Village',
+    bullets: [
+      <SingleWhiteVillage />,
+      'Cost/Victory points: 1',
+      'Produces: Soldiers',
+    ],
+  }, {
+    title: 'Town',
+    bullets: [
+      <SingleWhiteTown />,
+      'Cost/Victory points: 2',
+      'Produces: Archers or Soldiers',
+    ],
+  }, {
+    title: 'Castle',
+    bullets: [
+      <SingleWhiteCastle />,
+      'Cost/Victory points: 3',
+      'Produces: Knights, Archers or Soldiers',
+    ],
+  }],
+}, {
+  title: 'Hex Types',
+  bullets: [{
+    title: 'Land',
+    bullets: [
+      <SingleHex />,
+      'Default hex type',
+      'Eligible sites for building',
+    ],
+  }, {
+    title: 'Sea (resource)',
+    bullets: [
+      <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
+      'Provides access to fishing and trade',
+      'Produces 1 Gold per occupied or built adjacent hex per Income Phase',
+    ],
+  }, {
+    title: 'Forrest (resource)',
+    bullets: [
+      <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
+      'Provides access to hunting and lumber',
+      'Produces 2 Gold if occupied per Income Phase',
+    ],
+  }, {
+    title: 'Mountain (resource)',
+    bullets: [
+      <SingleHex hexProps={{ fill: 'Sienna' }} />,
+      'Provides access to mining valuable minerals and ore',
+      'Produces 3 Gold if occupied per Income Phase',
+    ],
+  }],
 }, {
   title: 'Setup',
   bullets: [{
@@ -54,37 +150,6 @@ export default [{
       'Example:',
       <FourPlayerBoard />,
     ],
-  }, {
-    title: 'Hex Types',
-    bullets: [{
-      title: 'Land',
-      bullets: [
-        <SingleHex />,
-        'Default hex type',
-        'Eligible sites for building',
-      ],
-    }, {
-      title: 'Sea (resource)',
-      bullets: [
-        <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
-        'Provides access to fishing and trade',
-        'Produces 1 Gold per occupied or built adjacent hex per Income Phase',
-      ],
-    }, {
-      title: 'Forrest (resource)',
-      bullets: [
-        <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
-        'Provides access to hunting and lumber',
-        'Produces Gold if occupied per Income Phase',
-      ],
-    }, {
-      title: 'Mountain (resource)',
-      bullets: [
-        <SingleHex hexProps={{ fill: 'Sienna' }} />,
-        'Provides access to mining valuable minerals and ore',
-        'Produces 3 Gold if occupied per Income Phase',
-      ],
-    }],
   }, {
     title: 'Step 2: Placement',
     text: 'In turn order each player chooses an empty land hex and places one building and one unit together per turn in the following order:',
@@ -196,71 +261,6 @@ export default [{
         'If prisoners are freed, receive victory points equal to the value of all freed prisoner units.',
       ],
     }],
-  }],
-}, {
-  title: 'Units',
-  bullets: [{
-    title: 'Soldier',
-    bullets: [
-      <SingleSoldier />,
-      'Cost/Victory points when captured/freed: 1',
-      'Melee Attack: 1',
-      'Movement: Any direction',
-      'Movement Range: 1 Hex',
-      'Max Recruits/Movements per phase: 3',
-      'Maximum Occupancy per Hex: 3',
-      'Can only be recruited in a Village',
-      'Battalion: Up to 3 Soldiers located on the same hex may be moved together as a single unit',
-    ],
-  }, {
-    title: 'Archer',
-    bullets: [
-      <SingleArcher />,
-      'Cost/Victory points when captured/freed: 2',
-      'Melee Attack: 1',
-      'Movement: Diagonally',
-      'Movement Range: 1 Hex',
-      'Max Movements per phase: 2',
-      'Maximum Occupancy per Hex: 2',
-      'Can only be recruited in a Town',
-      'Capable of ranged attacks',
-    ],
-  }, {
-    title: 'Knight',
-    bullets: [
-      <SingleKnight />,
-      'Cost/Victory points when captured/freed: 3',
-      'Melee Attack: 3',
-      'Movement: Any direction, straight line only',
-      'Movement Range: 3 Hexes',
-      'Max Movements per phase: 1',
-      'Maximum Occupancy per Hex: 1',
-      'Can only be recruited in a Castle',
-    ],
-  }],
-}, {
-  title: 'Buildings',
-  bullets: [{
-    title: 'Village',
-    bullets: [
-      <SingleWhiteVillage />,
-      'Cost/Victory points: 1',
-      'Produces: Soldiers',
-    ],
-  }, {
-    title: 'Town',
-    bullets: [
-      <SingleWhiteTown />,
-      'Cost/Victory points: 2',
-      'Produces: Archers or Soldiers',
-    ],
-  }, {
-    title: 'Castle',
-    bullets: [
-      <SingleWhiteCastle />,
-      'Cost/Victory points: 3',
-      'Produces: Knights, Archers or Soldiers',
-    ],
   }],
 }];
 
