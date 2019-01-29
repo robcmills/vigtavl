@@ -20,7 +20,6 @@ export default [{
   bullets: [
     'Kill/capture opponent units',
     'Seize opponent buildings',
-    'Free your imprisoned units',
   ],
 }, {
   title: 'Game Components',
@@ -248,17 +247,13 @@ export default [{
       bullets: [
         'Any hex occupied by more than one player becomes a melee battle.',
         'Each player involved rolls a number of dice equal to the sum of their units "Melee Attack" values that are involved. Involved units are the units located on the battle hex. The single highest die rolled is the only die compared. The highest die wins the battle. Ties are re-rolled.',
-        'If more than 2 players are involved in a battle, and a 2-way tie is rolled between other players, then the other player either wins the battle if his die is higher than the tie, or is defeated if his die is lower, and becomes prisoner of the winner of the tied re-roll.',
-        'Units that lose the battle are captured. Captured units are moved to the closest building that belongs to the winner of the battle, where they become prisoners (denoted by laying the units on their side).',
-        'If multiple buildings are equidistant then the capturer may choose.',
-        'Max Prisoner occupancy for each unit type is the same as their max occupancy per hex. See Units section for values.',
+        'If more than 2 players are involved in a battle, and a 2-way tie is rolled between other players, then the other player either wins the battle if his die is higher than the tie, or is defeated if his die is lower.',
+        'All defeated units on the battle hex are removed from the board.',
       ],
     }, {
       title: 'Seizing',
       bullets: [
         'After all battles have been resolved, if any player occupies a hex with an opponent building that is undefended, that player may seize the building and swap out the piece with the same building type of their own color and receive victory points equal to its value.',
-        'If seizing a building with prisoners, all prisoners belonging to the seizer are freed. Any prisoners belonging to other players become the prisoners of the buildings new owner.',
-        'If prisoners are freed, receive victory points equal to the value of all freed prisoner units.',
       ],
     }],
   }],
