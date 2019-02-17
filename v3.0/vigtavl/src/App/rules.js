@@ -1,7 +1,6 @@
 import React from 'react'
 
 import DefaultBoard from './Board/default'
-import PlacementBoard from './Board/placement'
 import FourPlayerBoard from './Board/four-player'
 import SingleHex from './SingleHex'
 import SingleSoldier from './Soldier/single'
@@ -20,6 +19,7 @@ export default [{
   bullets: [
     'One player captures all opponent units',
     'One player occupies all resource hexes',
+    'One player occupies all opponent hexes',
     'All but one player forfeits',
   ],
 }, {
@@ -35,9 +35,9 @@ export default [{
     '9 wooden soldier pieces of each color',
     '6 wooden archer pieces of each color',
     '3 wooden knight pieces of each color',
-    '12 small 1-gold tokens',
-    '12 medium 2-gold tokens',
-    '12 large 3-gold tokens',
+    '12 small 1-silver tokens',
+    '12 medium 2-silver tokens',
+    '12 large 3-silver tokens',
   ],
 }, {
   title: 'Units',
@@ -104,21 +104,21 @@ export default [{
     bullets: [
       <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
       'Provides access to fishing and trade',
-      'Produces 1 Gold per occupied or built adjacent hex per Income Phase',
+      'Produces 1 silver per resource action',
     ],
   }, {
     title: 'Forrest (resource)',
     bullets: [
       <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
       'Provides access to hunting and lumber',
-      'Produces 2 Gold if occupied per Income Phase',
+      'Produces 2 silver per resource action',
     ],
   }, {
     title: 'Mountain (resource)',
     bullets: [
       <SingleHex hexProps={{ fill: 'Sienna' }} />,
       'Provides access to mining valuable minerals and ore',
-      'Produces 3 Gold if occupied per Income Phase',
+      'Produces 3 silver per resource action',
     ],
   }],
 }, {
@@ -135,12 +135,17 @@ export default [{
     ],
   }, {
     title: 'Step 2: Placement',
-    text: 'In turn order each player chooses an empty land hex and places one building and one unit together per turn in the following order:',
     bullets: [
+      'In turn order each player places one building and one corresponding unit together per turn. Units correspond to buildings of equal value, ' +
+      'e.g. a Soldier & Village are placed together.',
+      'Players must choose hexes that satisfy the following requirements:',
+      '- must not be a resource hex',
+      '- must not be occupied by opponent',
+      '- unit orientation must not threaten or be threatened by any opponent unit',
+      'Players place the following:',
       '3 Villages & 3 Soldiers',
       '2 Towns & 2 Archers',
       '1 Castle & 1 Knight',
-      '(units and buildings are placed together on the same chosen hex)',
       {
         title: 'Example',
         bullets: [
@@ -158,88 +163,59 @@ export default [{
           'Player 2 places Castle & Knight',
         ]
       },
-      <PlacementBoard />,
     ],
   }],
 }, {
-  title: 'Rounds',
-  text: 'The game is played in a series of rounds. The number of rounds played depends on the number of players.',
+  title: 'Gameplay',
+  text: 'Each player performs one action in turn and play continues until an end condition is met.',
+}, {
+  title: 'Actions',
   bullets: [
-    '2 players: 6 rounds',
-    '3 players: 5 rounds',
-    '4 players: 4 rounds',
-    'Each round consists of 4 phases:',
-  {
-    title: 'Income Phase',
-    text: 'All players simultaneously collect gold for occupied resource hexes.',
-    bullets: [
-      'For each building or occupied hex adjacent to 1 or more sea hexes collect 1 gold',
-      'For each occupied forest hex collect 2 gold',
-      'For each occupied mountain hex collect 3 gold',
-    ]
-  }, {
-    title: 'Build Phase',
-    text: 'In turn order, each player may recruit or build or pass one at a time until all players have had 3 opportunities',
-    bullets: [{
-      title: 'Recruit',
-      bullets: [
-        'Add a new combat unit to the board by paying the value in gold and placing according to type:',
-        'Soldiers can only be recruited in Villages (max of 3 per phase)',
-        'Archers can only be recruited in Towns (max of 2 per phase)',
-        'Knights can only be recruited in Castles (max of 1 per phase)',
-      ],
-    }, {
-      title: 'Build',
-      bullets: [
-        'Players may build new structures on any land hex they occupy or empty adjacent hex to their existing buildings',
-        'Existing buildings can be upgraded',
-        'To build or upgrade simply pay value of building in gold',
-        'Villages cost 1 gold (max of 3 per phase)',
-        'Towns cost 2 gold (max of 2 per phase)',
-        'Castles cost 3 gold (max of 1 per phase)',
-      ],
-    }],
-  }, {
-    title: 'Movement Phase',
-    bullets: [
-      'In turn order, each player may move one unit or pass',
-      'Continue until each player has had 3 opportunities',
-      'Soliers may be moved a max of 3 times per phase (can be same unit/battalion)',
-      'Archers may be moved a max of 2 times per phase (can be same archer)',
-      'Knights may be moved a max of 1 time per phase',
-      'Note that multiple soliers on the same hex can be moved together as a battalion',
-    ],
-  }, {
-    title: 'Battle Phase',
-    text: 'The battle phase is conducted in three stages:',
-    bullets: [{
-      title: 'Ranged Attacks',
-      bullets: [
-        'In turn order, each player may conduct one ranged attack',
-        'Continue until each player has had 2 opportunities to attack',
-        'To conduct a ranged attack, choose one of your Archers that has opponent units within range, then choose a target unit to aim at. Roll 1 D6.',
-        'Archers range extends in straight lines outward from the hex up to 3 hexes away. However when targeting hexes farther away, accuracy diminishes, resulting in a smaller chance of hitting the target.',
-        'If target is on an adjacent hex (range of 1) then a roll result of 3, 2, or 1 results in a successful hit and kills the target unit (50% chance)',
-        'If target is on a hex at range of 2 then a roll result of 2 or 1 results in a successful hit and kills the target unit (33% chance)',
-        'If target is on a hex at range of 3 then a roll result of 1 results in a successful hit and kills the target unit (17% chance)',
-        'A successful hit results in 2 hit points of damage to the target unit. This is enough to kill another archer or solier, but not enough to kill a knight with a single hit because knights have 3 health points. In order to kill a knight with ranged attacks, players must successfully score two hits in the same phase on the same target knight. Hits do not carry over to subsequent rounds.',
-        'Killed units are removed from the board and the attacker collects a number of victory points equal to the value of the killed unit',
-        'Archers may not range attack units on the same hex. If opponent units are on the same hex as an archer then that would be a melee battle to be resolved as explained in the next section.',
-      ],
-    }, {
-      title: 'Battles',
-      bullets: [
-        'Any hex occupied by more than one player becomes a melee battle.',
-        'Each player involved rolls a number of dice equal to the sum of their units "Melee Attack" values that are involved. Involved units are the units located on the battle hex. The single highest die rolled is the only die compared. The highest die wins the battle. Ties are re-rolled.',
-        'If more than 2 players are involved in a battle, and a 2-way tie is rolled between other players, then the other player either wins the battle if his die is higher than the tie, or is defeated if his die is lower.',
-        'All defeated units on the battle hex are removed from the board.',
-      ],
-    }, {
-      title: 'Seizing',
-      bullets: [
-        'After all battles have been resolved, if any player occupies a hex with an opponent building that is undefended, that player may seize the building and swap out the piece with the same building type of their own color and receive victory points equal to its value.',
-      ],
-    }],
-  }],
+    'Move',
+    'Attack',
+    'Earn',
+    'Purchase',
+  ],
+}, {
+  title: 'Movement',
+  text: 'Players may move one of their units to a different hex and/or orientation, according to the units individual movement abilities.',
+  bullets: [
+    'Units may not move through opponent occupied hexes',
+    'Units may move through self occupied hexes',
+    'Units may occupy an opponent building if unoccupied'
+  ],
+}, {
+  title: 'Attack',
+  text: 'Players may attack an opponent unit with one of their own units.',
+  bullets: [
+    'Units inflict an amount of damage equal to their value. e.g. the soldier inflicts 1 point of damage and the knight inflicts 3',
+    'Units have a number of health points equal to their value',
+    'If a units health points are depleted to zero then that unit falls in battle and is removed from the board',
+    'Until a units health points are depleted to zero it may still move and attack normally',
+    'If a unit takes damage but is not at zero health points, mark the amount of health it has by placing a silver token next to it matching its current health value',
+    {
+      title: 'Shields',
+      text: 'Soldiers and knights are equipped with shields that can block attacks from certain directions. Players may not attack opponent units equipped with shields from these directions. They must maneuver to attack from the side or behind.',
+    }
+  ],
+}, {
+  title: 'Earn',
+  text: 'As an action, players may collect silver for all resource hexes they currently occupy. The amount of silver produced per hex is determined by the type:',
+  bullets: [
+    'Sea hexes produce 1 silver',
+    'Forrest hexes produce 2 silver',
+    'Mountain hexes produce 3 silver',
+  ],
+}, {
+  title: 'Purchase',
+  text: 'As an action, players may spend silver to purchase new units and immediately place them according to the following:',
+  bullets: [
+    'New units can only be placed in buildings of your own color',
+    'New units can only be placed in unoccupied buildings',
+    'Knights can only be placed in castles',
+    'Archers can be placed in castles or towns',
+    'Soldiers can be placed in any building type',
+    'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings',
+  ],
 }];
 
