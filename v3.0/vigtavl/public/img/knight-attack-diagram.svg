@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1028px" height="991px" viewBox="0 0 1028 991" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(4.000000, 5.000000)" stroke="#000000" stroke-width="8">
+            <g id="hexes">
+                <polygon id="Polygon" fill="#F5DEB3" points="509.832926 295 679.665852 393 679.665852 589 509.832926 687 340 589 340 393"></polygon>
+                <polygon id="Polygon" fill="#F5DEB3" points="170.334148 294.5 340.167074 392.5 340.167074 588.5 170.334148 686.5 0.501221299 588.5 0.501221299 392.5"></polygon>
+                <polygon id="Polygon" fill="#F5DEB3" points="339.916952 0.5 509.749878 98.5 509.749878 294.5 339.916952 392.5 170.084025 294.5 170.084025 98.5"></polygon>
+                <polygon id="Polygon" fill="#FFFFFF" points="679.582804 0.5 849.41573 98.5 849.41573 294.5 679.582804 392.5 509.749878 294.5 509.749878 98.5"></polygon>
+                <polygon id="Polygon" fill="#F5DEB3" points="340.417196 588.5 510.250122 686.5 510.250122 882.5 340.417196 980.5 170.58427 882.5 170.58427 686.5"></polygon>
+                <polygon id="Polygon" fill="#FFFFFF" points="680.083048 588.5 849.915975 686.5 849.915975 882.5 680.083048 980.5 510.250122 882.5 510.250122 686.5"></polygon>
+                <polygon id="Polygon" fill="#FFFFFF" points="849.832926 295 1019.66585 393 1019.66585 589 849.832926 687 680 589 680 393"></polygon>
+            </g>
+            <polygon id="check" fill="#00C513" transform="translate(849.767953, 476.500000) rotate(45.000000) translate(-849.767953, -476.500000) " points="813 523.012077 858.562102 523.012077 858.562102 402 886.535906 402 886.535906 551 813 551"></polygon>
+            <polygon id="check" fill="#00C513" transform="translate(688.767953, 180.500000) rotate(45.000000) translate(-688.767953, -180.500000) " points="652 227.012077 697.562102 227.012077 697.562102 106 725.535906 106 725.535906 255 652 255"></polygon>
+            <polygon id="check" fill="#00C513" transform="translate(688.767953, 767.500000) rotate(45.000000) translate(-688.767953, -767.500000) " points="652 814.012077 697.562102 814.012077 697.562102 693 725.535906 693 725.535906 842 652 842"></polygon>
+            <polygon id="orientation" fill="#FFFFFF" transform="translate(619.500000, 490.500000) rotate(-30.000000) translate(-619.500000, -490.500000) " points="619.5 458 647.645826 506.75 591.354174 506.75"></polygon>
+            <rect id="knight" fill="#FFFFFF" x="437" y="418" width="146" height="146"></rect>
+        </g>
+    </g>
+</svg>

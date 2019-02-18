@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1122px" height="1067px" viewBox="0 0 1122 1067" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-3.000000, 5.000000)">
+            <g id="hexes" transform="translate(101.000000, 0.000000)" fill="#F5DEB3" stroke="#000000" stroke-width="8">
+                <polygon id="Polygon" points="509.832926 295 679.665852 393 679.665852 589 509.832926 687 340 589 340 393"></polygon>
+                <polygon id="Polygon" points="170.334148 294.5 340.167074 392.5 340.167074 588.5 170.334148 686.5 0.501221299 588.5 0.501221299 392.5"></polygon>
+                <polygon id="Polygon" points="339.916952 0.5 509.749878 98.5 509.749878 294.5 339.916952 392.5 170.084025 294.5 170.084025 98.5"></polygon>
+                <polygon id="Polygon" points="679.582804 0.5 849.41573 98.5 849.41573 294.5 679.582804 392.5 509.749878 294.5 509.749878 98.5"></polygon>
+                <polygon id="Polygon" points="340.417196 588.5 510.250122 686.5 510.250122 882.5 340.417196 980.5 170.58427 882.5 170.58427 686.5"></polygon>
+                <polygon id="Polygon" points="680.083048 588.5 849.915975 686.5 849.915975 882.5 680.083048 980.5 510.250122 882.5 510.250122 686.5"></polygon>
+                <polygon id="Polygon" points="849.832926 295 1019.66585 393 1019.66585 589 849.832926 687 680 589 680 393"></polygon>
+            </g>
+            <circle id="soldier" stroke="#000000" stroke-width="8" fill="#FFFFFF" cx="611" cy="491" r="77"></circle>
+            <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(720.500000, 490.500000) rotate(-30.000000) translate(-720.500000, -490.500000) " points="720.5 458 748.645826 506.75 692.354174 506.75"></polygon>
+            <g id="files" transform="translate(0.000000, 120.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="125" font-weight="normal">
+                <text id="a">
+                    <tspan x="528" y="940">a</tspan>
+                </text>
+                <text id="b">
+                    <tspan x="891.5" y="940">b</tspan>
+                </text>
+                <text id="c">
+                    <tspan x="1055" y="620">c</tspan>
+                </text>
+                <text id="1">
+                    <tspan x="136" y="707">1</tspan>
+                </text>
+                <text id="2">
+                    <tspan x="0" y="424">2</tspan>
+                </text>
+                <text id="3">
+                    <tspan x="136" y="119">3</tspan>
+                </text>
+            </g>
+            <g id="labels" transform="translate(644.000000, 119.000000)" fill="#000000" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="68" font-weight="bold">
+                <text id="Forward">
+                    <tspan x="173" y="390">Forward</tspan>
+                </text>
+                <text id="Forward-Left">
+                    <tspan x="0" y="66">Forward</tspan>
+                    <tspan x="87.532" y="147">Left</tspan>
+                </text>
+                <text id="Forward-Right">
+                    <tspan x="0" y="647">Forward</tspan>
+                    <tspan x="67.276" y="728">Right</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

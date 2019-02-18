@@ -6,12 +6,12 @@ import SingleHex from './SingleHex'
 import SingleSoldier from './Soldier/single'
 import SingleArcher from './Archer/single'
 import SingleKnight from './Knight/single'
-import SingleWhiteVillage from './Village/single'
-import SingleWhiteTown from './Town/single'
-import SingleWhiteCastle from './Castle/single'
+import ArcherArtilleryDiagram from './Archer/artillery-diagram'
 import ArcherAttackDiagram from './Archer/attack-diagram'
 import ArcherMovementDiagram from './Archer/movement-diagram'
+import KnightAttackDiagram from './Knight/attack-diagram'
 import SoldierAttackDiagram from './Soldier/attack-diagram'
+import OrientationDiagram from './Orientation/diagram'
 
 export default [{
   title: 'Introduction',
@@ -22,7 +22,7 @@ export default [{
   bullets: [
     'One player captures all opponent units',
     'One player occupies all resource hexes',
-    'One player occupies all opponent hexes',
+    'One player occupies all opponent buildings',
     'All but one player forfeits',
   ],
 }, {
@@ -45,6 +45,15 @@ export default [{
 }, {
   title: 'Units',
   bullets: [{
+    title: 'Orientation',
+    text: 'Each unit on the battleboard at all times has an orientation. This is the direction that unit is facing.',
+    bullets: [
+      'Visually, orientation is denoted by a small orientation triangle next to the unit symbol:',
+      <OrientationDiagram />,
+      'Textually, orientation is denoted by the ">" character followed by the coordinates of the adjacent hex that unit is facing towards',
+      'For example, in the diagram above: Sb2>c2 (soldier at b2 facing c2)',
+    ],
+  }, {
     title: 'Soldier',
     bullets: [
       <SingleSoldier />,
@@ -61,7 +70,9 @@ export default [{
       'Value: 2',
       'Attack: Forward up to 2 hex range (adjacent hex is range zero)',
       <ArcherAttackDiagram />,
-      'Defend: None',
+      'Archers can attack opponent units behind other opponent units (if that is not oriented to protect itself with its shield)',
+      <ArcherArtilleryDiagram />,
+      'Defend: None. Archers do not carry a shield and are thus vulnerable to attack from any direction',
       'Movement: Diagonally up to 2 hexes',
       <ArcherMovementDiagram />,
       'For example, an archer located at c3 has valid moves: a2, b1, b4, d2, d5, e4, e7, g5',
@@ -72,7 +83,8 @@ export default [{
     bullets: [
       <SingleKnight />,
       'Value: 3',
-      'Attack: Forward-left, forward, forward-right',
+      'Attack: Adjacent forward-left, forward, forward-right',
+      <KnightAttackDiagram />,
       'Defend: Forward-left, forward, forward-right',
       'Movement: Forward up to 3 hexes',
     ],
@@ -82,20 +94,20 @@ export default [{
   bullets: [{
     title: 'Village',
     bullets: [
-      <SingleWhiteVillage />,
       'Value: 1',
+      'Produces soldiers'
     ],
   }, {
     title: 'Town',
     bullets: [
-      <SingleWhiteTown />,
       'Value: 2',
+      'Produces archers or soldiers',
     ],
   }, {
     title: 'Castle',
     bullets: [
-      <SingleWhiteCastle />,
       'Value: 3',
+      'Produces knights, archers or soldiers',
     ],
   }],
 }, {
@@ -186,11 +198,12 @@ export default [{
   ],
 }, {
   title: 'Movement',
-  text: 'Players may move one of their units to a different hex and/or orientation, according to the units individual movement abilities.',
   bullets: [
+    'Players may move one of their units to a different hex and/or orientation, according to the units individual movement abilities',
+    'Units may not move to an occupied hex',
     'Units may not move through opponent occupied hexes',
     'Units may move through self occupied hexes',
-    'Units may occupy an opponent building if unoccupied'
+    'Units may occupy an opponent building if unoccupied (this also blocks opponent production at that building)',
   ],
 }, {
   title: 'Attack',

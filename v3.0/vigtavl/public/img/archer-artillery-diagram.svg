@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1208px" height="1100px" viewBox="0 0 1208 1100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>attack-diagrams</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hexes" transform="translate(-240.000000, 24.000000)" stroke="#000000" stroke-width="8">
+            <g id="archer-attack" transform="translate(0.000000, 1.000000)">
+                <polygon id="Polygon" fill="#F5DEB3" points="1227.83293 294 1397.66585 392 1397.66585 588 1227.83293 686 1058 588 1058 392"></polygon>
+                <polygon id="Polygon" fill="#F5DEB3" points="1058.83293 588 1228.66585 686 1228.66585 882 1058.83293 980 889 882 889 686"></polygon>
+                <polygon id="Polygon" fill="#F5DEB3" points="1057.83293 0 1227.66585 98 1227.66585 294 1057.83293 392 888 294 888 98"></polygon>
+                <polygon id="check" fill="#00C513" transform="translate(1170.047526, 383.129667) rotate(45.000000) translate(-1170.047526, -383.129667) " points="1145.17349 414.595735 1175.99689 414.595735 1175.99689 332.729381 1194.92156 332.729381 1194.92156 433.529954 1145.17349 433.529954"></polygon>
+            </g>
+            <polygon id="Polygon" fill="#F5DEB3" points="548.832926 295 718.665852 393 718.665852 589 548.832926 687 379 589 379 393"></polygon>
+            <polygon id="Polygon" fill="#F5DEB3" points="718.582804 0.5 888.41573 98.5 888.41573 294.5 718.582804 392.5 548.749878 294.5 548.749878 98.5"></polygon>
+            <polygon id="Polygon" fill="#F5DEB3" points="719.083048 588.5 888.915975 686.5 888.915975 882.5 719.083048 980.5 549.250122 882.5 549.250122 686.5"></polygon>
+            <polygon id="Polygon" fill="#F5DEB3" points="888.832926 295 1058.66585 393 1058.66585 589 888.832926 687 719 589 719 393"></polygon>
+        </g>
+        <polygon id="archer" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(309.000000, 515.000000) rotate(-30.000000) translate(-309.000000, -515.000000) " points="309 438 375.683956 553.5 242.316044 553.5"></polygon>
+        <rect id="knight" stroke="#FFFFFF" stroke-width="8" fill="#000000" transform="translate(988.000000, 515.000000) rotate(60.000000) translate(-988.000000, -515.000000) " x="927" y="454" width="122" height="122"></rect>
+        <circle id="soldier" stroke="#FFFFFF" stroke-width="8" fill="#000000" cx="649" cy="515" r="65"></circle>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(418.500000, 514.500000) rotate(-30.000000) translate(-418.500000, -514.500000) " points="418.5 482 446.645826 530.75 390.354174 530.75"></polygon>
+        <polygon id="orientation" stroke="#FFFFFF" stroke-width="8" fill="#000000" transform="translate(1040.395826, 603.395826) rotate(30.000000) translate(-1040.395826, -603.395826) " points="1040.39583 570.895826 1068.54165 619.645826 1012.25 619.645826"></polygon>
+        <polygon id="orientation" stroke="#FFFFFF" stroke-width="8" fill="#000000" transform="translate(539.395826, 514.395826) rotate(30.000000) translate(-539.395826, -514.395826) " points="539.395826 481.895826 567.541651 530.645826 511.25 530.645826"></polygon>
+        <g id="files" transform="translate(38.000000, 144.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="125" font-weight="normal">
+            <text id="a">
+                <tspan x="523" y="915">a</tspan>
+            </text>
+            <text id="b">
+                <tspan x="887" y="915">b</tspan>
+            </text>
+            <text id="c">
+                <tspan x="1031" y="607">c</tspan>
+            </text>
+            <text id="1">
+                <tspan x="160" y="707">1</tspan>
+            </text>
+            <text id="2">
+                <tspan x="0" y="424">2</tspan>
+            </text>
+            <text id="3">
+                <tspan x="164" y="119">3</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
