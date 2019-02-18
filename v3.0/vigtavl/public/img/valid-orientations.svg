@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="348px" height="400px" viewBox="0 0 348 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Polygon" stroke="#000000" stroke-width="8" fill="#F5DEB3" points="173.832926 4 343.665852 102 343.665852 298 173.832926 396 4 298 4 102"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(115.395826, 100.395826) rotate(-30.000000) translate(-115.395826, -100.395826) " points="115.395826 67.8958256 143.541651 116.645826 87.25 116.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(116.395826, 300.395826) rotate(-30.000000) translate(-116.395826, -300.395826) " points="116.395826 267.895826 144.541651 316.645826 88.25 316.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(289.395826, 200.395826) rotate(-30.000000) translate(-289.395826, -200.395826) " points="289.395826 167.895826 317.541651 216.645826 261.25 216.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(233.395826, 101.395826) rotate(30.000000) translate(-233.395826, -101.395826) " points="233.395826 68.8958256 261.541651 117.645826 205.25 117.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(231.395826, 299.395826) rotate(30.000000) translate(-231.395826, -299.395826) " points="231.395826 266.895826 259.541651 315.645826 203.25 315.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#00C513" transform="translate(57.395826, 200.395826) rotate(30.000000) translate(-57.395826, -200.395826) " points="57.3958256 167.895826 85.5416512 216.645826 29.25 216.645826"></polygon>
+    </g>
+</svg>

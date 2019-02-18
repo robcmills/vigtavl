@@ -8,6 +8,7 @@ import DefaultBoard from './Board/default'
 import FourPlayerBoard from './Board/four-player'
 import KnightAttackDiagram from './Knight/attack-diagram'
 import OrientationDiagram from './Orientation/diagram'
+import ValidOrientations from './Orientation/valid'
 import SingleArcher from './Archer/single'
 import SingleHex from './SingleHex'
 import SingleKnight from './Knight/single'
@@ -30,12 +31,12 @@ export default [{
   title: 'Game Components',
   bullets: [
     '48 wooden land hexes',
-    '6 wooden sea hexes',
-    '5 wooden forest hexes',
-    '4 wooden mountain hexes',
+    '5 wooden sea hexes',
+    '4 wooden forest hexes',
+    '3 wooden mountain hexes',
     '3 wooden village pieces of each color',
     '2 wooden town pieces of each color',
-    '1 wooden castle pieces of each color',
+    '1 wooden castle piece of each color',
     '9 wooden soldier pieces of each color',
     '6 wooden archer pieces of each color',
     '3 wooden knight pieces of each color',
@@ -53,6 +54,8 @@ export default [{
       <OrientationDiagram />,
       'Textually, orientation is denoted by the ">" character followed by the coordinates of the adjacent hex that unit is facing towards',
       'For example, in the diagram above: Sb2>c2 (soldier at b2 facing c2)',
+      'Orientations always face towards the center of adjacent hexes',
+      <ValidOrientations />,
     ],
   }, {
     title: 'Soldier',
@@ -71,7 +74,8 @@ export default [{
       'Value: 2',
       'Attack: Forward up to 2 hex range (adjacent hex is range zero)',
       <ArcherAttackDiagram />,
-      'Archers can attack opponent units behind other opponent units (if that is not oriented to protect itself with its shield)',
+      'Archers can attack opponent units behind other opponent units (if that unit is not oriented to protect itself with its shield)',
+      'For example, in the following diagram the white a2 archer can attack the black c2 knight but it can not attack the black b2 soldier because it is facing its shield toward the archer',
       <ArcherArtilleryDiagram />,
       'Defend: None. Archers do not carry a shield and are thus vulnerable to attack from any direction',
       'Movement: Diagonally up to 2 hexes',
