@@ -6,7 +6,7 @@ import DefaultSvg from '../Svg/default';
 
 const SingleVillage = ({ hexProps }) => (
 	<DefaultSvg>
-	  <DefaultHex fill="white" />
+	  <DefaultHex />
 	  <WhiteVillage {...hexProps} />
 	 </DefaultSvg>
 );

@@ -1,17 +1,18 @@
 import React from 'react'
 
-import DefaultBoard from './Board/default'
-import FourPlayerBoard from './Board/four-player'
-import SingleHex from './SingleHex'
-import SingleSoldier from './Soldier/single'
-import SingleArcher from './Archer/single'
-import SingleKnight from './Knight/single'
 import ArcherArtilleryDiagram from './Archer/artillery-diagram'
 import ArcherAttackDiagram from './Archer/attack-diagram'
 import ArcherMovementDiagram from './Archer/movement-diagram'
+import CastleExample from './Castle/example'
+import DefaultBoard from './Board/default'
+import FourPlayerBoard from './Board/four-player'
 import KnightAttackDiagram from './Knight/attack-diagram'
-import SoldierAttackDiagram from './Soldier/attack-diagram'
 import OrientationDiagram from './Orientation/diagram'
+import SingleArcher from './Archer/single'
+import SingleHex from './SingleHex'
+import SingleKnight from './Knight/single'
+import SingleSoldier from './Soldier/single'
+import SoldierAttackDiagram from './Soldier/attack-diagram'
 
 export default [{
   title: 'Introduction',
@@ -91,25 +92,30 @@ export default [{
   }],
 }, {
   title: 'Buildings',
-  bullets: [{
-    title: 'Village',
-    bullets: [
-      'Value: 1',
-      'Produces soldiers'
-    ],
-  }, {
-    title: 'Town',
-    bullets: [
-      'Value: 2',
-      'Produces archers or soldiers',
-    ],
-  }, {
-    title: 'Castle',
-    bullets: [
-      'Value: 3',
-      'Produces knights, archers or soldiers',
-    ],
-  }],
+  text: 'Buildings are visually represented in diagrams by a small symbol of the strongest unit that they produce, without an orientation.',
+  bullets: [
+    'For example in the following diagram is an archer unit and a castle:',
+    <CastleExample />,
+    {
+      title: 'Village',
+      bullets: [
+        'Value: 1',
+        'Produces soldiers'
+      ],
+    }, {
+      title: 'Town',
+      bullets: [
+        'Value: 2',
+        'Produces archers or soldiers',
+      ],
+    }, {
+      title: 'Castle',
+      bullets: [
+        'Value: 3',
+        'Produces knights, archers or soldiers',
+      ],
+    }
+  ],
 }, {
   title: 'Hex Types',
   bullets: [{

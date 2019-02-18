@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="348px" height="400px" viewBox="0 0 348 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Polygon" stroke="#000000" stroke-width="8" fill="#F5DEB3" points="173.832926 4 343.665852 102 343.665852 298 173.832926 396 4 298 4 102"></polygon>
+        <polygon id="archer" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(174.000000, 200.000000) rotate(-30.000000) translate(-174.000000, -200.000000) " points="174 123 240.683956 238.5 107.316044 238.5"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(117.395826, 102.395826) rotate(-30.000000) translate(-117.395826, -102.395826) " points="117.395826 69.8958256 145.541651 118.645826 89.25 118.645826"></polygon>
+        <rect id="castle" stroke="#000000" stroke-width="8" fill="#FFFFFF" x="151" y="309" width="46" height="46"></rect>
+    </g>
+</svg>

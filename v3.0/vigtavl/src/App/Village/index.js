@@ -5,7 +5,7 @@ import DefaultCircle from '../Circle/default'
 const Village = ({ fill, onClick, stroke, strokeWidth, style, x, y }) => {
   return (
     <DefaultCircle
-      fill="wheat"
+      fill={fill}
       onClick={onClick}
       radius={0.5}
       stroke={stroke}
