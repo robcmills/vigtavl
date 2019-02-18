@@ -37,7 +37,7 @@ class Rule extends Component {
   	const { text } = this.props;
   	return text
   		.split('\n')
-  		.map((line, index) => <div key={index}>{line}</div>);
+  		.map((line, index) => <p key={index}>{line}</p>);
   }
 
   renderBullets = () => {
