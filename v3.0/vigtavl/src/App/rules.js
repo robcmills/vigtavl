@@ -9,6 +9,9 @@ import SingleKnight from './Knight/single'
 import SingleWhiteVillage from './Village/single'
 import SingleWhiteTown from './Town/single'
 import SingleWhiteCastle from './Castle/single'
+import ArcherAttackDiagram from './Archer/attack-diagram'
+import ArcherMovementDiagram from './Archer/movement-diagram'
+import SoldierAttackDiagram from './Soldier/attack-diagram'
 
 export default [{
   title: 'Introduction',
@@ -47,6 +50,7 @@ export default [{
       <SingleSoldier />,
       'Value: 1',
       'Attack: Forward adjacent hex',
+      <SoldierAttackDiagram />,
       'Defend: Forward (adjacent melee and ranged arrows)',
       'Movement: Any direction up to 3 hexes',
     ],
@@ -55,9 +59,13 @@ export default [{
     bullets: [
       <SingleArcher />,
       'Value: 2',
-      'Attack: Forward up to 2 hex range',
+      'Attack: Forward up to 2 hex range (adjacent hex is range zero)',
+      <ArcherAttackDiagram />,
       'Defend: None',
       'Movement: Diagonally up to 2 hexes',
+      <ArcherMovementDiagram />,
+      'For example, an archer located at c3 has valid moves: a2, b1, b4, d2, d5, e4, e7, g5',
+      'Note that orientation does not affect valid moves',
     ],
   }, {
     title: 'Knight',

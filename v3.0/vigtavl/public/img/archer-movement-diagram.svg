@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4990px" height="4425px" viewBox="0 0 4990 4425" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-7.000000, 11.000000)">
+            <g id="hexes" transform="translate(230.000000, 0.000000)" stroke="#000000" stroke-width="18">
+                <polygon id="g7" fill="#F5DEB3" points="3398.5 0 3738 196 3738 588 3398.5 784 3059 588 3059 196"></polygon>
+                <polygon id="g6" fill="#F5DEB3" points="3739.5 587 4079 783 4079 1175 3739.5 1371 3400 1175 3400 783"></polygon>
+                <polygon id="g5" fill="#FFFFFF" points="4079.5 1175 4419 1371 4419 1763 4079.5 1959 3740 1763 3740 1371"></polygon>
+                <polygon id="g4" fill="#F5DEB3" points="4418.5 1763 4758 1959 4758 2351 4418.5 2547 4079 2351 4079 1959"></polygon>
+                <polygon id="f7" fill="#F5DEB3" points="2717.5 0 3057 196 3057 588 2717.5 784 2378 588 2378 196"></polygon>
+                <polygon id="f6" fill="#F5DEB3" points="3059.5 588 3399 784 3399 1176 3059.5 1372 2720 1176 2720 784"></polygon>
+                <polygon id="f5" fill="#F5DEB3" points="3398.5 1175 3738 1371 3738 1763 3398.5 1959 3059 1763 3059 1371"></polygon>
+                <polygon id="f4" fill="#F5DEB3" points="3737.5 1763 4077 1959 4077 2351 3737.5 2547 3398 2351 3398 1959"></polygon>
+                <polygon id="f3" fill="#F5DEB3" points="4074.5 2351 4414 2547 4414 2939 4074.5 3135 3735 2939 3735 2547"></polygon>
+                <polygon id="e7" fill="#FFFFFF" points="2036.5 0 2376 196 2376 588 2036.5 784 1697 588 1697 196"></polygon>
+                <polygon id="e6" fill="#F5DEB3" points="2377.5 587 2717 783 2717 1175 2377.5 1371 2038 1175 2038 783"></polygon>
+                <polygon id="e5" fill="#F5DEB3" points="2717.5 1175 3057 1371 3057 1763 2717.5 1959 2378 1763 2378 1371"></polygon>
+                <polygon id="e4" fill="#FFFFFF" points="3056.5 1763 3396 1959 3396 2351 3056.5 2547 2717 2351 2717 1959"></polygon>
+                <polygon id="e3" fill="#F5DEB3" points="3395.5 2351 3735 2547 3735 2939 3395.5 3135 3056 2939 3056 2547"></polygon>
+                <polygon id="e2" fill="#F5DEB3" points="3733.5 2939 4073 3135 4073 3527 3733.5 3723 3394 3527 3394 3135"></polygon>
+                <polygon id="d7" fill="#F5DEB3" points="1355.5 0 1695 196 1695 588 1355.5 784 1016 588 1016 196"></polygon>
+                <polygon id="d6" fill="#F5DEB3" points="1697.5 588 2037 784 2037 1176 1697.5 1372 1358 1176 1358 784"></polygon>
+                <polygon id="d5" fill="#FFFFFF" points="2036.5 1175 2376 1371 2376 1763 2036.5 1959 1697 1763 1697 1371"></polygon>
+                <polygon id="d4" fill="#F5DEB3" points="2375.5 1763 2715 1959 2715 2351 2375.5 2547 2036 2351 2036 1959"></polygon>
+                <polygon id="d3" fill="#F5DEB3" points="2716.5 2350 3056 2546 3056 2938 2716.5 3134 2377 2938 2377 2546"></polygon>
+                <polygon id="d2" fill="#FFFFFF" points="3054.5 2939 3394 3135 3394 3527 3054.5 3723 2715 3527 2715 3135"></polygon>
+                <polygon id="d1" fill="#F5DEB3" points="3392.5 3527 3732 3723 3732 4115 3392.5 4311 3053 4115 3053 3723"></polygon>
+                <polygon id="c6" fill="#F5DEB3" points="1016.5 587 1356 783 1356 1175 1016.5 1371 677 1175 677 783"></polygon>
+                <polygon id="c5" fill="#F5DEB3" points="1355.5 1175 1695 1371 1695 1763 1355.5 1959 1016 1763 1016 1371"></polygon>
+                <polygon id="c4" fill="#F5DEB3" points="1694.5 1763 2034 1959 2034 2351 1694.5 2547 1355 2351 1355 1959"></polygon>
+                <polygon id="c3" fill="#F5DEB3" points="2036.5 2351 2376 2547 2376 2939 2036.5 3135 1697 2939 1697 2547"></polygon>
+                <polygon id="c2" fill="#F5DEB3" points="2375.5 2938 2715 3134 2715 3526 2375.5 3722 2036 3526 2036 3134"></polygon>
+                <polygon id="c1" fill="#F5DEB3" points="2713.5 3527 3053 3723 3053 4115 2713.5 4311 2374 4115 2374 3723"></polygon>
+                <polygon id="b5" fill="#F5DEB3" points="676.5 1175 1016 1371 1016 1763 676.5 1959 337 1763 337 1371"></polygon>
+                <polygon id="b4" fill="#FFFFFF" points="1015.5 1763 1355 1959 1355 2351 1015.5 2547 676 2351 676 1959"></polygon>
+                <polygon id="b3" fill="#F5DEB3" points="1355.5 2350 1695 2546 1695 2938 1355.5 3134 1016 2938 1016 2546"></polygon>
+                <polygon id="b2" fill="#F5DEB3" points="1694.5 2938 2034 3134 2034 3526 1694.5 3722 1355 3526 1355 3134"></polygon>
+                <polygon id="b1" fill="#FFFFFF" points="2034.5 3526 2374 3722 2374 4114 2034.5 4310 1695 4114 1695 3722"></polygon>
+                <polygon id="a4" fill="#F5DEB3" points="339.5 1763 679 1959 679 2351 339.5 2547 2.78547555e-13 2351 0 1959"></polygon>
+                <polygon id="a3" fill="#F5DEB3" points="678.5 2351 1018 2547 1018 2939 678.5 3135 339 2939 339 2547"></polygon>
+                <polygon id="a2" fill="#FFFFFF" points="1018.5 2938 1358 3134 1358 3526 1018.5 3722 679 3526 679 3134"></polygon>
+                <polygon id="a1" fill="#F5DEB3" points="1357.5 3526 1697 3722 1697 4114 1357.5 4310 1018 4114 1018 3722"></polygon>
+            </g>
+            <g id="ranks" transform="translate(0.000000, 233.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="250" font-weight="normal">
+                <text id="1">
+                    <tspan x="1019" y="3762">1</tspan>
+                </text>
+                <text id="2">
+                    <tspan x="680" y="3196">2</tspan>
+                </text>
+                <text id="3">
+                    <tspan x="340" y="2588">3</tspan>
+                </text>
+                <text id="4">
+                    <tspan x="0" y="2011">4</tspan>
+                </text>
+                <text id="5">
+                    <tspan x="340" y="1432">5</tspan>
+                </text>
+                <text id="6">
+                    <tspan x="679" y="835">6</tspan>
+                </text>
+                <text id="7">
+                    <tspan x="1019" y="238">7</tspan>
+                </text>
+            </g>
+            <g id="files" transform="translate(1757.000000, 2463.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="250" font-weight="normal">
+                <text id="a">
+                    <tspan x="0" y="1948">a</tspan>
+                </text>
+                <text id="b">
+                    <tspan x="727" y="1948">b</tspan>
+                </text>
+                <text id="c">
+                    <tspan x="1454" y="1948">c</tspan>
+                </text>
+                <text id="d">
+                    <tspan x="2106" y="1948">d</tspan>
+                </text>
+                <text id="e">
+                    <tspan x="2422" y="1378">e</tspan>
+                </text>
+                <text id="f">
+                    <tspan x="2762" y="797">f</tspan>
+                </text>
+                <text id="g">
+                    <tspan x="3101" y="238">g</tspan>
+                </text>
+            </g>
+            <polygon id="orientation" stroke="#000000" stroke-width="18" fill="#FFFFFF" points="2425 2673 2545.48163 2742.11552 2425 2811.23103"></polygon>
+            <polygon id="archer" stroke="#000000" stroke-width="18" fill="#FFFFFF" points="2098 2578 2383.44879 2741.75061 2098 2905.50122"></polygon>
+            <g id="checks" transform="translate(1096.000000, 195.000000)" fill="#00C513" stroke="#000000" stroke-width="18">
+                <polygon id="check" transform="translate(1186.500000, 1340.000000) rotate(45.000000) translate(-1186.500000, -1340.000000) " points="1113 1433.02415 1204.07971 1433.02415 1204.07971 1191 1260 1191 1260 1489 1113 1489"></polygon>
+                <polygon id="check" transform="translate(1159.331259, 157.331259) rotate(45.000000) translate(-1159.331259, -157.331259) " points="1085.83126 250.355413 1176.91097 250.355413 1176.91097 8.33125881 1232.83126 8.33125881 1232.83126 306.331259 1085.83126 306.331259"></polygon>
+                <polygon id="check" transform="translate(157.331259, 3127.331259) rotate(45.000000) translate(-157.331259, -3127.331259) " points="83.8312588 3220.35541 174.910969 3220.35541 174.910969 2978.33126 230.831259 2978.33126 230.831259 3276.33126 83.8312588 3276.33126"></polygon>
+                <polygon id="check" transform="translate(1186.331259, 3735.838702) rotate(45.000000) translate(-1186.331259, -3735.838702) " points="1112.83126 3828.86286 1203.91097 3828.86286 1203.91097 3586.8387 1259.83126 3586.8387 1259.83126 3884.8387 1112.83126 3884.8387"></polygon>
+                <polygon id="check" transform="translate(2199.331259, 3127.331259) rotate(45.000000) translate(-2199.331259, -3127.331259) " points="2125.83126 3220.35541 2216.91097 3220.35541 2216.91097 2978.33126 2272.83126 2978.33126 2272.83126 3276.33126 2125.83126 3276.33126"></polygon>
+                <polygon id="check" transform="translate(2199.331259, 1926.331259) rotate(45.000000) translate(-2199.331259, -1926.331259) " points="2125.83126 2019.35541 2216.91097 2019.35541 2216.91097 1777.33126 2272.83126 1777.33126 2272.83126 2075.33126 2125.83126 2075.33126"></polygon>
+                <polygon id="check" transform="translate(157.331259, 1924.331259) rotate(45.000000) translate(-157.331259, -1924.331259) " points="83.8312588 2017.35541 174.910969 2017.35541 174.910969 1775.33126 230.831259 1775.33126 230.831259 2073.33126 83.8312588 2073.33126"></polygon>
+                <polygon id="check" transform="translate(3221.331259, 1340.331259) rotate(45.000000) translate(-3221.331259, -1340.331259) " points="3147.83126 1433.35541 3238.91097 1433.35541 3238.91097 1191.33126 3294.83126 1191.33126 3294.83126 1489.33126 3147.83126 1489.33126"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
