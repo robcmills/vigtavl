@@ -47,7 +47,7 @@ export default [{
       <SingleSoldier />,
       'Value: 1',
       'Attack: Forward adjacent hex',
-      'Defend: Forward',
+      'Defend: Forward (adjacent melee and ranged arrows)',
       'Movement: Any direction up to 3 hexes',
     ],
   }, {
@@ -64,8 +64,8 @@ export default [{
     bullets: [
       <SingleKnight />,
       'Value: 3',
-      'Attack: Left/right forward/backward',
-      'Defend: Left/right forward/backward',
+      'Attack: Forward-left, forward, forward-right',
+      'Defend: Forward-left, forward, forward-right',
       'Movement: Forward up to 3 hexes',
     ],
   }],
