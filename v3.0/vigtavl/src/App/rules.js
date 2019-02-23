@@ -176,23 +176,6 @@ export default [{
       '3 Villages & 3 Soldiers',
       '2 Towns & 2 Archers',
       '1 Castle & 1 Knight',
-      {
-        title: 'Example',
-        bullets: [
-          'Player 1 places first Village & Soldier',
-          'Player 2 places first Village & Soldier',
-          'Player 1 places second Village & Soldier',
-          'Player 2 places second Village & Soldier',
-          'Player 1 places third Village & Soldier',
-          'Player 2 places third Village & Soldier',
-          'Player 1 places first Town & Archer',
-          'Player 2 places first Town & Archer',
-          'Player 1 places second Town & Archer',
-          'Player 2 places second Town & Archer',
-          'Player 1 places Castle & Knight',
-          'Player 2 places Castle & Knight',
-        ]
-      },
     ],
   }],
 }, {
