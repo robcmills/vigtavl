@@ -1,19 +1,19 @@
 import React from 'react'
 
-import ArcherArtilleryDiagram from './Archer/artillery-diagram'
-import ArcherAttackDiagram from './Archer/attack-diagram'
-import ArcherMovementDiagram from './Archer/movement-diagram'
-import CastleExample from './Castle/example'
-import DefaultBoard from './Board/default'
-import FourPlayerBoard from './Board/four-player'
-import KnightAttackDiagram from './Knight/attack-diagram'
-import OrientationDiagram from './Orientation/diagram'
-import ValidOrientations from './Orientation/valid'
-import SingleArcher from './Archer/single'
-import SingleHex from './SingleHex'
-import SingleKnight from './Knight/single'
-import SingleSoldier from './Soldier/single'
-import SoldierAttackDiagram from './Soldier/attack-diagram'
+import ArcherArtilleryDiagram from '../Archer/artillery-diagram'
+import ArcherAttackDiagram from '../Archer/attack-diagram'
+import ArcherMovementDiagram from '../Archer/movement-diagram'
+import CastleExample from '../Castle/example'
+import DefaultBoard from '../Board/default'
+import FourPlayerBoard from '../Board/four-player'
+import KnightAttackDiagram from '../Knight/attack-diagram'
+import OrientationDiagram from '../Orientation/diagram'
+import ValidOrientations from '../Orientation/valid'
+import SingleArcher from '../Archer/single'
+import SingleHex from '../SingleHex'
+import SingleKnight from '../Knight/single'
+import SingleSoldier from '../Soldier/single'
+import SoldierAttackDiagram from '../Soldier/attack-diagram'
 
 export default [{
   title: 'Introduction',
@@ -231,5 +231,8 @@ export default [{
     'Soldiers can be placed in any building type',
     'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings',
   ],
+}, {
+  title: 'Play',
+  bullets: [<a href='#play'>Play</a>],
 }];
 

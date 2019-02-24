@@ -1,15 +1,15 @@
 import React from 'react'
 
-import DefaultBoard from './Board/default'
-import PlacementBoard from './Board/placement'
-import FourPlayerBoard from './Board/four-player'
-import SingleHex from './SingleHex'
-import SingleSoldier from './Soldier/single'
-import SingleArcher from './Archer/single'
-import SingleKnight from './Knight/single'
-import SingleWhiteVillage from './Village/single'
-import SingleWhiteTown from './Town/single'
-import SingleWhiteCastle from './Castle/single'
+import DefaultBoard from '../Board/default'
+import PlacementBoard from '../Board/placement'
+import FourPlayerBoard from '../Board/four-player'
+import SingleHex from '../SingleHex'
+import SingleSoldier from '../Soldier/single'
+import SingleArcher from '../Archer/single'
+import SingleKnight from '../Knight/single'
+import SingleWhiteVillage from '../Village/single'
+import SingleWhiteTown from '../Town/single'
+import SingleWhiteCastle from '../Castle/single'
 
 export default [{
   title: 'Introduction',
