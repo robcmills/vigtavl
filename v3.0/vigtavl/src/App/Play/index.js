@@ -1,5 +1,13 @@
 import React from 'react'
+import withStyles from 'react-jss'
 
-const Play = () => <div>Play</div>
+import styles from './styles'
+import PlayBoard from '../Board/play'
 
-export default Play
+const Play = ({ classes: c }) => (
+	<div className={c.page}>
+		<PlayBoard className={c.board} />
+	</div>
+)
+
+export default withStyles(styles)(Play)

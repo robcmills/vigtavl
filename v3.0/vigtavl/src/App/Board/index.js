@@ -13,7 +13,7 @@ const HORZ_RADIUS = HEX_RADIUS * SIN_60
 const OPP = HEX_RADIUS * COS_60
 const HEX_STROKE_WIDTH = 0.1
 
-const Board = ({ hexes, size, style }) => {
+const Board = ({ className, hexes, size, style }) => {
   const originX = -HEX_STROKE_WIDTH - HORZ_RADIUS * (size - 1)
   const height = (
     HEX_STROKE_WIDTH * 2 +
@@ -28,12 +28,12 @@ const Board = ({ hexes, size, style }) => {
   )
   const viewBox = [originX, originY, width, height].join(',')
   return (
-    <Svg style={style} viewBox={viewBox}>
+    <Svg className={className} style={style} viewBox={viewBox}>
       {hexes.map((hex, index) => {
         const file = hex.file.charCodeAt(0) - 97
         const rank = hex.rank - 1
         const x = HORZ_RADIUS + file * HORZ_RADIUS * 2 - (rank * HORZ_RADIUS)
-        const y = -(HEX_RADIUS + rank * (HEX_RADIUS + OPP))
+        const y = -(HEX_RADIUS + rank * (HEX_RADIUS + OPP) + HEX_STROKE_WIDTH)
         if (hex.type === 'castle') {
           return (
             <React.Fragment key={index}>
@@ -74,7 +74,7 @@ const Board = ({ hexes, size, style }) => {
         const file = hex.file.charCodeAt(0) - 97
         const rank = hex.rank - 1
         const x = HORZ_RADIUS + file * HORZ_RADIUS * 2 - (rank * HORZ_RADIUS)
-        const y = -(HEX_RADIUS + rank * (HEX_RADIUS + OPP))
+        const y = -(HEX_RADIUS + rank * (HEX_RADIUS + OPP) + HEX_STROKE_WIDTH)
         return <HexUnits key={'u' + index} units={hex.units} x={x} y={y} />
       })}
     </Svg>

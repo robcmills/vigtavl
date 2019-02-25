@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Svg = ({ children, style, viewBox }) => (
+const Svg = ({ children, className, style, viewBox }) => (
 	<svg
+	  className={className}
 		style={style}
 		viewBox={viewBox}
 	>
