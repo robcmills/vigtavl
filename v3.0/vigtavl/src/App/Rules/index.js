@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import withStyles from 'react-jss'
 
-import './rules.css';
 import Rule from '../Rule';
 import rules from './rules';
+import styles from './styles'
 
 class Rules extends Component {
   render() {
@@ -24,4 +25,4 @@ class Rules extends Component {
   }
 }
 
-export default Rules;
+export default withStyles(styles)(Rules);

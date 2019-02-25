@@ -8,6 +8,8 @@
   },
   "author": "robcmills",
   "license": "ISC",
+  "dependencies": {
+  },
   "devDependencies": {
     "create-react-app": "^2.1.2"
   }
