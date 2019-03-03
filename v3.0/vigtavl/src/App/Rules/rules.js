@@ -8,7 +8,8 @@ import DefaultBoard from '../Board/default'
 import FourPlayerBoard from '../Board/four-player'
 import KnightAttackDiagram from '../Knight/attack-diagram'
 import OrientationDiagram from '../Orientation/diagram'
-import SimultaneousAttack from '../Attack/simultaneous'
+import SimultaneousAttack1 from '../Attack/simultaneous1'
+import SimultaneousAttack2 from '../Attack/simultaneous2'
 import SingleArcher from '../Archer/single'
 import SingleHex from '../SingleHex'
 import SingleKnight from '../Knight/single'
@@ -67,7 +68,7 @@ export default [{
       'Attack: Forward adjacent hex',
       <SoldierAttackDiagram />,
       'Defend: Forward (adjacent melee and ranged arrows)',
-      'Movement: Any direction up to 3 hexes',
+      'Movement: 3 hexes any direction',
     ],
   }, {
     title: 'Archer',
@@ -80,7 +81,7 @@ export default [{
       'For example, in the following diagram the white a2 archer can attack the black c2 knight but it can not attack the black b2 soldier because it is facing its shield toward the archer',
       <ArcherArtilleryDiagram />,
       'Defend: None. Archers do not carry a shield and are thus vulnerable to attack from any direction',
-      'Movement: Diagonally up to 2 hexes',
+      'Movement: 2 hexes diagonally',
       <ArcherMovementDiagram />,
       'For example, an archer located at c3 has valid moves: a2, b1, b4, d2, d5, e4, e7, g5',
       'Note that orientation does not affect valid moves but an Archer can only attack in the direction of its current orientation.',
@@ -93,7 +94,7 @@ export default [{
       'Attack: Adjacent forward-left, forward, forward-right',
       <KnightAttackDiagram />,
       'Defend: Forward-left, forward, forward-right',
-      'Movement: Forward up to 3 hexes',
+      'Movement: 1 hex any direction',
     ],
   }],
 }, {
@@ -218,8 +219,10 @@ export default [{
         "However, if the attacked unit is not oriented to defend itself then it is vulnerable to attack. In the following diagram, the black soldier is now oriented away from the attacking white soldier. If it is white's turn to play, the black soldier may be captured.",
         <VulnerableSoldier />,
         'If multiple units are oriented to attack the same hex then the defending unit can use its shield to block only one attack, resulting in the defending unit being captured.',
-        'For example, in the following diagram we see the soldier standoff from before but now white has brought a second soldier in to attack from the rear. The black soldier is now unable to defend and will be captured if attacked.',
-        <SimultaneousAttack />,
+        'For example, in the following diagram the black knight is able to defend against the attacking white soldier. Remember that the knight attacks and defends the forward hex as well as left-forward and right-forward hexes.',
+        <SimultaneousAttack1 />,
+        'However if white moves another unit in to attack then black will not be able to defend both attacks and will be captured',
+        <SimultaneousAttack2 />,
       ],
     }
   ],

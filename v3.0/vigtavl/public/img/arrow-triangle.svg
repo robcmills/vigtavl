@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="534px" height="464px" viewBox="0 0 534 464" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Polygon-2" stroke="#000000" stroke-width="10" fill="#FFFFFF" points="267 5 529 458.797312 5 458.797312"></polygon>
+        <g id="bow-arrow-2" transform="translate(28.000000, 47.000000)" stroke="#000000">
+            <path d="M57.412844,257 L416.587156,257" id="string" stroke-width="7.5" stroke-linecap="square"></path>
+            <g id="arrow-2" transform="translate(186.000000, 0.000000)">
+                <rect id="Rectangle-2" stroke-width="7.5" fill="#FFFFFF" x="46.620229" y="58.2838983" width="16.0409378" height="288.518471" rx="8"></rect>
+                <path d="M24.4322705,24.4829541 L52.8464047,84.1401303 L63.7860808,63.9400997 L83.9631844,52.9639112 L24.4322705,24.4829541 Z" id="Rectangle" stroke-width="7.5" fill="#FFFFFF" transform="translate(54.346515, 54.468053) rotate(45.000000) translate(-54.346515, -54.468053) "></path>
+                <polygon id="Polygon" stroke-width="7.5" fill="#FFFFFF" points="54.3963535 319.766949 75.8156078 332.161017 75.8156078 390 54.3963535 377.605932 32.9770992 390 32.9770992 332.161017"></polygon>
+                <path d="M33.389313,377.192797 L53.1755725,364.798729" id="Line-2" stroke-width="5" stroke-linecap="round"></path>
+                <path d="M33.389313,365.625 L53.1755725,353.230932" id="Line-2" stroke-width="5" stroke-linecap="round"></path>
+            </g>
+            <path d="M197.403811,420.515116 C204.706991,427.260411 192.89971,440.57533 184.442066,430.148107 C126.491969,359.53046 274.325076,339.682375 280.017371,195.002056 C274.325076,50.3176253 126.491969,30.4695404 184.442066,-40.1481067 C192.89971,-50.5753299 204.706991,-37.2604112 197.403811,-30.5151164 C147.550755,26.8615373 301.977887,40.3542991 308,194.997944 C301.977887,349.645701 147.550755,363.138463 197.403811,420.515116 Z" id="bow" stroke-width="7.5" fill="#FFFFFF" transform="translate(239.500000, 195.000000) rotate(-90.000000) translate(-239.500000, -195.000000) "></path>
+        </g>
+    </g>
+</svg>
