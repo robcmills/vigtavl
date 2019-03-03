@@ -8,12 +8,15 @@ import DefaultBoard from '../Board/default'
 import FourPlayerBoard from '../Board/four-player'
 import KnightAttackDiagram from '../Knight/attack-diagram'
 import OrientationDiagram from '../Orientation/diagram'
-import ValidOrientations from '../Orientation/valid'
+import SimultaneousAttack from '../Attack/simultaneous'
 import SingleArcher from '../Archer/single'
 import SingleHex from '../SingleHex'
 import SingleKnight from '../Knight/single'
 import SingleSoldier from '../Soldier/single'
 import SoldierAttackDiagram from '../Soldier/attack-diagram'
+import SoldierStandoff from '../Attack/standoff'
+import ValidOrientations from '../Orientation/valid'
+import VulnerableSoldier from '../Attack/vulnerable'
 
 export default [{
   title: 'Introduction',
@@ -22,9 +25,8 @@ export default [{
   title: 'Object of the Game',
   text: 'The game ends if any of the following conditions are met:',
   bullets: [
-    'One player captures all opponent units',
     'One player occupies all resource hexes',
-    'One player occupies all opponent buildings',
+    'One player captures all opponent units',
     'All but one player forfeits',
   ],
 }, {
@@ -37,9 +39,9 @@ export default [{
     '3 wooden village pieces of each color',
     '2 wooden town pieces of each color',
     '1 wooden castle piece of each color',
-    '9 wooden soldier pieces of each color',
-    '6 wooden archer pieces of each color',
-    '3 wooden knight pieces of each color',
+    '12 wooden soldier pieces of each color',
+    '12 wooden archer pieces of each color',
+    '12 wooden knight pieces of each color',
     '12 small 1-silver tokens',
     '12 medium 2-silver tokens',
     '12 large 3-silver tokens',
@@ -81,7 +83,7 @@ export default [{
       'Movement: Diagonally up to 2 hexes',
       <ArcherMovementDiagram />,
       'For example, an archer located at c3 has valid moves: a2, b1, b4, d2, d5, e4, e7, g5',
-      'Note that orientation does not affect valid moves',
+      'Note that orientation does not affect valid moves but an Archer can only attack in the direction of its current orientation.',
     ],
   }, {
     title: 'Knight',
@@ -197,19 +199,28 @@ export default [{
     'Units may not move through opponent occupied hexes',
     'Units may move through self occupied hexes',
     'Units may occupy an opponent building if unoccupied (this also blocks opponent production at that building)',
+    'Only one unit may occupy any given hex at any time',
   ],
 }, {
   title: 'Attack',
-  text: 'Players may attack an opponent unit with one of their own units.',
+  text: 'Players may attack an opponent unit with one or more of their own units.',
   bullets: [
-    'Units inflict an amount of damage equal to their value. e.g. the soldier inflicts 1 point of damage and the knight inflicts 3',
-    'Units have a number of health points equal to their value',
-    'If a units health points are depleted to zero then that unit falls in battle and is removed from the board',
-    'Until a units health points are depleted to zero it may still move and attack normally',
-    'If a unit takes damage but is not at zero health points, mark the amount of health it has by placing a silver token next to it matching its current health value',
+    'Attacked units are captured and removed from the board',
+    'The attacking unit does not move to occupy the hex of the captured unit',
+    'Attacks are denoted with an "x" followed by the coordinate of the attacked unit. There is no need to specify the attacking unit, since multiple units may simultaneously attack the same opponent unit.',
     {
       title: 'Shields',
-      text: 'Soldiers and knights are equipped with shields that can block attacks from certain directions. Players may not attack opponent units equipped with shields from these directions. They must maneuver to attack from the side or behind.',
+      bullets: [
+        'Soldiers and knights are equipped with shields that can block attacks from the same hexes they are able to attack.',
+        'Players may not attack opponent units equipped with shields from these directions. They must maneuver to attack from the side or behind or attack with multiple units simultaneously.',
+        'For example, in the following diagram two soldiers are facing each other. The soldier attacks and defends the adjacent hex to its orientation. Thus these two soldiers can not attack each other and are effectively in a standoff, much like pawns in Chess.',
+        <SoldierStandoff />,
+        "However, if the attacked unit is not oriented to defend itself then it is vulnerable to attack. In the following diagram, the black soldier is now oriented away from the attacking white soldier. If it is white's turn to play, the black soldier may be captured.",
+        <VulnerableSoldier />,
+        'If multiple units are oriented to attack the same hex then the defending unit can use its shield to block only one attack, resulting in the defending unit being captured.',
+        'For example, in the following diagram we see the soldier standoff from before but now white has brought a second soldier in to attack from the rear. The black soldier is now unable to defend and will be captured if attacked.',
+        <SimultaneousAttack />,
+      ],
     }
   ],
 }, {
