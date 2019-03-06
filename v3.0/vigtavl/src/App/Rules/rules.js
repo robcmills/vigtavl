@@ -4,8 +4,8 @@ import ArcherArtilleryDiagram from '../Archer/artillery-diagram'
 import ArcherAttackDiagram from '../Archer/attack-diagram'
 import ArcherMovementDiagram from '../Archer/movement-diagram'
 import CastleExample from '../Castle/example'
-import DefaultBoard from '../Board/default'
-import FourPlayerBoard from '../Board/four-player'
+import EmptyBoardDiagram from '../Board/empty'
+import ExampleBoardDiagram from '../Board/example'
 import KnightAttackDiagram from '../Knight/attack-diagram'
 import OrientationDiagram from '../Orientation/diagram'
 import SimultaneousAttack1 from '../Attack/simultaneous1'
@@ -20,32 +20,29 @@ import ValidOrientations from '../Orientation/valid'
 import VulnerableSoldier from '../Attack/vulnerable'
 
 export default [{
-  title: 'Introduction',
-  text: 'Players take control of an army to battle against their opponents while maneuvering to control limited resources that can be used to grow their armies.',
-}, {
   title: 'Object of the Game',
-  text: 'The game ends if any of the following conditions are met:',
   bullets: [
-    'One player occupies all resource hexes',
-    'One player captures all opponent units',
-    'All but one player forfeits',
+    'Collect resources, grow your army, vanquish your opponents',
+    'The game ends immediately when the last resource is collected',
+    'The winner is the player with the highest score at the end',
+    'Scores are calculated as the sum of the values of all units remaining on the board plus unspent silver'
   ],
 }, {
   title: 'Game Components',
   bullets: [
     '48 wooden land hexes',
-    '5 wooden sea hexes',
-    '4 wooden forest hexes',
-    '3 wooden mountain hexes',
+    '9 wooden sea hexes',
+    '9 wooden forest hexes',
+    '9 wooden mountain hexes',
     '3 wooden village pieces of each color',
     '2 wooden town pieces of each color',
     '1 wooden castle piece of each color',
-    '12 wooden soldier pieces of each color',
-    '12 wooden archer pieces of each color',
-    '12 wooden knight pieces of each color',
-    '12 small 1-silver tokens',
-    '12 medium 2-silver tokens',
-    '12 large 3-silver tokens',
+    '9 wooden soldier pieces of each color',
+    '6 wooden archer pieces of each color',
+    '3 wooden knight pieces of each color',
+    '16 small 1-silver tokens',
+    '16 medium 2-silver tokens',
+    '16 large 3-silver tokens',
   ],
 }, {
   title: 'Units',
@@ -159,37 +156,39 @@ export default [{
   bullets: [{
     title: 'Step 1: Build the board',
     bullets: [
-      'For a 2 player game, a hexagon shaped board with a side dimension of 4 hexes. Randomly place 3 sea hexes, 2 forest hexes and 1 mountain hex.',
-      'Example:',
-      <DefaultBoard />,
-      'For a 3 or 4 player game, a hexagon shaped board with a side dimension of 5 hexes. Randomly place 4 sea hexes, 3 forest hexes and 2 mountain hexes.',
-      'Example:',
-      <FourPlayerBoard />,
+      'For a 2 player game, construct a hexagon shaped board with a side dimension of 3 hexes like so:',
+      <EmptyBoardDiagram />,
+      'Then roll 2 dice, a white D5 and a black D5. The white die result will determine the rank and the black die will determine the file. Place resource hexes at the coordinates determined by consecutive dice rolls in the following order:',
+      '3 mountains, 3 forrest and 3 sea hexes',
+      'If a dice roll results in a hex that already has a resource, simply stack the new resource on top of the existing one',
+      'Example result:',
+      <ExampleBoardDiagram />,
+      'For a 3 or 4 player game, construct a hexagon shaped board with a side dimension of 4 hexes',
     ],
   }, {
     title: 'Step 2: Placement',
     bullets: [
-      'In turn order each player places one building and one corresponding unit together per turn. Units correspond to buildings of equal value, ' +
-      'e.g. a Soldier & Village are placed together.',
+      'In turn order each player places one building and one corresponding unit together on the same hex per turn. Units correspond to buildings of equal value, ' +
+      'i.e. a soldier & village are placed together, archer and town, knight and castle.',
       'Players must choose hexes that satisfy the following requirements:',
       '- must not be a resource hex',
       '- must not be occupied by opponent',
       '- unit orientation must not threaten or be threatened by any opponent unit',
       'Players place the following:',
-      '3 Villages & 3 Soldiers',
-      '2 Towns & 2 Archers',
-      '1 Castle & 1 Knight',
+      '1 soldier & 1 village',
+      '1 archer & 1 town',
+      '1 knight & 1 castle',
     ],
   }],
 }, {
   title: 'Gameplay',
-  text: 'Each player performs one action in turn and play continues until an end condition is met.',
+  text: 'Each player performs one action in turn and play continues until the end condition is met.',
 }, {
   title: 'Actions',
   bullets: [
     'Move',
     'Attack',
-    'Earn',
+    'Collect',
     'Purchase',
   ],
 }, {
@@ -218,6 +217,10 @@ export default [{
         <SoldierStandoff />,
         "However, if the attacked unit is not oriented to defend itself then it is vulnerable to attack. In the following diagram, the black soldier is now oriented away from the attacking white soldier. If it is white's turn to play, the black soldier may be captured.",
         <VulnerableSoldier />,
+      ],
+    }, {
+      title: 'Double Attack',
+      bullets: [
         'If multiple units are oriented to attack the same hex then the defending unit can use its shield to block only one attack, resulting in the defending unit being captured.',
         'For example, in the following diagram the black knight is able to defend against the attacking white soldier. Remember that the knight attacks and defends the forward hex as well as left-forward and right-forward hexes.',
         <SimultaneousAttack1 />,
@@ -227,8 +230,8 @@ export default [{
     }
   ],
 }, {
-  title: 'Earn',
-  text: 'As an action, players may collect silver for all resource hexes they currently occupy. The amount of silver produced per hex is determined by the type:',
+  title: 'Collect',
+  text: 'As an action, players may collect a resource hex they currently occupy. The resource hex is removed from the board and the player collects the corresponding amount of silver:',
   bullets: [
     'Sea hexes produce 1 silver',
     'Forrest hexes produce 2 silver',
@@ -245,8 +248,8 @@ export default [{
     'Soldiers can be placed in any building type',
     'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings',
   ],
-}, {
-  title: 'Play',
-  bullets: [<a href='#play'>Play</a>],
+// }, {
+//   title: 'Play',
+//   bullets: [<a href='#play'>Play</a>],
 }];
 
