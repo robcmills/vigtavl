@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="973px" height="786px" viewBox="0 0 973 786" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>attack-diagrams</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hexes" transform="translate(-141.000000, -247.000000)" fill="#F5DEB3" stroke="#000000" stroke-width="8">
+            <polygon id="Polygon" points="548.832926 295 718.665852 393 718.665852 589 548.832926 687 379 589 379 393"></polygon>
+            <polygon id="Polygon" points="379.417196 588.5 549.250122 686.5 549.250122 882.5 379.417196 980.5 209.58427 882.5 209.58427 686.5"></polygon>
+            <polygon id="Polygon" points="718.832926 589 888.665852 687 888.665852 883 718.832926 981 549 883 549 687"></polygon>
+            <polygon id="Polygon" points="888.832926 295 1058.66585 393 1058.66585 589 888.832926 687 719 589 719 393"></polygon>
+        </g>
+        <rect id="knight" stroke="#FFFFFF" stroke-width="8" fill="#000000" transform="translate(408.000000, 244.000000) rotate(60.000000) translate(-408.000000, -244.000000) " x="347" y="183" width="122" height="122"></rect>
+        <circle id="soldier" stroke="#000000" stroke-width="8" fill="#FFFFFF" cx="748" cy="244" r="65"></circle>
+        <polygon id="orientation" stroke="#FFFFFF" stroke-width="8" fill="#000000" transform="translate(463.395826, 332.395826) rotate(30.000000) translate(-463.395826, -332.395826) " points="463.395826 299.895826 491.541651 348.645826 435.25 348.645826"></polygon>
+        <circle id="soldier" stroke="#000000" stroke-width="8" fill="#FFFFFF" cx="578" cy="538" r="65"></circle>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(523.395826, 442.395826) rotate(-30.000000) translate(-523.395826, -442.395826) " points="523.395826 409.895826 551.541651 458.645826 495.25 458.645826"></polygon>
+        <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(638.395826, 243.395826) rotate(30.000000) translate(-638.395826, -243.395826) " points="638.395826 210.895826 666.541651 259.645826 610.25 259.645826"></polygon>
+    </g>
+</svg>

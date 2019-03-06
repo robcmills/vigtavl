@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="385px" height="489px" viewBox="0 0 385 489" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>sword-shield</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-3" stroke="#000000" stroke-width="10" fill="#FFFFFF" x="5" y="73" width="375" height="375"></rect>
+        <g id="shield" transform="translate(70.000000, 110.000000)" stroke="#000000">
+            <path d="M1.09249474,215.813048 C-0.473454957,173.598772 -0.250620009,86.0792871 1.09249474,42.8123242 C49.186178,42.718752 89.8225218,28.4479773 123.001526,2.22008878e-14 C156.177478,28.4479773 196.813822,42.718752 244.907505,42.8123242 C246.25062,86.0792871 246.473455,173.598772 244.907505,215.813048 C242.496004,274.748266 163.594117,309.017043 122.998474,333 C82.4058829,309.017043 3.50399623,274.748266 1.09249474,215.813048 Z" stroke-width="8" fill="#FFFFFF"></path>
+            <path d="M37.7638581,201.004325 C36.6689665,171.467009 36.8247697,110.229651 37.7638581,79.9557704 C71.3903358,79.8902979 99.8027388,69.9050412 123.001067,50 C146.197261,69.9050412 174.609664,79.8902979 208.236142,79.9557704 C209.17523,110.229651 209.331034,171.467009 208.236142,201.004325 C206.550051,242.241279 151.382879,266.219132 122.998933,283 C94.6171214,266.219132 39.4499486,242.241279 37.7638581,201.004325 Z" stroke-width="8" fill="#FFFFFF"></path>
+            <circle id="Oval" stroke-width="6" transform="translate(20.000000, 63.000000) rotate(90.000000) translate(-20.000000, -63.000000) " cx="20" cy="63" r="8"></circle>
+            <circle id="Oval" stroke-width="6" transform="translate(19.000000, 166.000000) rotate(90.000000) translate(-19.000000, -166.000000) " cx="19" cy="166" r="8"></circle>
+            <circle id="Oval" stroke-width="6" transform="translate(59.000000, 268.000000) rotate(90.000000) translate(-59.000000, -268.000000) " cx="59" cy="268" r="8"></circle>
+            <circle id="Oval" stroke-width="6" transform="translate(226.000000, 63.000000) scale(-1, 1) rotate(90.000000) translate(-226.000000, -63.000000) " cx="226" cy="63" r="8"></circle>
+            <circle id="Oval" stroke-width="6" transform="translate(227.000000, 166.000000) scale(-1, 1) rotate(90.000000) translate(-227.000000, -166.000000) " cx="227" cy="166" r="8"></circle>
+            <circle id="Oval" stroke-width="6" transform="translate(187.000000, 268.000000) scale(-1, 1) rotate(90.000000) translate(-187.000000, -268.000000) " cx="187" cy="268" r="8"></circle>
+        </g>
+        <g id="axe" transform="translate(61.000000, 5.000000)" fill="#FFFFFF" stroke="#000000" stroke-width="7.5">
+            <rect id="Rectangle-2" x="120.972857" y="4.49174757" width="21.0542857" height="458.758252" rx="8"></rect>
+            <path d="M19.9126335,35.6931523 C19.9126335,78.3715656 57.8981127,116.26029 99.4422485,115.020193 C96.4296852,94.8662536 101.703872,73.1688805 115.26481,49.9280735 L85.4615677,20.2007449 C62.7396592,34.0199196 40.8900145,39.1840555 19.9126335,35.6931523 Z" id="blade" transform="translate(67.588722, 67.625276) rotate(45.000000) translate(-67.588722, -67.625276) "></path>
+            <path d="M147.73519,35.6931523 C147.73519,78.3715656 185.720669,116.26029 227.264805,115.020193 C224.252242,94.8662536 229.526429,73.1688805 243.087366,49.9280735 L213.284124,20.2007449 C190.562216,34.0199196 168.712571,39.1840555 147.73519,35.6931523 Z" id="blade" transform="translate(195.411278, 67.625276) scale(-1, 1) rotate(45.000000) translate(-195.411278, -67.625276) "></path>
+            <rect id="Rectangle-2" x="113.458571" y="36.7208738" width="36.0828571" height="61.4553398" rx="8"></rect>
+            <rect id="Rectangle-2" x="113.458571" y="3.75" width="36.0828571" height="17.9834951" rx="8.99174757"></rect>
+            <rect id="Rectangle-2" x="113.458571" y="457.769417" width="36.0828571" height="22.4805825" rx="11.2402913"></rect>
+        </g>
+    </g>
+</svg>
