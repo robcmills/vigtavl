@@ -6,6 +6,8 @@ import ArcherMovementDiagram from '../Archer/movement-diagram'
 import CastleExample from '../Castle/example'
 import EmptyBoardDiagram from '../Board/empty'
 import ExampleBoardDiagram from '../Board/example'
+import ExampleNonRandomBoard from '../Board/non-random'
+import ExampleUnitPlacement from '../Board/example-unit-placement'
 import KnightAttackDiagram from '../Knight/attack-diagram'
 import OrientationDiagram from '../Orientation/diagram'
 import SimultaneousAttack1 from '../Attack/simultaneous1'
@@ -158,15 +160,35 @@ export default [{
     bullets: [
       'For a 2 player game, construct a hexagon shaped board with a side dimension of 3 hexes like so:',
       <EmptyBoardDiagram />,
-      'Then roll 2 dice, a white D5 and a black D5. The white die result will determine the rank and the black die will determine the file. Place resource hexes at the coordinates determined by consecutive dice rolls in the following order:',
+    ],
+  }, {
+    title: 'Step 2: Place Resources',
+    text: 'There are two methods of resource placement:',
+    bullets: [
+      'Random',
+      'Non-random',
+    ],
+  }, {
+    title: 'Random Resource Placement',
+    bullets: [
+      'Roll 2 dice, a white D5 and a black D5. The white die result will determine the rank and the black die will determine the file. Place resource hexes at the coordinates determined by consecutive dice rolls in the following order:',
       '3 mountains, 3 forrest and 3 sea hexes',
-      'If a dice roll results in a hex that already has a resource, simply stack the new resource on top of the existing one',
+      'If a die coordinate is not within the board then just re-roll it',
+      'If a die coordinate is a hex that already has a resource, simply stack the new resource on top of the existing one',
       'Example result:',
       <ExampleBoardDiagram />,
       'For a 3 or 4 player game, construct a hexagon shaped board with a side dimension of 4 hexes',
     ],
   }, {
-    title: 'Step 2: Placement',
+    title: 'Non-random Resource Placement',
+    bullets: [
+      'Use your imagination and place resources however you like. The recommended distribution is:',
+      '3 mountains, 3 forrest and 3 sea hexes',
+      'Example:',
+      <ExampleNonRandomBoard />,
+    ],
+  }, {
+    title: 'Step 3: Place Units',
     bullets: [
       'In turn order each player places one building and one corresponding unit together on the same hex per turn. Units correspond to buildings of equal value, ' +
       'i.e. a soldier & village are placed together, archer and town, knight and castle.',
@@ -178,6 +200,8 @@ export default [{
       '1 soldier & 1 village',
       '1 archer & 1 town',
       '1 knight & 1 castle',
+      'Example:',
+      <ExampleUnitPlacement />,
     ],
   }],
 }, {

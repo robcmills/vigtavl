@@ -18,7 +18,7 @@ export default {
 		'ul': {
 		  listStyle: 'none',
 		  margin: '0.5rem 0',
-		  paddingLeft: 18,
+		  paddingLeft: 0,
 		},
 		'li': {
 		  padding: '0.25rem 0',
