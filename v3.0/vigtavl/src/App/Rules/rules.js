@@ -16,8 +16,8 @@ import SingleArcher from '../Archer/single'
 import SingleHex from '../SingleHex'
 import SingleKnight from '../Knight/single'
 import SingleSoldier from '../Soldier/single'
-import SoldierAttackDiagram from '../Soldier/attack-diagram'
 import SoldierStandoff from '../Attack/standoff'
+import SpearAttackDefend from '../Spear/attack-defend'
 import ValidOrientations from '../Orientation/valid'
 import VulnerableSoldier from '../Attack/vulnerable'
 
@@ -64,10 +64,10 @@ export default [{
     bullets: [
       <SingleSoldier />,
       'Value: 1',
-      'Attack: Forward adjacent hex',
-      <SoldierAttackDiagram />,
-      'Defend: Forward (adjacent melee and ranged arrows)',
-      'Movement: 3 hexes any direction',
+      'Attack/Defend: Forward adjacent hex',
+      <SpearAttackDefend />,
+      'Shiled can defend against arrow attacks',
+      'Movement: 3 hexes any direction or combination of directions',
     ],
   }, {
     title: 'Archer',
@@ -82,7 +82,7 @@ export default [{
       'Defend: None. Archers do not carry a shield and are thus vulnerable to attack from any direction',
       'Movement: 2 hexes diagonally',
       <ArcherMovementDiagram />,
-      'For example, an archer located at c3 has valid moves: a2, b1, b4, d2, d5, e4, e7, g5',
+      'In the diagram above, the archer located at c3 has valid moves a2, b1, b4, d2, d5, e4, e7, and g5 and can attack d4, e5, and f6',
       'Note that orientation does not affect valid moves but an Archer can only attack in the direction of its current orientation.',
     ],
   }, {
@@ -90,9 +90,8 @@ export default [{
     bullets: [
       <SingleKnight />,
       'Value: 3',
-      'Attack: Adjacent forward-left, forward, forward-right',
+      'Attack/Defend: Adjacent forward-left, forward, forward-right',
       <KnightAttackDiagram />,
-      'Defend: Forward-left, forward, forward-right',
       'Movement: 1 hex any direction',
     ],
   }],
@@ -129,7 +128,7 @@ export default [{
     bullets: [
       <SingleHex />,
       'Default hex type',
-      'Eligible sites for building',
+      'Eligible sites for placement',
     ],
   }, {
     title: 'Sea (resource)',
@@ -230,8 +229,9 @@ export default [{
   text: 'Players may attack an opponent unit with one or more of their own units.',
   bullets: [
     'Attacked units are captured and removed from the board',
-    'The attacking unit does not move to occupy the hex of the captured unit',
-    'Attacks are denoted with an "x" followed by the coordinate of the attacked unit. There is no need to specify the attacking unit, since multiple units may simultaneously attack the same opponent unit.',
+    'The attacking unit must move to occupy the hex of the captured unit, with the exception of archers.',
+    'The attacking unit may choose a new orientation after moving onto the attacked hex.',
+    'Attacks are denoted with an "x" followed by the coordinate of the attacked unit.',
     {
       title: 'Shields',
       bullets: [
@@ -263,14 +263,15 @@ export default [{
   ],
 }, {
   title: 'Purchase',
-  text: 'As an action, players may spend silver to purchase new units and immediately place them according to the following:',
+  text: 'As an action, players may spend silver to purchase new units and immediately place them according to the following rules:',
   bullets: [
     'New units can only be placed in buildings of your own color',
     'New units can only be placed in unoccupied buildings',
     'Knights can only be placed in castles',
     'Archers can be placed in castles or towns',
     'Soldiers can be placed in any building type',
-    'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings',
+    'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings.',
+    'Purchases are denoted by the "+" character, followed by the coordinate of the building in which the unit is placed, followed by the coordinates of the adjacent hex that unit is oriented towards.',
   ],
 // }, {
 //   title: 'Play',

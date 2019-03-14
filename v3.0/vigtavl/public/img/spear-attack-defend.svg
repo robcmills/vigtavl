@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1801px" height="1058px" viewBox="0 0 1801 1058" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1125px" height="1058px" viewBox="0 0 1125 1058" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
     <title>attack-diagrams</title>
     <desc>Created with Sketch.</desc>
@@ -7,12 +7,6 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="hexes" transform="translate(11.000000, 34.000000)" stroke="#000000" stroke-width="8">
             <polygon id="Polygon" fill="#F5DEB3" points="548.832926 295 718.665852 393 718.665852 589 548.832926 687 379 589 379 393"></polygon>
-            <polygon id="Polygon" fill="#F5DEB3" points="1397.83293 589 1567.66585 687 1567.66585 883 1397.83293 981 1228 883 1228 687"></polygon>
-            <polygon id="Polygon" fill="#F5DEB3" points="1058.83293 589 1228.66585 687 1228.66585 883 1058.83293 981 889 883 889 687"></polygon>
-            <polygon id="Polygon" fill="#F5DEB3" points="1396.83293 1 1566.66585 99 1566.66585 295 1396.83293 393 1227 295 1227 99"></polygon>
-            <polygon id="Polygon" fill="#F5DEB3" points="1057.83293 1 1227.66585 99 1227.66585 295 1057.83293 393 888 295 888 99"></polygon>
-            <polygon id="Polygon" fill="#FFFFFF" points="1228.83293 295 1398.66585 393 1398.66585 589 1228.83293 687 1059 589 1059 393"></polygon>
-            <polygon id="Polygon-Copy" fill="#FFFFFF" points="1568.83293 295 1738.66585 393 1738.66585 589 1568.83293 687 1399 589 1399 393"></polygon>
             <polygon id="Polygon" fill="#F5DEB3" points="209.334148 294.5 379.167074 392.5 379.167074 588.5 209.334148 686.5 39.5012213 588.5 39.5012213 392.5"></polygon>
             <polygon id="Polygon" fill="#F5DEB3" points="378.916952 0.5 548.749878 98.5 548.749878 294.5 378.916952 392.5 209.084025 294.5 209.084025 98.5"></polygon>
             <polygon id="Polygon" fill="#F5DEB3" points="718.582804 0.5 888.41573 98.5 888.41573 294.5 718.582804 392.5 548.749878 294.5 548.749878 98.5"></polygon>
@@ -20,7 +14,7 @@
             <polygon id="Polygon" fill="#F5DEB3" points="718.832926 589 888.665852 687 888.665852 883 718.832926 981 549 883 549 687"></polygon>
             <polygon id="Polygon" fill="#FFFFFF" points="888.832926 295 1058.66585 393 1058.66585 589 888.832926 687 719 589 719 393"></polygon>
         </g>
-        <polygon id="archer" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(560.000000, 525.000000) rotate(-30.000000) translate(-560.000000, -525.000000) " points="560 448 626.683956 563.5 493.316044 563.5"></polygon>
+        <circle id="soldier" stroke="#000000" stroke-width="8" fill="#FFFFFF" cx="560" cy="525" r="65"></circle>
         <polygon id="orientation" stroke="#000000" stroke-width="8" fill="#FFFFFF" transform="translate(667.395826, 524.395826) rotate(-30.000000) translate(-667.395826, -524.395826) " points="667.395826 491.895826 695.541651 540.645826 639.25 540.645826"></polygon>
     </g>
 </svg>
