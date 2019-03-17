@@ -64,6 +64,7 @@ export default [{
     bullets: [
       <SingleSoldier />,
       'Value: 1',
+      'Weapon: Spear and shield',
       'Attack/Defend: Forward adjacent hex',
       <SpearAttackDefend />,
       'Shiled can defend against arrow attacks',
@@ -74,13 +75,14 @@ export default [{
     bullets: [
       <SingleArcher />,
       'Value: 2',
-      'Attack: Forward up to 2 hex range (adjacent hex is range zero)',
+      'Weapon: Bow and arrow',
+      'Attack: One direction forward up to 2 hex range (adjacent hex is range zero)',
       <ArcherAttackDiagram />,
       'Archers can attack opponent units behind other opponent units (if that unit is not oriented to protect itself with its shield)',
       'For example, in the following diagram the white a2 archer can attack the black c2 knight but it can not attack the black b2 soldier because it is facing its shield toward the archer',
       <ArcherArtilleryDiagram />,
       'Defend: None. Archers do not carry a shield and are thus vulnerable to attack from any direction',
-      'Movement: 2 hexes diagonally',
+      'Movement: 2 hexes diagonally (one direction only)',
       <ArcherMovementDiagram />,
       'In the diagram above, the archer located at c3 has valid moves a2, b1, b4, d2, d5, e4, e7, and g5 and can attack d4, e5, and f6',
       'Note that orientation does not affect valid moves but an Archer can only attack in the direction of its current orientation.',
@@ -90,6 +92,7 @@ export default [{
     bullets: [
       <SingleKnight />,
       'Value: 3',
+      'Weapon: Double bladed battle axe and shield',
       'Attack/Defend: Adjacent forward-left, forward, forward-right',
       <KnightAttackDiagram />,
       'Movement: 1 hex any direction',
@@ -229,7 +232,7 @@ export default [{
   text: 'Players may attack an opponent unit with one or more of their own units.',
   bullets: [
     'Attacked units are captured and removed from the board',
-    'The attacking unit must move to occupy the hex of the captured unit, with the exception of archers.',
+    'The attacking unit may move to occupy the hex of the captured unit if desired, and only if that hex is adjacent to the attacker.',
     'The attacking unit may choose a new orientation after moving onto the attacked hex.',
     'Attacks are denoted with an "x" followed by the coordinate of the attacked unit.',
     {

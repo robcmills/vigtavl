@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3933px" height="3625px" viewBox="0 0 3933 3625" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>board</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hexes" transform="translate(0.000000, -916.000000)" stroke="#000000" stroke-width="18">
+            <polygon id="e5" fill="#1A8C16" points="2717.5 1175 3057 1371 3057 1763 2717.5 1959 2378 1763 2378 1371"></polygon>
+            <polygon id="e4" fill="#F5DEB3" points="3056.5 1763 3396 1959 3396 2351 3056.5 2547 2717 2351 2717 1959"></polygon>
+            <polygon id="e3" fill="#00BEFF" points="3395.5 2351 3735 2547 3735 2939 3395.5 3135 3056 2939 3056 2547"></polygon>
+            <polygon id="d5" fill="#F5DEB3" points="2036.5 1175 2376 1371 2376 1763 2036.5 1959 1697 1763 1697 1371"></polygon>
+            <polygon id="d4" fill="#F5DEB3" points="2375.5 1763 2715 1959 2715 2351 2375.5 2547 2036 2351 2036 1959"></polygon>
+            <polygon id="d3" fill="#A0522D" points="2716.5 2350 3056 2546 3056 2938 2716.5 3134 2377 2938 2377 2546"></polygon>
+            <polygon id="d2" fill="#F5DEB3" points="3054.5 2939 3394 3135 3394 3527 3054.5 3723 2715 3527 2715 3135"></polygon>
+            <polygon id="c5" fill="#00BEFF" points="1355.5 1175 1695 1371 1695 1763 1355.5 1959 1016 1763 1016 1371"></polygon>
+            <polygon id="c4" fill="#A0522D" points="1694.5 1763 2034 1959 2034 2351 1694.5 2547 1355 2351 1355 1959"></polygon>
+            <polygon id="c3" fill="#F5DEB3" points="2036.5 2351 2376 2547 2376 2939 2036.5 3135 1697 2939 1697 2547"></polygon>
+            <polygon id="c2" fill="#F5DEB3" points="2375.5 2938 2715 3134 2715 3526 2375.5 3722 2036 3526 2036 3134"></polygon>
+            <polygon id="c1" fill="#1A8C16" points="2713.5 3527 3053 3723 3053 4115 2713.5 4311 2374 4115 2374 3723"></polygon>
+            <polygon id="b4" fill="#F5DEB3" points="1015.5 1763 1355 1959 1355 2351 1015.5 2547 676 2351 676 1959"></polygon>
+            <polygon id="b3" fill="#F5DEB3" points="1355.5 2350 1695 2546 1695 2938 1355.5 3134 1016 2938 1016 2546"></polygon>
+            <polygon id="b2" fill="#A0522D" points="1694.5 2938 2034 3134 2034 3526 1694.5 3722 1355 3526 1355 3134"></polygon>
+            <polygon id="b1" fill="#F5DEB3" points="2034.5 3526 2374 3722 2374 4114 2034.5 4310 1695 4114 1695 3722"></polygon>
+            <polygon id="a3" fill="#1A8C16" points="678.5 2351 1018 2547 1018 2939 678.5 3135 339 2939 339 2547"></polygon>
+            <polygon id="a2" fill="#F5DEB3" points="1018.5 2938 1358 3134 1358 3526 1018.5 3722 679 3526 679 3134"></polygon>
+            <polygon id="a1" fill="#00BEFF" points="1357.5 3526 1697 3722 1697 4114 1357.5 4310 1018 4114 1018 3722"></polygon>
+        </g>
+        <g id="ranks" transform="translate(110.000000, -683.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="250" font-weight="normal">
+            <text id="1">
+                <tspan x="679" y="3762">1</tspan>
+            </text>
+            <text id="2">
+                <tspan x="340" y="3196">2</tspan>
+            </text>
+            <text id="3">
+                <tspan x="0" y="2588">3</tspan>
+            </text>
+            <text id="4">
+                <tspan x="342" y="2011">4</tspan>
+            </text>
+            <text id="5">
+                <tspan x="682" y="1432">5</tspan>
+            </text>
+        </g>
+        <g id="files" transform="translate(1527.000000, 1547.000000)" fill="#000000" font-family="HelveticaNeue, Helvetica Neue" font-size="250" font-weight="normal">
+            <text id="a">
+                <tspan x="0" y="1948">a</tspan>
+            </text>
+            <text id="b">
+                <tspan x="727" y="1948">b</tspan>
+            </text>
+            <text id="c">
+                <tspan x="1439" y="1941">c</tspan>
+            </text>
+            <text id="d">
+                <tspan x="1716" y="1398">d</tspan>
+            </text>
+            <text id="e">
+                <tspan x="2032" y="828">e</tspan>
+            </text>
+        </g>
+        <g id="Units" transform="translate(808.000000, 933.000000)" stroke-width="18">
+            <g id="white" transform="translate(1066.000000, 63.000000)" fill="#FFFFFF" stroke="#000000">
+                <polygon id="orientation" transform="translate(282.240817, 677.115517) rotate(60.000000) translate(-282.240817, -677.115517) " points="222 608 342.481634 677.115517 222 746.231034"></polygon>
+                <circle id="soldier" cx="163" cy="831" r="125"></circle>
+                <circle id="village" cx="163" cy="1076" r="50"></circle>
+                <polygon id="town" transform="translate(173.680490, 2285.115517) rotate(30.000000) translate(-173.680490, -2285.115517) " points="130 2235 217.360981 2285.11552 130 2335.23103"></polygon>
+                <polygon id="orientation" transform="translate(267.240817, 1847.115517) rotate(60.000000) translate(-267.240817, -1847.115517) " points="207 1778 327.481634 1847.11552 207 1916.23103"></polygon>
+                <polygon id="archer" transform="translate(163.099869, 2058.172503) rotate(60.000000) translate(-163.099869, -2058.172503) " points="54 1933 272.199737 2058.1725 54 2183.34501"></polygon>
+                <polygon id="orientation" transform="translate(611.240817, 87.115517) rotate(60.000000) translate(-611.240817, -87.115517) " points="551 18 671.481634 87.1155171 551 156.231034"></polygon>
+                <rect id="knight" transform="translate(502.000000, 243.000000) rotate(30.000000) translate(-502.000000, -243.000000) " x="386" y="127" width="232" height="232"></rect>
+                <rect id="castle" x="466" y="467" width="82" height="82"></rect>
+            </g>
+            <g id="black" fill="#000000" stroke="#FFFFFF">
+                <polygon id="orientation" transform="translate(2058.240817, 1486.115517) rotate(60.000000) translate(-2058.240817, -1486.115517) " points="1998 1417 2118.48163 1486.11552 1998 1555.23103"></polygon>
+                <rect id="knight" x="2134" y="1354" width="232" height="232"></rect>
+                <rect id="castle" x="2203" y="1708" width="82" height="82"></rect>
+                <polygon id="town" transform="translate(223.680490, 1760.115517) rotate(30.000000) translate(-223.680490, -1760.115517) " points="180 1710 267.360981 1760.11552 180 1810.23103"></polygon>
+                <polygon id="orientation" transform="translate(407.240817, 1503.115517) rotate(120.000000) translate(-407.240817, -1503.115517) " points="347 1434 467.481634 1503.11552 347 1572.23103"></polygon>
+                <polygon id="archer" transform="translate(163.099869, 1510.172503) rotate(120.000000) translate(-163.099869, -1510.172503) " points="54 1385 272.199737 1510.1725 54 1635.34501"></polygon>
+                <polygon id="orientation" transform="translate(326.240817, 491.115517) rotate(60.000000) translate(-326.240817, -491.115517) " points="266 422 386.481634 491.115517 266 560.231034"></polygon>
+                <circle id="soldier" cx="209" cy="294" r="125"></circle>
+                <circle id="village" cx="209" cy="50" r="50"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
