@@ -5,7 +5,7 @@ import ArcherAttackDiagram from '../Archer/attack-diagram'
 import ArcherMovementDiagram from '../Archer/movement-diagram'
 import CastleExample from '../Castle/example'
 import EmptyBoardDiagram from '../Board/empty'
-import ExampleBoardDiagram from '../Board/example'
+import ExampleResourcePlacementDiagram from '../Board/example-resource-placement'
 import ExampleNonRandomBoard from '../Board/non-random'
 import ExampleUnitPlacement from '../Board/example-unit-placement'
 import KnightAttackDiagram from '../Knight/attack-diagram'
@@ -22,29 +22,26 @@ import ValidOrientations from '../Orientation/valid'
 import VulnerableSoldier from '../Attack/vulnerable'
 
 export default [{
-  title: 'Object of the Game',
+  title: 'Goal',
   bullets: [
-    'Collect resources, grow your army, vanquish your opponents',
-    'The game ends immediately when the last resource is collected',
-    'The winner is the player with the highest score at the end',
-    'Scores are calculated as the sum of the values of all units remaining on the board plus unspent silver'
+    'Collect resources, grow your army, vanquish your opponents.',
+    'The winner is the player with the highest score at the end.',
+    'Scores are calculated as the sum of the values of all units remaining on the board plus unspent resources.',
+    "The game ends immediately when the last resource is collected or any player's last unit on the board is captured.",
   ],
 }, {
   title: 'Game Components',
   bullets: [
-    '48 wooden land hexes',
-    '9 wooden sea hexes',
-    '9 wooden forest hexes',
-    '9 wooden mountain hexes',
-    '3 wooden village pieces of each color',
-    '2 wooden town pieces of each color',
-    '1 wooden castle piece of each color',
-    '9 wooden soldier pieces of each color',
-    '6 wooden archer pieces of each color',
-    '3 wooden knight pieces of each color',
-    '16 small 1-silver tokens',
-    '16 medium 2-silver tokens',
-    '16 large 3-silver tokens',
+    '48 land hexes',
+    '9 sea hexes',
+    '9 forest hexes',
+    '9 mountain hexes',
+    '3 village pieces of each color',
+    '2 town pieces of each color',
+    '1 castle piece of each color',
+    '9 soldier units of each color',
+    '6 archer units of each color',
+    '3 knight units of each color',
   ],
 }, {
   title: 'Units',
@@ -138,21 +135,21 @@ export default [{
     bullets: [
       <SingleHex hexProps={{ fill: 'DeepSkyBlue' }} />,
       'Provides access to fishing and trade',
-      'Produces 1 silver per resource action',
+      'Value: 1',
     ],
   }, {
     title: 'Forrest (resource)',
     bullets: [
       <SingleHex hexProps={{ fill: 'ForestGreen' }} />,
       'Provides access to hunting and lumber',
-      'Produces 2 silver per resource action',
+      'Value: 2',
     ],
   }, {
     title: 'Mountain (resource)',
     bullets: [
       <SingleHex hexProps={{ fill: 'Sienna' }} />,
       'Provides access to mining valuable minerals and ore',
-      'Produces 3 silver per resource action',
+      'Value: 3',
     ],
   }],
 }, {
@@ -160,7 +157,7 @@ export default [{
   bullets: [{
     title: 'Step 1: Build the board',
     bullets: [
-      'For a 2 player game, construct a hexagon shaped board with a side dimension of 3 hexes like so:',
+      'Construct a hexagon shaped board with a side dimension of 4 hexes like so:',
       <EmptyBoardDiagram />,
     ],
   }, {
@@ -173,13 +170,16 @@ export default [{
   }, {
     title: 'Random Resource Placement',
     bullets: [
-      'Roll 2 dice, a white D5 and a black D5. The white die result will determine the rank and the black die will determine the file. Place resource hexes at the coordinates determined by consecutive dice rolls in the following order:',
-      '3 mountains, 3 forrest and 3 sea hexes',
-      'If a die coordinate is not within the board then just re-roll it',
-      'If a die coordinate is a hex that already has a resource, simply stack the new resource on top of the existing one',
+      'Use dice rolls to randomly determine coordinates to place resources.',
+      'Roll 2 dice, a white D6 and a black D6.',
+      'The first roll of both dice determines the target file. If the black die is even then count left to right, if the black die is odd then count right to left the value of the white die.',
+      'The second roll of both dice determines the target rank. If the black die is even then count top to bottom, if the black die is odd then count bottom to top the value of the white die.',
+      'Place resource hexes one at a time at the coordinates determined by consecutive dice rolls in the following order:',
+      '3 mountains, 3 forrest and 3 sea hexes.',
+      'If a die coordinate is not within the board then just re-roll it.',
+      'If a die coordinate is a hex that already has a resource, simply stack the new resource on top of the existing one.',
       'Example result:',
-      <ExampleBoardDiagram />,
-      'For a 3 or 4 player game, construct a hexagon shaped board with a side dimension of 4 hexes',
+      <ExampleResourcePlacementDiagram />,
     ],
   }, {
     title: 'Non-random Resource Placement',
@@ -198,17 +198,19 @@ export default [{
       '- must not be a resource hex',
       '- must not be occupied by opponent',
       '- unit orientation must not threaten or be threatened by any opponent unit',
-      'Players place the following:',
+      'For a 2 player game, players place the following:',
+      '3 soldiers & 3 villages',
+      '2 archers & 2 towns',
+      '1 knight & 1 castle',
+      'For a 3 player game, players place the following:',
       '1 soldier & 1 village',
       '1 archer & 1 town',
       '1 knight & 1 castle',
-      'Example:',
-      <ExampleUnitPlacement />,
     ],
   }],
 }, {
   title: 'Gameplay',
-  text: 'Each player performs one action in turn and play continues until the end condition is met.',
+  text: 'Each player performs one action in turn and play continues until an end condition is met.',
 }, {
   title: 'Actions',
   bullets: [
@@ -258,22 +260,17 @@ export default [{
   ],
 }, {
   title: 'Collect',
-  text: 'As an action, players may collect a resource hex they currently occupy. The resource hex is removed from the board and the player collects the corresponding amount of silver:',
-  bullets: [
-    'Sea hexes produce 1 silver',
-    'Forrest hexes produce 2 silver',
-    'Mountain hexes produce 3 silver',
-  ],
+  text: 'As an action, players may collect a resource hex they currently occupy. The resource hex is removed from the board and kept near the player who collected it.',
 }, {
   title: 'Purchase',
-  text: 'As an action, players may spend silver to purchase new units and immediately place them according to the following rules:',
+  text: 'As an action, players may spend resources to purchase new units and immediately place them according to the following rules:',
   bullets: [
     'New units can only be placed in buildings of your own color',
     'New units can only be placed in unoccupied buildings',
     'Knights can only be placed in castles',
     'Archers can be placed in castles or towns',
     'Soldiers can be placed in any building type',
-    'There is no limit to how much silver can be spent, provided those units can be placed in eligible buildings.',
+    'There is no limit to how many resources can be spent, provided those units can be placed in eligible buildings.',
     'Purchases are denoted by the "+" character, followed by the coordinate of the building in which the unit is placed, followed by the coordinates of the adjacent hex that unit is oriented towards.',
   ],
 // }, {

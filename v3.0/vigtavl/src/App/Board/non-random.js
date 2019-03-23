@@ -4,9 +4,9 @@ const ExampleNonRandomBoard = () => {
 	return (
 		<div>
 		  <img
-		    style={{ height: '12rem' }}
+		    style={{ height: '16rem' }}
 		  	src='img/example-non-random-board.svg'
-		  	alt='example-non-random-board-diagram'
+		  	alt='example-non-random-board'
 		  />
 		</div>
 	);

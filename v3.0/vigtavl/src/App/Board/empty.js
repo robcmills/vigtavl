@@ -4,7 +4,7 @@ const EmptyBoardDiagram = () => {
 	return (
 		<div>
 		  <img
-		    style={{ height: '12rem' }}
+		    style={{ height: '16rem' }}
 		  	src='img/empty-board.svg'
 		  	alt='empty-board-diagram'
 		  />
